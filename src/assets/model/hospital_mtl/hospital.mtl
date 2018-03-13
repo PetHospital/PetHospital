@@ -1,0 +1,90 @@
+﻿newmtl /Game/LowPolyHospital/Materials/Master/M_Colors_Master_M_Colors_Master
+	map_Kd M_Colors_Master_M_Colors_Master_D.bmp
+	map_Ks M_Colors_Master_M_Colors_Master_S.bmp
+	bump M_Colors_Master_M_Colors_Master_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_Yellow_A1_M_Wall_Yellow_A1
+	map_Kd M_Wall_Yellow_A1_M_Wall_Yellow_A1_D.bmp
+	map_Ks M_Wall_Yellow_A1_M_Wall_Yellow_A1_S.bmp
+	bump M_Wall_Yellow_A1_M_Wall_Yellow_A1_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_DarkBrown_A_M_Wall_DarkBrown_A
+	map_Kd M_Wall_DarkBrown_A_M_Wall_DarkBrown_A_D.bmp
+	map_Ks M_Wall_DarkBrown_A_M_Wall_DarkBrown_A_S.bmp
+	bump M_Wall_DarkBrown_A_M_Wall_DarkBrown_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_Green_A_M_Wall_Green_A
+	map_Kd M_Wall_Green_A_M_Wall_Green_A_D.bmp
+	map_Ks M_Wall_Green_A_M_Wall_Green_A_S.bmp
+	bump M_Wall_Green_A_M_Wall_Green_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_LightBlue_A_M_Wall_LightBlue_A
+	map_Kd M_Wall_LightBlue_A_M_Wall_LightBlue_A_D.bmp
+	map_Ks M_Wall_LightBlue_A_M_Wall_LightBlue_A_S.bmp
+	bump M_Wall_LightBlue_A_M_Wall_LightBlue_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_LightBlue_A1_M_Wall_LightBlue_A1
+	map_Kd M_Wall_LightBlue_A1_M_Wall_LightBlue_A1_D.bmp
+	map_Ks M_Wall_LightBlue_A1_M_Wall_LightBlue_A1_S.bmp
+	bump M_Wall_LightBlue_A1_M_Wall_LightBlue_A1_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_Yellow_A_M_Wall_Yellow_A
+	map_Kd M_Wall_Yellow_A_M_Wall_Yellow_A_D.bmp
+	map_Ks M_Wall_Yellow_A_M_Wall_Yellow_A_S.bmp
+	bump M_Wall_Yellow_A_M_Wall_Yellow_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Walls/M_Wall_Gray_A_M_Wall_Gray_A
+	map_Kd M_Wall_Gray_A_M_Wall_Gray_A_D.bmp
+	map_Ks M_Wall_Gray_A_M_Wall_Gray_A_S.bmp
+	bump M_Wall_Gray_A_M_Wall_Gray_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_Green_M_Floor_Green
+	map_Kd M_Floor_Green_M_Floor_Green_D.bmp
+	map_Ks M_Floor_Green_M_Floor_Green_S.bmp
+	bump M_Floor_Green_M_Floor_Green_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_Yellow_A_M_Floor_Yellow_A
+	map_Kd M_Floor_Yellow_A_M_Floor_Yellow_A_D.bmp
+	map_Ks M_Floor_Yellow_A_M_Floor_Yellow_A_S.bmp
+	bump M_Floor_Yellow_A_M_Floor_Yellow_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_Green_A1_M_Floor_Green_A1
+	map_Kd M_Floor_Green_A1_M_Floor_Green_A1_D.bmp
+	map_Ks M_Floor_Green_A1_M_Floor_Green_A1_S.bmp
+	bump M_Floor_Green_A1_M_Floor_Green_A1_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_B1_M_Floor_B1
+	map_Kd M_Floor_B1_M_Floor_B1_D.bmp
+	map_Ks M_Floor_B1_M_Floor_B1_S.bmp
+	bump M_Floor_B1_M_Floor_B1_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_A1_M_Floor_A1
+	map_Kd M_Floor_A1_M_Floor_A1_D.bmp
+	map_Ks M_Floor_A1_M_Floor_A1_S.bmp
+	bump M_Floor_A1_M_Floor_A1_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_B_M_Floor_B
+	map_Kd M_Floor_B_M_Floor_B_D.bmp
+	map_Ks M_Floor_B_M_Floor_B_S.bmp
+	bump M_Floor_B_M_Floor_B_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_A_M_Floor_A
+	map_Kd M_Floor_A_M_Floor_A_D.bmp
+	map_Ks M_Floor_A_M_Floor_A_S.bmp
+	bump M_Floor_A_M_Floor_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Floor/M_Floor_B2_M_Floor_B2
+	map_Kd M_Floor_B2_M_Floor_B2_D.bmp
+	map_Ks M_Floor_B2_M_Floor_B2_S.bmp
+	bump M_Floor_B2_M_Floor_B2_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Text/M_Text_A_M_Text_A
+	map_Kd M_Text_A_M_Text_A_D.bmp
+	map_Ks M_Text_A_M_Text_A_S.bmp
+	bump M_Text_A_M_Text_A_N.bmp
+
+newmtl /Game/LowPolyHospital/Materials/Master/M_Text_Master_M_Text_Master
+	map_Kd M_Text_Master_M_Text_Master_D.bmp
+	map_Ks M_Text_Master_M_Text_Master_S.bmp
+	bump M_Text_Master_M_Text_Master_N.bmp
+

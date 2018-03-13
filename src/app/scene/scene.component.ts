@@ -2,7 +2,9 @@ import { Component, AfterViewInit, ElementRef, ViewChild, HostListener } from '@
 import * as THREE from 'three';
 import './js/EnableThreeExamples';
 import 'three/examples/js/controls/OrbitControls';
-import 'three/examples/js/loaders/ColladaLoader';
+import 'three/examples/js/loaders/OBJLoader';
+import 'three/examples/js/loaders/MTLLoader';
+import { Vector3 } from 'three';
 
 @Component({
   selector: 'app-scene',
@@ -15,9 +17,9 @@ export class SceneComponent implements AfterViewInit {
     private cameraTarget: THREE.Vector3;
     public scene: THREE.Scene;
 
-    public fieldOfView: number = 45;
+    public fieldOfView: number = 60;
     public nearClippingPane: number = 1;
-    public farClippingPane: number = 1000;
+    public farClippingPane: number = 6000;
 
     public controls: THREE.OrbitControls;
 
@@ -35,24 +37,29 @@ export class SceneComponent implements AfterViewInit {
 
     private createScene() {
         this.scene = new THREE.Scene();
-        this.scene.add(new THREE.AxesHelper(200));
-        let loader = new THREE.ColladaLoader();
-        loader.load('assets/model/multimaterial.dae', this.onModelLoadingCompleted);
+        this.scene.add(new THREE.AxesHelper(1000));
+        let loader = new THREE.MTLLoader();
+        loader.setPath('assets/model/hospital_mtl/');
+        loader.load('hospital.mtl', this.onModelLoadingCompleted);
     }
 
-    private onModelLoadingCompleted(collada) {
-        let modelScene = collada.scene;
-        this.scene.add(modelScene);
-        this.render();
+    private onModelLoadingCompleted(materials) {
+        let objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load('assets/model/hospital.OBJ', (object) => {
+            object.rotateOnWorldAxis(new Vector3(0, 1, 0), Math.PI);
+            object.position.set(-2000, -750, 500);
+            this.scene.add(object);
+            this.render();
+        });
     }
 
     private createLight() {
-        let light1 = new THREE.PointLight(0xffffff, 1, 1000);
-        light1.position.set(0, 0, 100);
+        let light1 = new THREE.PointLight(0xffffff, 1);
+        light1.position.set(0, 4000, 0);
         this.scene.add(light1);
 
-        let light2 = new THREE.PointLight(0xffffff, 1, 1000);
-        light2.position.set(0, 0, -100);
+        let light2 = new THREE.AmbientLight(0xFFFFFF, 0.5);
         this.scene.add(light2);
     }
 
@@ -65,9 +72,10 @@ export class SceneComponent implements AfterViewInit {
             this.farClippingPane
         );
 
-        this.camera.position.x = 1000;
-        this.camera.position.y = 1000;
-        this.camera.position.z = 1000;
+        this.camera.position.x = 400;
+        this.camera.position.y = 2800;
+        this.camera.position.z = 2000;
+
     }
 
     private getAspectRatio(): number {
@@ -88,13 +96,13 @@ export class SceneComponent implements AfterViewInit {
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.renderer.setClearColor(0xffffff, 1);
+        this.renderer.setClearColor(0xADD8E6, 1);
         this.renderer.autoClear = true;
 
         let component: SceneComponent = this;
 
         (function render() {
-            // requestAnimationFrame(render);
+            requestAnimationFrame(render);
             component.render();
         }());
     }
@@ -105,8 +113,12 @@ export class SceneComponent implements AfterViewInit {
 
     public addControls() {
         this.controls = new THREE.OrbitControls(this.camera);
+        this.controls.maxDistance = 3600;
+        this.controls.minDistance = 0;
+        this.controls.maxPolarAngle = Math.PI / 2;
+        this.controls.minPolarAngle = 0;
         this.controls.rotateSpeed = 1.0;
-        this.controls.zoomSpeed = 1.2;
+        this.controls.zoomSpeed = 1.0;
         this.controls.addEventListener('change', this.render);
     }
 
@@ -114,7 +126,7 @@ export class SceneComponent implements AfterViewInit {
         console.log("onMouseDown");
         event.preventDefault();
 
-        // Example of mesh selection/pick:
+        // mesh selection:
         let raycaster = new THREE.Raycaster();
         let mouse = new THREE.Vector2();
         mouse.x = (event.clientX / this.renderer.domElement.clientWidth) * 2 - 1;
@@ -127,13 +139,12 @@ export class SceneComponent implements AfterViewInit {
         console.log("Scene has " + obj.length + " objects");
         console.log(intersects.length + " intersected objects found");
         intersects.forEach((i) => {
-            console.log(i.object); // do what you want to do with object
+            console.log(i.object);
         });
 
     }
 
     private findAllObjects(pred: THREE.Object3D[], parent: THREE.Object3D) {
-        // NOTE: Better to keep separate array of selected objects
         if (parent.children.length > 0) {
             parent.children.forEach((i) => {
                 pred.push(i);
