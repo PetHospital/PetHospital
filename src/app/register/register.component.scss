@@ -1,0 +1,72 @@
+.registerContent {
+    width: 800px;
+    height: 300px;
+    // text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .vet-dog{
+        margin-left: 50px;
+    }
+
+    .registerForm {
+        width: 500px;
+        height: 300px;
+        text-align: center;
+        float: right;
+        // margin: auto;
+        // position: absolute;
+        // top: 0;
+        // bottom: 0;
+        // left: 0;
+        // right: -200px;
+    
+        .label{
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+        }
+    
+        .input{
+            margin: 10px auto;
+            width: 300px;
+            height: 40px;
+            box-shadow: 0;
+            outline: none;
+            -webkit-box-shadow: 0;
+            -webkit-appearance:none;
+            border: 1px solid #dfdfdf;
+            border-radius: 3px;
+        }
+    
+        .input:focus{
+            box-shadow: 0;
+            -webkit-box-shadow: 0;        
+        }
+    
+        input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 0; 
+        } 
+    
+        .submit{
+            border: none;
+            padding: 0;
+            background: #00a0da;
+            margin-top: 20px;
+            margin-right: 50px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+            width: 300px;
+            height: 40px;
+            border-radius: 3px;
+            position: relative;
+            float: right;
+        }
+    }
+}
