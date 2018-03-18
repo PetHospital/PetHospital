@@ -20,12 +20,12 @@
         "prefix": "app",
         "styles": [
             "styles.scss",
-            "assets/css/semantic/semantic.min.css",
+         
             "assets/scss/main.scss"
         ],
         "scripts": [
             "../node_modules/jquery/dist/jquery.min.js",
-            "assets/css/semantic/semantic.min.js",
+            
             "../node_modules/three/build/three.min.js"
         ],
         "environmentSource": "environments/environment.ts",
