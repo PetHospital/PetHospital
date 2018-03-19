@@ -1,3 +1,45 @@
-<p>
-  login works!
-</p>
+<div id="login">
+    <div class="wrapper">
+        <div class="login">
+            <form action="#" method="post" class="container offset1 loginform" #loginForm="ngForm" (ngSubmit)="doSubmit(loginForm.value)">
+                <div id="owl-login">
+                    <div class="hand"></div>
+                    <div class="hand hand-r"></div>
+                    <div class="arms">
+                        <div class="arm"></div>
+                        <div class="arm arm-r"></div>
+                    </div>
+                </div>
+                <div class="pad">
+                    <div class="control-group">
+                        <div class="controls">
+                        <label for="userName" class="control-label fa fa-user"></label>
+                            <input id="userName" type="text" name="userName" placeholder="用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium" [(ngModel)]="formData.userName" #userName="ngModel" required>
+                            <div *ngIf="userName.errors && (userName.dirty || userName.touched)" class="error">
+                                <span [hidden]="!userName.errors.required">
+                                    <i class="fa fa-info-circle large"></i>
+                                    &nbsp;用户名必须输入
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="password" class="control-label fa fa-asterisk"></label>
+                            <input id="password" type="password" name="password" placeholder="密码" tabindex="2" class="form-control input-medium" [(ngModel)]="formData.password" #password="ngModel" required>
+                            <div *ngIf="password.errors && (password.dirty || password.touched)" class="error">
+                                    <span [hidden]="!password.errors.required">
+                                        <i class="fa fa-info-circle large"></i>
+                                        &nbsp;密码必须输入
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions"><a href="#" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a><a routerLink="/signup" tabindex="6" class="btn btn-link text-muted">Sign Up</a>
+                    <button type="submit" tabindex="4" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
