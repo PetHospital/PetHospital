@@ -37,7 +37,7 @@ export class SceneComponent implements AfterViewInit {
 
     private createScene() {
         this.scene = new THREE.Scene();
-        this.scene.add(new THREE.AxesHelper(1000));
+        // this.scene.add(new THREE.AxesHelper(1000));
         let loader = new THREE.MTLLoader();
         loader.setPath('assets/model/hospital_mtl/');
         loader.load('hospital.mtl', this.onModelLoadingCompleted);

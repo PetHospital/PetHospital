@@ -8,6 +8,10 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 	margin:0;
 	padding:0;
 }
+
+html, body {
+    height: 100%;
+}
 //
 // Correct `block` display not defined for any HTML5 element in IE 8/9.
 // Correct `block` display not defined for `details` or `summary` in IE 10/11
@@ -72,7 +76,8 @@ template {
 //
 
 a {
-	background-color: transparent;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 //

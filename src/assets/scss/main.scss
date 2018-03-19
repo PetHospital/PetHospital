@@ -2,3 +2,26 @@
 @import "_theme";
 @import "_variable";
 @import "_vendor";
+
+@font-face {
+    font-family: 'Abril';
+    src: url('./../fonts/AbrilFatface-Regular.otf');
+};
+
+@font-face {
+    font-family: 'Alegre';
+    src: url('./../fonts/Alegre-Sans.ttf');
+};
+
+@font-face {
+  font-family: 'source-serif-pro';
+  src: url('./../fonts/SourceSerifPro-Regular.ttf');
+}
+
+.clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
