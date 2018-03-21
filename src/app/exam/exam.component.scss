@@ -1,0 +1,132 @@
+.em_main {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.ec_sidel {
+    width: 162px;
+    float: left;
+    position: relative;
+}
+.golbal_side {
+    position: fixed;
+    z-index: 1000;
+}
+.Navigation {
+    width: 160px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.ec_card {
+    width: 160px;
+    min-height: 100px;
+    border: 1px solid #bec2c5;
+    background: #f0f0f0;
+    font-family: 'Microsoft Yahei';
+    padding-bottom: 20px;
+}
+.ec_ca_cpt {
+    height: 20px;
+    line-height: 20px;
+    padding: 8px;
+    font-size: 16px;
+    color: #838383;
+}
+.ep_sidel_span {
+    color: #999;
+    height: 119px;
+    cursor: default;
+    background: #f0f0f0;
+    float: left;
+    width: 160px;
+    color: #555;
+    text-shadow: 1px 1px 0 #fff;
+    border-radius: 15px 15px 0px 0px; 
+}
+.ep_sidel_a {
+    color: #999;
+    height: 119px;
+    cursor: default;
+    background-color: #BEBEBE;
+    float: left;
+    width: 160px;
+    color: #555;
+    text-shadow: 1px 1px 0 #fff;
+    border-radius: 0px 0px 15px 15px; 
+}
+.ep_sidel_a:hover{
+	background: #6C6C6C;
+}
+.ec_sa_span {
+    width: 160px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-top: -9px;
+}
+.ec_sider {
+    width: 802px;
+    float: right;
+}
+.ep_topic {
+    width: 796px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: solid 1px #d9d9d9;
+}
+.ep_t_topic {
+    padding: 7px 0;
+    background: #eee;
+    overflow: hidden;
+}
+.ep_tt_num {
+    color: #97b7cd;
+    font-size: 30px;
+    font-family: 'Verdana';
+    padding: 0 8px 0 14px;
+    float: left;
+}
+.ep_tt_topic{
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-family: 宋体;
+    line-height: 24px;
+    float: left;
+}
+.ep_t_ul {
+    list-style-position: inside;
+    margin-top: 2%;
+    li{
+        margin-bottom: 10px;
+        b {
+            display: inline-block;
+            padding-right: 5px;
+            font-size: 14px;
+            font-family: 'Arial';
+            color: #333;
+        }
+        p {
+            display: inline;
+        }
+    }
+}
+.ep_radio {
+    margin-left: 3%;
+    display: inline-block;
+    margin-right: 13px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.pading{
+	 padding: 7px 0;
+}
+.ep_img{
+    width: 55px;
+    height:55px;
+    margin-left: 48px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
