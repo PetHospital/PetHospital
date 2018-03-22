@@ -14,6 +14,7 @@ import { TutorComponent } from './tutor/tutor.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
