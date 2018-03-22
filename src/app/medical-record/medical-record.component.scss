@@ -50,6 +50,20 @@
     .null-record-image {
         width: 100%;
     }
+
+    .content{
+        margin: 20px;
+
+        .image{
+            width: 50%;
+            height: auto;
+            margin: 20px;
+        }
+        .video {
+            width: 400px;
+            height: 250px;
+        }
+    }
 }
   
   

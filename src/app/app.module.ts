@@ -16,6 +16,8 @@ import { RegisterComponent } from './register/register.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { PracticeComponent } from './practice/practice.component';
+import { ExamComponent } from './exam/exam.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
         TutorComponent,
         LoginComponent,
         RegisterComponent,
-        MedicalRecordComponent
+        MedicalRecordComponent,
+        PracticeComponent,
+        ExamComponent,
     ],
     imports: [
         BrowserModule,

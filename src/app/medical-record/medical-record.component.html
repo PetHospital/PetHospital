@@ -20,6 +20,15 @@
       <h2>请选择您想要学习的病例</h2>
     </div>
   </div>
-  <div>{{currentRecord.name}}</div>
+  <div *ngIf="currentRecord.name !== null" class="content">
+    <div>
+      <div>
+        <h1>{{currentRecord.name}}</h1>
+        <p>blalalaalallalalalalalalalalalalalallaalal</p>
+        <img src="../../assets/images/cat1.jpg"  class="image"/>
+        <video class="video" src="../../assets/videos/mango.MP4" controls="controls"></video>
+      </div>
+    </div>
+  </div>
 </div>
 
