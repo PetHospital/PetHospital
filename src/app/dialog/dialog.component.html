@@ -8,22 +8,27 @@
     <div class="dialog-ctnt">
       <ul>
           <li>
-            <div class="sys-msg">
-              <div class="avatar"></div>
-              <div class="text">xqq is a big sb.</div>
-            </div>  
+            <div *ngFor="let message of messages">
+                <div *ngIf="!message.isUser" class="sys-msg">
+                    <div class="avatar"></div>
+                    <div class="text">{{message.content}}</div>
+                </div> 
+                <div *ngIf="message.isUser" class="usr-msg">
+                  <div class="text">{{message.content}}</div>
+                </div>
+            </div>
           </li>
           <li>
-            <div class="usr-msg"><div class="text">Yes, I understand.</div></div>
+            
           </li>
       </ul>
     </div>
     <ul class="dialog-btm">
         <li>
-          <button class="btn">Yes, I understand.</button>
+          <button class="btn" (click)="addUserMessage(true)">Yes, I understand.</button>
         </li>
         <li>
-          <button class="btn">No, I don't understand.</button>
+          <button class="btn" (click)="addUserMessage(false)">No, I don't understand.</button>
         </li>
       </ul>
   </div>
