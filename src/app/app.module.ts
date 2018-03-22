@@ -14,7 +14,8 @@ import { TutorComponent } from './tutor/tutor.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
-
+import { PracticeComponent } from './practice/practice.component';
+import { ExamComponent } from './exam/exam.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,9 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
         TutorComponent,
         LoginComponent,
         RegisterComponent,
-        MedicalRecordComponent
+        MedicalRecordComponent,
+        PracticeComponent,
+        ExamComponent
     ],
     imports: [
         BrowserModule,

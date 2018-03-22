@@ -6,6 +6,7 @@ import { RegisterComponent } from '../app/register/register.component';
 import { SceneComponent } from './scene/scene.component';
 import { TutorComponent } from '../app/tutor/tutor.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
+import { PracticeComponent } from './practice/practice.component';
 
 
 export const appRoutes: Routes = [
@@ -14,7 +15,8 @@ export const appRoutes: Routes = [
     { path: 'signup', component: RegisterComponent},
     { path: 'scene', component: SceneComponent},
     { path: 'role', component: TutorComponent },
-    { path: 'disease', component: MedicalRecordComponent}
+    { path: 'disease', component: MedicalRecordComponent},
+    { path: 'practice', component: PracticeComponent }
 ];
 
 @NgModule({
