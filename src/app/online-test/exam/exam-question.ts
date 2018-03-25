@@ -8,5 +8,4 @@ export class ExamQuestion {
     type: String;
     subject: String;
     options: Option[];
-    answer: String;
 }

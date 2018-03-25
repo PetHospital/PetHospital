@@ -1,0 +1,54 @@
+<div class="em_main">
+  <div class="ec_sidel">
+      <div class="golbal_side">
+          <div class="Navigation">
+            <a class="ep_sidel_a ep_active" >
+              <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
+              <span class="ec_sa_span">我的错题</span>
+            </a>
+            <a class="ep_sidel_a">
+              <img class="ep_img" src="../../../assets/images/exam/fork.png">
+              <span class="ec_sa_span">我的收藏</span>
+            </a>
+          </div>
+      </div>
+  </div>
+  <div class="ec_sider" *ngFor="let parent of WrongList">
+      <div class="ep_topic">
+          <div class="ep_t_topic">
+              <div class="ep_tt_num">{{parent.id}}</div>
+              <div class="ep_tt_topic pading">【{{parent.type}}】</div>
+              <div class="pading"><span>{{parent.subject}}</span></div>
+          </div>
+          <ul class="ep_t_ul" *ngFor="let child of parent.options">
+          <li>
+              <label>
+                  <b>{{child.id}}.</b><p>{{child.content}}</p>                                
+              </label>
+          </li>
+          </ul>
+          <div class="eh_t_solution">
+              <div class="eh_ts_a">
+                    <div class="eh_answer">
+                        <img class="em_icon" src="../../../assets/images/exam/wrong.png">
+                        <span>您的答案：
+                            <b>{{parent.wrongAnswer}}</b>
+                        </span>
+                    </div>
+              </div>
+              <div class="eh_uanswer">
+                    <span>正确答案：
+                        <b>{{parent.correctAnswer}}</b>
+                    </span>
+              </div>
+              <div class="eh_ts_s">
+                  <a (click)="manageCollection(parent.id)">{{parent.collectStatus}}</a>
+                  <a (click)="viewSolution(parent.id)" [class.a_active]="parent.showSolution===true">解析</a>
+              </div>
+          </div>
+          <div class="eh_t_resolve" [class.active]="parent.showSolution===true">
+              <div class="eh_resolve_nexist">{{parent.solution}}</div>
+          </div>
+      </div>
+  </div>
+</div>
