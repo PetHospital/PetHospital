@@ -1,0 +1,43 @@
+<div class="em_main">
+    <div class="ec_sidel">
+        <div class="golbal_side">
+            <div class="Navigation">
+              <a class="ep_sidel_a" >
+                <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
+                <span class="ec_sa_span">我的错题</span>
+              </a>
+              <a class="ep_sidel_a ep_active">
+                <img class="ep_img" src="../../../assets/images/exam/fork.png">
+                <span class="ec_sa_span">我的收藏</span>
+              </a>
+            </div>
+        </div>
+    </div>
+    <div class="ec_sider" *ngFor="let parent of CollectionList">
+        <div class="ep_topic">
+            <div class="ep_t_topic">
+                <div class="ep_tt_num">{{parent.id}}</div>
+                <div class="ep_tt_topic pading">【{{parent.question.type}}】</div>
+                <div class="pading"><span>{{parent.question.subject}}</span></div>
+            </div>
+            <ul class="ep_t_ul" *ngFor="let child of parent.question.options">
+            <li>
+                <label>
+                    <b>{{child.id}}.</b><p>{{child.content}}</p>                                
+                </label>
+            </li>
+            </ul>
+            <div class="eh_t_solution">
+                <div class="eh_ts_a">
+                      <div class="eh_uanswer">
+                          <img class="em_icon" src="../../../assets/images/exam/correct.png">
+                          <span>正确答案：
+                              <b>{{parent.answer}}</b>
+                          </span>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
