@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
 
+import { DataService } from './shared/service/data.service';
+
 
 @NgModule({
     declarations: [
@@ -33,7 +35,9 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
         RoleplayModule,
         OnlineTestModule
     ],
-    providers: [],
+    providers: [
+        DataService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

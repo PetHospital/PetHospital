@@ -11,7 +11,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class RegisterComponent implements OnInit, AfterViewInit {
   formData = {} as any;
-  constructor(  
+  constructor(
     private http: HttpClient,
   ) {
   }
@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       this.onValueChanged(obj);
       return;
     }
-    let url = 'http://localhost:8000/';
+    let url = 'http://localhost:8000/register/';
     console.log(JSON.stringify(obj));
     this.http.post(url, obj).subscribe(
       data => {

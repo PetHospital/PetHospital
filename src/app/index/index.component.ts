@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './../shared/service/data.service';
 
 @Component({
     selector: 'app-index',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-    constructor() { }
+    constructor(private dataService: DataService) {
+        this.dataService.getRoomInfo()
+                 .subscribe(data => console.log(data));
+    }
 
     ngOnInit() {
     }

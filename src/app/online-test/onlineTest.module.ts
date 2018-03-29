@@ -5,6 +5,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { PracticeService } from './practice/practice.service';
 import { ExamService } from './exam/exam.service';
+import { MistakeComponent } from './mistake/mistake.component';
 @NgModule({
     imports: [
         CommonModule
@@ -12,7 +13,8 @@ import { ExamService } from './exam/exam.service';
     declarations: [
         ExamComponent,
         PracticeComponent,
-        CountdownComponent
+        CountdownComponent,
+        MistakeComponent
     ],
     providers: [
         PracticeService,
