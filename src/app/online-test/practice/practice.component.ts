@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PracticeItem} from './practice-item';
 import {PracticeList} from './practice-list';
 import {PracticeTab} from './practice-tab';
-import {LISTS} from './mock-practice-lists';
-import {TABS} from './mock-practice-tabs';
-import {ITEMS} from './mock-practice-items';
+import {PracticeService} from './practice.service';
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
@@ -12,16 +10,31 @@ import {ITEMS} from './mock-practice-items';
 })
 export class PracticeComponent implements OnInit {
 
-  constructor() { }
-  
-  lists = LISTS;
-  OnSelectedList = this.lists[0];
+  lists: PracticeList[];
 
-  tabs = TABS;
-  OnSelectedTab = this.tabs[0];
+  OnSelectedList: PracticeList;
 
-  items = ITEMS;
+  tabs: PracticeTab[];
+
+  OnSelectedTab: PracticeTab;
+
+  items: PracticeItem[];
+
   OnSelectedItem: PracticeItem;
+
+  constructor(private practiceService: PracticeService) { }
+  ngOnInit() {
+    this.getPractice();
+  }
+
+  getPractice(): void {
+    this.items = this.practiceService.getItems();
+    this.OnSelectedItem = this.items[0];
+    this.lists = this.practiceService.getLists();
+    this.OnSelectedList = this.lists[0];
+    this.tabs = this.practiceService.getTabs();
+    this.OnSelectedTab = this.tabs[0];
+  }
 
   SelectList(list: PracticeList): void {
     this.OnSelectedList = list;
@@ -31,7 +44,8 @@ export class PracticeComponent implements OnInit {
     this.OnSelectedTab = tab;
   }
 
-  ngOnInit() {
+  SelectItem(item: PracticeItem): void {
+    this.OnSelectedItem = item;
   }
 
 }

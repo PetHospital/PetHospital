@@ -41,7 +41,7 @@
         <div *ngIf="password1.value != password2.value && (password2.dirty || password2.touched)" class="error">
             <span>
                 <i class="fa fa-info-circle large"></i>
-                &nbsp;两次输入不一致 
+                &nbsp;两次输入不一致
             </span>
         </div>
         <br>
@@ -54,8 +54,8 @@
                 &nbsp;邮箱必须输入</span>
             <span [hidden]="!email.errors.pattern">
                 <i class="fa fa-info-circle large"></i>
-                &nbsp;邮箱格式不对</span>            
-        </div>      
+                &nbsp;邮箱格式不对</span>
+        </div>
         <br>
         <label name="phone" for="phone" class="label">
             手机号&nbsp;<i class="fa fa-mobile-phone fa-large"></i></label>
@@ -65,7 +65,7 @@
                     <i class="fa fa-info-circle large"></i>
                     &nbsp;手机号格式不对
                 </span>
-        </div>    
+        </div>
         <br>
         <input type="submit" value="注册" class="submit" (click)="doSubmit(registerForm.value)">
       </form>

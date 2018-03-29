@@ -1,3 +1,11 @@
+.left-container{
+    width: 880px;
+    float: left;
+}
+.right-container{
+    width: 280px;
+    float: right;
+}
 .practice-lists{
     width: 240px;
     height: 116px;
@@ -56,7 +64,7 @@ a{
     outline: 0;
 }
 a:hover {
-     color: #E0E0E0;
+     color: #4C91FF;
     text-decoration: none;
 }
 .plan-icon {
@@ -185,4 +193,110 @@ background-repeat: no-repeat;
     margin: 0 auto;
     margin-top: 15px;
     overflow: hidden;
+}
+.header-line {
+    width: 100%;
+    height: 110px;
+    background-color: #7d7b71;
+    margin-bottom: 30px;
+}
+.logo{
+    width: 168px;
+    height: 118px;
+    float: left;
+    margin-left: 25px;
+    background-size: cover;
+}
+.growth-list-mod {
+    background: #fff;
+    padding: 18px 0 40px;
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.title_show{
+    margin-left: 100px;
+    width: 368px;
+    height: 118px;
+}
+.rank-list-mod {
+    background: #fff;
+    padding: 18px 0 40px;
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 4%;
+    border-top:1px solid #ADADAD;
+    border-left:1px solid #ADADAD;
+    border-bottom:1px solid #ADADAD;
+    .rank-top-nav {
+        border-bottom: 1px solid #EDEDEF;
+        margin: 0 24px;
+        height: 45px;
+    }
+}
+.rank-top {
+    width: 50%;
+    color: #333;
+    font-size: 18px;
+    float: left;
+    line-height: 43px;
+    border-bottom: 2px solid #FFF;
+    position: relative;
+}
+.clearfix:after, .g-clearfix:after, .ym-clearfix:after {
+    content: "";
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+.rank-load-area {
+    padding-top: 5px;
+}
+.top-three .top-three-inbox {
+    height: 47px;
+    margin: 0 24px;
+    position: relative;
+    padding: 8px 0;
+    border-bottom: 1px dashed #E5E5E5;
+    img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        float: left;
+    }
+}
+.grade-tip {
+    font-family: Arial;
+    font-style: oblique;
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 12px;
+    padding-right: 2px;
+    line-height: 12px;
+    background: #FFF;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    left: 7px;
+    bottom: 7px;
+    font-size: 10px;
+    font-weight: 700;
+}
+.rank-load-area .top-three .grade-tip.top-one {
+    background: #EF4C4A;
+    color: #FFF;
+}
+.rank-load-area .top-three .grade-tip.top-two {
+    background: #FF5809;
+    color: #FFF;
+}
+.rank-load-area .top-three .grade-tip.top-three {
+    background: rgb(240, 236, 7);
+    color: #FFF;
 }

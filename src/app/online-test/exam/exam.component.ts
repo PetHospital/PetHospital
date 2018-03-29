@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ExamQuestion} from './exam-question';
-import {Questions} from './mock-exam-questions';
+import {ExamService} from './exam.service';
 @Component({
   selector: 'app-exam',
   templateUrl: './exam.component.html',
@@ -8,11 +8,14 @@ import {Questions} from './mock-exam-questions';
 })
 export class ExamComponent implements OnInit {
 
-  constructor() { }
+  QuestionLists: ExamQuestion[];
 
-  QuestionLists = Questions;
+  constructor(private examService: ExamService) { }
 
   ngOnInit() {
+    this.getQuestions();
   }
-
+  getQuestions(): void {
+    this.QuestionLists = this.examService.getQuestions();
+  }
 }
