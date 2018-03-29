@@ -1,3 +1,25 @@
+.hide{
+    display: none;
+}
+
+.top-bar{
+    position: fixed;
+    top:0;
+    background: #111;
+    height: 100px;
+    width: 100%;
+    transition: height 1s ease-in;
+}
+
+.btm-bar{
+    position: fixed;
+    bottom:0;
+    background: #111;
+    height: 100px;
+    width: 100%;
+    transition: height 1s ease-in;
+}
+
 .content{
     height: 100%;
     width: 100%;
@@ -14,28 +36,12 @@
         font-size: 16px;
         line-height: 1.5;
     }
-    
-    .top-bar{
-        position: fixed;
-        top:0;
-        background: #111;
-        height: 100px;
-        width: 100%;
-    }
 
     .department-info{
         position: fixed;
         top:100px;
         bottom: 100px;
         width: 50%;
-    }
-
-    .btm-bar{
-        position: fixed;
-        bottom:0;
-        background: #111;
-        height: 100px;
-        width: 100%;
     }
 }
 
