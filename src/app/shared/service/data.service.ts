@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
+import { RoomInfo, RoleInfo } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -22,17 +23,3 @@ export class DataService {
     }
 }
 
-interface RoomInfo {
-    name: string;
-    intro: string;
-    image: string;
-}
-
-interface RoleInfo {
-    id: string;
-    data: {
-        content: string;
-        pic: string[];
-        video: string;
-    };
-}

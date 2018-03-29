@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MedicalRecord } from './../model/model';
 import * as _ from "lodash";
 
 @Component({
@@ -30,7 +31,7 @@ export class MedicalRecordComponent implements OnInit {
       ],
       isExpanded: false
     },
-    { name: '内科' , 
+    { name: '内科' ,
       id: 2,
       children: [
         { name: '口炎', id: 0 },
@@ -40,7 +41,7 @@ export class MedicalRecordComponent implements OnInit {
     }
   ];
 
-  currentRecord: object;
+  currentRecord: MedicalRecord;
 
   showDetail = (parent, child) => {
     console.log(parent, child);
@@ -49,7 +50,10 @@ export class MedicalRecordComponent implements OnInit {
 
   ngOnInit() {
     this.currentRecord = {
-      "name": null
+      name: null,
+      id: null,
+      children: null,
+      isExpanded: null
     };
   }
 
