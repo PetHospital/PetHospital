@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MedicalRecord } from './../model/model';
 import * as _ from "lodash";
 import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';

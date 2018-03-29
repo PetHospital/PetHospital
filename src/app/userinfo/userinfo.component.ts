@@ -73,6 +73,10 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     this.isUploadingImage = false;
   }
 
+  changeAvatar = () => {
+    
+  }
+
   switchTabs = (tabId) => {
     this.currentTab = tabId;
   }
