@@ -1,20 +1,17 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { HttpClient } from "@angular/common/http";
-
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-userinfo',
+  templateUrl: './userinfo.component.html',
+  styleUrls: ['./userinfo.component.scss']
 })
+export class UserinfoComponent implements OnInit, AfterViewInit {
 
-export class RegisterComponent implements OnInit, AfterViewInit {
+  currentTab: number;
+  constructor() { }
   formData = {} as any;
-  constructor(  
-    private http: HttpClient,
-  ) {
-  }
+  isUploadingImage: boolean;
   formErrors = {
     'email': '',
     'userName': '',
@@ -46,17 +43,17 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     },
   };
 
-  @ViewChild('registerForm') registerForm: NgForm;
+  @ViewChild('changeInfoForm') changeInfoForm: NgForm;
 
   ngAfterViewInit(): void {
-    this.registerForm.valueChanges.subscribe(data => this.onValueChanged(data));
+    this.changeInfoForm.valueChanges.subscribe(data => this.onValueChanged(data));
   }
 
   onValueChanged(data) {
     if (this.formErrors) {
       for (const field in this.formErrors) {
         this.formErrors[field] = '';
-        const control = this.registerForm.form.get(field);
+        const control = this.changeInfoForm.form.get(field);
         if (control && control.dirty && !control.valid) {
           const messages = this.validationMessages[field];
           if (control.errors) {
@@ -68,24 +65,16 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       }
     }
   }
-
-  doSubmit(obj: any) {
-    if (!this.registerForm.valid) {
-      this.onValueChanged(obj);
-      return;
-    }
-    let url = 'http://172.20.10.2/user/register/';
-    console.log(JSON.stringify(obj));
-    this.http.post(url, obj).subscribe(
-      data => {
-        console.log(data);
-      },
-      err => {
-        console.log(err);
-    });
+  ngOnInit() {
+    this.currentTab = 0;
+    this.isUploadingImage = false;
+  }
+  closeImage = () => {
+    this.isUploadingImage = false;
   }
 
-  ngOnInit() {
+  switchTabs = (tabId) => {
+    this.currentTab = tabId;
   }
 
 }

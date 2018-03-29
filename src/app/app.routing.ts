@@ -7,6 +7,7 @@ import { SceneComponent } from './scene/scene.component';
 import { TutorComponent } from './roleplay/tutor/tutor.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
 import { PracticeComponent } from './online-test/practice/practice.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 
 
 export const appRoutes: Routes = [
@@ -17,7 +18,8 @@ export const appRoutes: Routes = [
     { path: 'role', component: TutorComponent },
     { path: 'disease', component: MedicalRecordComponent},
     { path: 'tutor', component: TutorComponent},
-    { path: 'practice', component: PracticeComponent }
+    { path: 'practice', component: PracticeComponent },
+    { path: 'userinfo', component: UserinfoComponent}
 ];
 
 @NgModule({

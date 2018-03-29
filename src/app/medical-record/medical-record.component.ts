@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as _ from "lodash";
+import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
 
 @Component({
   selector: 'app-medical-record',
@@ -7,9 +8,18 @@ import * as _ from "lodash";
   styleUrls: ['./medical-record.component.scss']
 })
 export class MedicalRecordComponent implements OnInit {
-
-  constructor() { }
-
+  @ViewChild(BigPicComponent)
+  bigPic: BigPicComponent;
+  pictures: Array<string>;
+  coverPic: string;
+  constructor() {
+    this.pictures = [
+    "../../assets/images/cat2.jpg",
+    "../../assets/images/cat1.jpg"
+    ]; 
+    this.coverPic = this.pictures[0];    
+  }
+  
   nodes = [
     {
       name: '传染病',
@@ -45,6 +55,10 @@ export class MedicalRecordComponent implements OnInit {
   showDetail = (parent, child) => {
     console.log(parent, child);
     this.currentRecord = child;
+  }
+
+  onShowPic() {
+    this.bigPic.showPic();
   }
 
   ngOnInit() {
