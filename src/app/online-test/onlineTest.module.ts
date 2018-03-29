@@ -6,6 +6,10 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { PracticeService } from './practice/practice.service';
 import { ExamService } from './exam/exam.service';
 import { MistakeComponent } from './mistake/mistake.component';
+import { MistakeService } from './mistake/mistake.service';
+import { CollectionService } from './collection/collection.service';
+import { Collection } from './collection/collection';
+import { CollectionComponent } from './collection/collection.component';
 @NgModule({
     imports: [
         CommonModule
@@ -14,12 +18,15 @@ import { MistakeComponent } from './mistake/mistake.component';
         ExamComponent,
         PracticeComponent,
         CountdownComponent,
-        MistakeComponent
+        MistakeComponent,
+        CollectionComponent
     ],
     providers: [
         PracticeService,
-        ExamService
+        ExamService,
+        MistakeService,
+        CollectionService
     ],
-    exports: [ExamComponent]
+    exports: [CollectionComponent]
 })
 export class OnlineTestModule { }
