@@ -11,9 +11,10 @@ export class CardComponent {
   bigPic: BigPicComponent;
   pictures: Array<string>;
   coverPic: string;
-
+  content: string;
+  
   constructor() {
-    this.pictures = ["../../assets/images/cat1.jpg", "../../assets/images/cat2.jpg", "../../assets/images/cat3.jpeg"];
+    this.pictures = ["../../assets/images/role/cat1.jpg", "../../assets/images/role/cat2.jpg", "../../assets/images/role/cat3.jpeg"];
     this.coverPic = this.pictures[0];
   }
   onShowPic() {
