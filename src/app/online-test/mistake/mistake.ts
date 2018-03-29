@@ -1,13 +1,9 @@
-import {Option} from '../exam/exam-question';
+import {Option, ExamQuestion} from '../exam/exam-question';
 
 export class Mistake {
     id: number;
-    type: String;
-    subject: String;
-    options: Option[];
+    question: ExamQuestion;
     wrongAnswer: String;
-    correctAnswer: String;
-    solution: String;
     showSolution: boolean;
-    collectStatus: String;
+    collectStatus: boolean;
 }

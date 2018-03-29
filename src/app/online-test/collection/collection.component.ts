@@ -19,4 +19,8 @@ export class CollectionComponent implements OnInit {
   getCollectionList(): void {
     this.CollectionList = this.collectionService.getCollection(); 
   }
+
+  viewSolution(id): void {
+    this.CollectionList[id - 1].showSolution = !this.CollectionList[id - 1].showSolution;
+  }
 }

@@ -9,6 +9,7 @@ import { MedicalRecordComponent } from './medical-record/medical-record.componen
 import { PracticeComponent } from './online-test/practice/practice.component';
 import { ExamComponent } from './online-test/exam/exam.component';
 import { MistakeComponent } from './online-test/mistake/mistake.component';
+import { CollectionComponent } from './online-test/collection/collection.component';
 
 
 export const appRoutes: Routes = [
@@ -18,16 +19,13 @@ export const appRoutes: Routes = [
     { path: 'scene', component: SceneComponent},
     { path: 'role', component: TutorComponent },
     { path: 'disease', component: MedicalRecordComponent},
-    { path: 'practice', 
-    component: PracticeComponent,
-    children: [
-        {path: 'test', component: ExamComponent},
-        {path: 'wrongCollection', component: MistakeComponent}
-    ] }
+    { path: 'practice', component: PracticeComponent},
+    { path: 'mistake', component: MistakeComponent},
+    { path: 'collection', component: CollectionComponent}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes), RouterModule.forChild(appRoutes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}
