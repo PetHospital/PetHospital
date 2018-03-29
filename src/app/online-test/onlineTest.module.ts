@@ -10,6 +10,8 @@ import { MistakeService } from './mistake/mistake.service';
 import { CollectionService } from './collection/collection.service';
 import { Collection } from './collection/collection';
 import { CollectionComponent } from './collection/collection.component';
+import {  } from './onlineTest-routing.module';
+
 @NgModule({
     imports: [
         CommonModule
@@ -27,6 +29,6 @@ import { CollectionComponent } from './collection/collection.component';
         MistakeService,
         CollectionService
     ],
-    exports: [CollectionComponent]
+    exports: [PracticeComponent]
 })
 export class OnlineTestModule { }

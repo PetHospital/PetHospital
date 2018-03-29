@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ColletionService } from './colletion.service';
+import { CollectionService } from './collection.service';
 
 describe('ColletionService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ColletionService]
+      providers: [CollectionService]
     });
   });
 
-  it('should be created', inject([ColletionService], (service: ColletionService) => {
+  it('should be created', inject([CollectionService], (service: CollectionService) => {
     expect(service).toBeTruthy();
   }));
 });

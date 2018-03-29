@@ -6,7 +6,7 @@
               <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
               <span class="ec_sa_span">我的错题</span>
             </a>
-            <a class="ep_sidel_a">
+            <a class="ep_sidel_a ep_to_choose" href="/collection">
               <img class="ep_img" src="../../../assets/images/exam/fork.png">
               <span class="ec_sa_span">我的收藏</span>
             </a>
@@ -17,10 +17,10 @@
       <div class="ep_topic">
           <div class="ep_t_topic">
               <div class="ep_tt_num">{{parent.id}}</div>
-              <div class="ep_tt_topic pading">【{{parent.type}}】</div>
-              <div class="pading"><span>{{parent.subject}}</span></div>
+              <div class="ep_tt_topic pading">【{{parent.question.type}}】</div>
+              <div class="pading"><span>{{parent.question.subject}}</span></div>
           </div>
-          <ul class="ep_t_ul" *ngFor="let child of parent.options">
+          <ul class="ep_t_ul" *ngFor="let child of parent.question.options">
           <li>
               <label>
                   <b>{{child.id}}.</b><p>{{child.content}}</p>                                
@@ -38,16 +38,17 @@
               </div>
               <div class="eh_uanswer">
                     <span>正确答案：
-                        <b>{{parent.correctAnswer}}</b>
+                        <b>{{parent.question.answer}}</b>
                     </span>
               </div>
               <div class="eh_ts_s">
-                  <a (click)="manageCollection(parent.id)">{{parent.collectStatus}}</a>
+                  <a (click)="manageCollection(parent.id)" [class.hide]="parent.collectStatus===true" [class.active]="parent.collectStatus===false">添加收藏</a>
+                  <a (click)="manageCollection(parent.id)" [class.hide]="parent.collectStatus===false" [class.active]="parent.collectStatus===true">取消收藏</a>
                   <a (click)="viewSolution(parent.id)" [class.a_active]="parent.showSolution===true">解析</a>
               </div>
           </div>
           <div class="eh_t_resolve" [class.active]="parent.showSolution===true">
-              <div class="eh_resolve_nexist">{{parent.solution}}</div>
+              <div class="eh_resolve_nexist">{{parent.question.solution}}</div>
           </div>
       </div>
   </div>

@@ -10,7 +10,6 @@ import {MistakeService} from './mistake.service';
 export class MistakeComponent implements OnInit {
 
   WrongList: Mistake[];
-  CollectList: Mistake[];
 
   constructor(private mistakeService: MistakeService) { }
 
@@ -27,8 +26,7 @@ export class MistakeComponent implements OnInit {
   }
 
   manageCollection(id): void {
-    this.WrongList[id - 1].collectStatus = '取消收藏';
-    this.CollectList.push(this.WrongList[id - 1]);
+    this.WrongList[id - 1].collectStatus = !this.WrongList[id - 1].collectStatus;
   }
 
 }

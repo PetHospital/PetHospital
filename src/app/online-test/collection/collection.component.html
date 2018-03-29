@@ -2,7 +2,7 @@
     <div class="ec_sidel">
         <div class="golbal_side">
             <div class="Navigation">
-              <a class="ep_sidel_a" >
+              <a class="ep_sidel_a ep_to_choose" href="/mistake">
                 <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
                 <span class="ec_sa_span">我的错题</span>
               </a>
@@ -32,10 +32,17 @@
                       <div class="eh_uanswer">
                           <img class="em_icon" src="../../../assets/images/exam/correct.png">
                           <span>正确答案：
-                              <b>{{parent.answer}}</b>
+                              <b>{{parent.question.answer}}</b>
                           </span>
                       </div>
                 </div>
+                <div class="eh_ts_s">
+                    <a (click)="manageCollection(parent.id)">取消收藏</a>
+                    <a (click)="viewSolution(parent.id)" [class.a_active]="parent.showSolution===true">解析</a>
+                </div>
+            </div>
+            <div class="eh_t_resolve" [class.active]="parent.showSolution===true">
+                <div class="eh_resolve_nexist">{{parent.question.solution}}</div>
             </div>
         </div>
     </div>
