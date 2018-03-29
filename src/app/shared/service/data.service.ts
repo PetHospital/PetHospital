@@ -15,10 +15,24 @@ export class DataService {
         let dataUrl = JSON_URL + '/navigation.json';
         return this.http.get<RoomInfo[]>(dataUrl);
     }
+
+    getRoleInfo(): Observable<RoleInfo[]> {
+        let dataUrl = JSON_URL + '/role-info.json';
+        return this.http.get<RoleInfo[]>(dataUrl);
+    }
 }
 
 interface RoomInfo {
     name: string;
     intro: string;
     image: string;
+}
+
+interface RoleInfo {
+    id: string;
+    data: {
+        content: string;
+        pic: string[];
+        video: string;
+    };
 }

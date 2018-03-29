@@ -4,6 +4,7 @@ import { BigPicComponent } from './big-pic/big-pic.component';
 import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { TutorComponent } from './tutor/tutor.component';
+import { DataService } from './../shared/service/data.service';
 
 @NgModule({
     imports: [
@@ -14,6 +15,9 @@ import { TutorComponent } from './tutor/tutor.component';
         CardComponent,
         DialogComponent,
         TutorComponent
+    ],
+    providers: [
+        DataService
     ],
     exports: [TutorComponent]
 })
