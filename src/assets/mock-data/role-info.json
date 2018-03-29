@@ -1,0 +1,30 @@
+[
+    {
+        "id": "前台",
+        "data":{
+            "content": "包括接待挂号、导医咨询、病历档案发出与回收、收费等。",
+            "pic": [
+                "../../assets/images/role/cat1.jpg",
+                "../../assets/images/role/cat2.jpg",
+                "../../assets/images/role/cat3.jpeg"
+            ],
+            "video": "../../assets/images/role/cat1.jpg"
+        }
+    },
+    {
+        "id": "档案室",
+        "data":{
+            "content": "包括病例档案的合理保存与数据统计等。",
+            "pic": [
+                "../../assets/images/role/cat1.jpg",
+                "../../assets/images/role/cat2.jpg",
+                "../../assets/images/role/cat3.jpeg"
+            ],
+            "video": [
+                "../../assets/images/role/cat1.jpg",
+                "../../assets/images/role/cat2.jpg",
+                "../../assets/images/role/cat3.jpeg"
+            ]
+        }
+    }
+]

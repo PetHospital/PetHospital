@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Front-end",
+        "intro": "前台需要一个漂亮可爱的小姐姐",
+        "image": "assets/images/qiantai.png"
+    },
+    {
+        "id": 2,
+        "name": "Operation-room",
+        "intro": "手术室需要一个帅气冷静的小哥哥",
+        "image": "assets/images/qiantai.png"
+    }
+]

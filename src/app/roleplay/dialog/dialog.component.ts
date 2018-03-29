@@ -1,19 +1,26 @@
-import { Component, OnInit, Input} from '@angular/core';
-
+import { Component, OnInit, Input, ViewChild, EventEmitter, Output} from '@angular/core';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
-
+  @Output() dialogMsg: EventEmitter<any> = new EventEmitter();
+  isClose: boolean;
   constructor() { }
 
   progresses = [
-    'first step',
-    'second step',
+    'first stepfirst',
+    'second stepsecond',
     'third step',
     'fourth step'
+  ];
+
+  clickMessages = [
+    null,
+    'wc',
+    'pet',
+    null
   ];
 
   userMessage = {
@@ -27,7 +34,8 @@ export class DialogComponent implements OnInit {
   ngOnInit() {
     this.messages.push({
       "content": this.progresses[0],
-      "isUser": false
+      "isUser": false,
+      "clickMsg": this.clickMessages[0]
     });
   }
 
@@ -37,15 +45,32 @@ export class DialogComponent implements OnInit {
     }
     this.messages.push({
       "content": this.progresses[this.currentIndex],
-      "isUser": false
+      "isUser": false,
+      "clickMsg": this.clickMessages[this.currentIndex]
     });
   }
 
   addUserMessage = (flag) => {
     this.messages.push({
       "content": this.userMessage[flag],
-      "isUser": true
+      "isUser": true,
+      "clickMsg": null
     });
-    this.addSysMessage(flag);    
+    
+    setTimeout(() => this.addSysMessage(flag), 1000);
+  }
+
+  onClickMsg(clickMsg) {
+    if (clickMsg) {
+      this.dialogMsg.emit(clickMsg);
+    }
+  }
+
+  onClose() {
+    this.messages = null;
+    this.isClose = true;
+    if (this.isClose) {
+      this.dialogMsg.emit("close");
+    }
   }
 }

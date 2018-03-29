@@ -1,39 +1,70 @@
-<div class="all-see g-mod-shadow">
-    <div class="tab-list g-clearfix">
-      <li *ngFor="let list of lists"
-        (click)="SelectList(list)"><a [class.list-active]="list===OnSelectedList" class="tab-links">{{list.name}}</a></li>
-    </div>
-    <div class="filtrate-cont">
-        <div class="filtrate-btn-cont">
-          <div class="filtrate-msg">难度选择：</div>
-          <div class="filtrate-btn">
-              <li *ngFor="let tab of tabs"
-              (click)="SelectTab(tab)" style="display:inline;">
-              <a [class.active]="tab===OnSelectedTab" class="filtrate-links">{{tab.name}}</a>
-          </li></div>
+<div class="left-container">
+    <div class="all-see g-mod-shadow">
+        <div class="tab-list g-clearfix">
+          <li *ngFor="let list of lists"
+            (click)="SelectList(list)"><a [class.list-active]="list===OnSelectedList" class="tab-links">{{list.name}}</a>
+          </li>
+          <a href="/mistake" class="tab-links">我的测试</a>
         </div>
-    </div>
-    <div class="list-cont" *ngFor="let parent of items">
-        <div class="practice-list-cont">
-            <div class="list-title-cont">
-                <div class="list-title">{{parent.name}}</div>
+        <div class="filtrate-cont">
+            <div class="filtrate-btn-cont">
+              <div class="filtrate-msg">难度选择：</div>
+              <div class="filtrate-btn">
+                  <li *ngFor="let tab of tabs"
+                  (click)="SelectTab(tab)" style="display:inline;">
+                  <a [class.active]="tab===OnSelectedTab" class="filtrate-links">{{tab.name}}</a>
+              </li></div>
             </div>
-            <div *ngFor="let child of parent.items">
-              <div class="practice-list">
-                <div class="practice-lists">
-                <a class="practice-title">{{child.name}}</a>
-                <div class="tab-cout">
-                  <span class="type {{child.level}}">{{child.level}}</span>
+        </div>
+        <div class="list-cont" *ngFor="let parent of items">
+            <div class="practice-list-cont">
+                <div class="list-title-cont">
+                    <div class="list-title">{{parent.name}}</div>
                 </div>
-                <div class="score_show">
-                  <span class="score-num">Last score: </span>
+                <div *ngFor="let child of parent.items">
+                  <div class="practice-list">
+                    <div class="practice-lists">
+                    <a class="practice-title">{{child.name}}</a>
+                    <div class="tab-cout">
+                      <span class="type {{child.level}}">{{child.level}}</span>
+                    </div>
+                    <div class="score_show">
+                      <span class="score-num">Last score: </span>
+                    </div>
+                    <i class="plan-icon practice-icon">
+                      <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
+                    </i>
+                  </div>
                 </div>
-                <i class="plan-icon practice-icon">
-                  <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
-                </i>
               </div>
             </div>
-          </div>
         </div>
     </div>
+</div>
+<div class="right-container">
+  <div class="rank-list-mod">
+    <div class="rank-top-nav g-clearfix">
+      <span class="rank-top">排行榜</span>
+    </div>
+    <div class="rank-load-area g-clearfix">
+        <div class="top-three">
+          <div class="top-three-inbox">
+            <span class="grade-tip top-one">No.1</span>
+            <img src="./../../assets/images/exam/avatar.jpg" alt="">
+          </div>
+        </div>
+        <div class="top-three">
+            <div class="top-three-inbox">
+              <span class="grade-tip top-two">No.2</span>
+              <img src="./../../assets/images/exam/avatar.jpg" alt="">
+            </div>
+          </div>
+          <div class="top-three">
+              <div class="top-three-inbox">
+                <span class="grade-tip top-three">No.3</span>
+                <img src="./../../assets/images/exam/avatar.jpg" alt="">
+              </div>
+            </div>
+      </div>
+  </div>
 </div>

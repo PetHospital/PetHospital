@@ -9,4 +9,5 @@ export class ExamQuestion {
     subject: String;
     options: Option[];
     answer: String;
+    solution: String;
 }
