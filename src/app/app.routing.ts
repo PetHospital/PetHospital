@@ -22,11 +22,14 @@ export const appRoutes: Routes = [
     { path: 'disease', component: MedicalRecordComponent},
     { path: 'tutor', component: TutorComponent},
     { path: 'practice', component: PracticeComponent },
-    { path: 'userinfo', component: UserinfoComponent}
+    { path: 'userinfo', component: UserinfoComponent},
+    { path: 'mistake', component: MistakeComponent},
+    { path: 'collection', component: CollectionComponent},
+    { path: 'exma/:id', component: ExamComponent}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes), RouterModule.forChild(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true}), RouterModule.forChild(appRoutes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}

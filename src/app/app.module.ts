@@ -43,8 +43,6 @@ import { DataService } from './shared/service/data.service';
     ],
     providers: [
         DataService,
-        { provide: LocationStrategy, useClass: PathLocationStrategy },
-        { provide: APP_BASE_HREF, useValue: '/' }
     ],
     bootstrap: [AppComponent]
 })
