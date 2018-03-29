@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   formData = {} as any;
   @ViewChild('loginForm') loginForm: NgForm;
 
-  constructor(  
+  constructor(
     private http: HttpClient,
   ) {
   }
@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid) {
       return;
     }
-    let url = 'http://localhost:8000/';
+    let url = 'http://localhost:8000/users/';
     console.log(JSON.stringify(obj));
-    this.http.post(url, obj).subscribe(
+    this.http.get(url, obj).subscribe(
       data => {
         console.log(data);
       },
@@ -43,6 +43,6 @@ export class LoginComponent implements OnInit {
         console.log(err);
     });
   }
-  
+
 
 }
