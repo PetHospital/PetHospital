@@ -44,4 +44,5 @@ export class BigPicComponent implements OnInit {
       this.currentPic = this.pictures[this.index];
     }
   }
+
 }

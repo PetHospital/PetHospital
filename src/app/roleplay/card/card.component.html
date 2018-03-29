@@ -1,22 +1,24 @@
 <div class="main">
-    <div class="content">
-      <app-big-pic [pictures] = "pictures"></app-big-pic>
-      <div class="info">
-        <span class="title">卫生间</span>
-        <span>ng generate component heroes,应用程序现在有了基本的标题。 
-                接下来你要创建一个新的组件来显示英雄信息并且把这个组件放到应用程序的外壳里去.
-                萌萌狗有各种形状和大小。有的小狗因为呆萌的表情惹人疼爱，
-                有的则因为五短身材令人怜惜。甚至还有一些会因为巨大的体型也会显得傻缺。</span>
+  <div class="content">
+    <app-big-pic [pictures]="pictures"></app-big-pic>
+    <div class="info">
+      <span class="title">title</span>
+      <span>{{content}}
+      </span>
+    </div>
+    <div class="media">
+      <div class="pic">
+        <img [src]="coverPic">
       </div>
-      <div class="media">
-        <div class="pic">
-          <img [src]="coverPic">
-        </div>
-        <div class="cover" (click)="onShowPic()"><span>点击放大图片</span></div>
-        <div class="vedio">
-          <img [src]="coverPic">
-        </div>
-        <div class="cover"><span>点击播放视频</span></div>
+      <div class="cover" (click)="onShowPic()">
+        <span>点击放大图片</span>
+      </div>
+      <div class="vedio">
+        <img [src]="coverPic">
+      </div>
+      <div class="cover">
+        <span>点击播放视频</span>
       </div>
     </div>
+  </div>
 </div>
