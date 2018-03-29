@@ -74,8 +74,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       this.onValueChanged(obj);
       return;
     }
-    let url = 'http://localhost:8000/register/';
-    console.log(JSON.stringify(obj));
+    let url = 'http://localhost:8000/user/register';
     this.http.post(url, obj).subscribe(
       data => {
         console.log(data);

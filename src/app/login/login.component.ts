@@ -29,13 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   doSubmit(obj: any) {
-    console.log(this.loginForm.valid);
     if (!this.loginForm.valid) {
       return;
     }
-    let url = 'http://localhost:8000/users/';
+    let url = 'http://localhost:8000/user/login';
     console.log(JSON.stringify(obj));
-    this.http.get(url, obj).subscribe(
+    this.http.post(url, obj).subscribe(
       data => {
         console.log(data);
       },
@@ -43,6 +42,4 @@ export class LoginComponent implements OnInit {
         console.log(err);
     });
   }
-
-
 }
