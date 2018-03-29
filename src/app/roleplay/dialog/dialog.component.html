@@ -5,7 +5,6 @@
     <div class="btn-close" (click) = "onClose()">
       <img src="../../../assets/images/role/quit2.png">
     </div>
-<<<<<<< HEAD
     <div class="dialog-ctnt">
       <ul>
           <li>
@@ -29,27 +28,6 @@
           <button class="btn" (click)="addUserMessage(false)">No, I don't understand.</button>
         </li>
       </ul>
-=======
-  </div>
-
-  <div class="dialog-ctnt">
-    <ul class="dialog-ul">
-      <li *ngFor="let message of messages" class="animate">
-        <div *ngIf="!message.isUser">
-          <div class="sys-msg" (click) = "onClickMsg(message.clickMsg)">
-            <div class="avatar"><img src="../../../assets/images/role/A2.jpg"></div>
-            <div class="text">{{message.content}}</div>
-          </div>
-        </div>
-        <div *ngIf="message.isUser">
-          <div class="usr-msg">
-            <div class="text">{{message.content}}</div>
-            <div class="avatar"><img src="../../../assets/images/role/A1.jpg"></div>
-          </div>
-        </div>
-      </li>
-    </ul>
->>>>>>> 9c8f8c20ae8dfb0b506fadb582add97a229b8203
   </div>
   <ul class="dialog-btm">
     <li>

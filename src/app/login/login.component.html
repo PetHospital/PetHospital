@@ -13,17 +13,10 @@
                 <div class="pad">
                     <div class="control-group">
                         <div class="controls">
-<<<<<<< HEAD
-                        <label for="userName" class="control-label fa fa-user"></label>
-                            <input id="userName" type="text" name="userName" placeholder="user name" tabindex="1" autofocus="autofocus" class="form-control input-medium" [(ngModel)]="formData.userName" #userName="ngModel" required>
-                            <div *ngIf="userName.errors && (userName.dirty || userName.touched)" class="error">
-                                <span [hidden]="!userName.errors.required">
-=======
                         <label for="username" class="control-label fa fa-user"></label>
                             <input id="username" type="text" name="username" placeholder="用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium" [(ngModel)]="formData.username" #username="ngModel" required>
                             <div *ngIf="username.errors && (username.dirty || username.touched)" class="error">
                                 <span [hidden]="!username.errors.required">
->>>>>>> 9c8f8c20ae8dfb0b506fadb582add97a229b8203
                                     <i class="fa fa-info-circle large"></i>
                                     &nbsp;user name is required
                                 </span>

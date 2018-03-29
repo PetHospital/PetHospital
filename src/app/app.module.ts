@@ -41,14 +41,11 @@ import { DataService } from './shared/service/data.service';
         MedicalRecordModule,
         ImageUploadModule.forRoot(),
     ],
-<<<<<<< HEAD
-    providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy },
-        { provide: APP_BASE_HREF, useValue: '/' }],
-=======
     providers: [
-        DataService
+        DataService,
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
+        { provide: APP_BASE_HREF, useValue: '/' }
     ],
->>>>>>> 9c8f8c20ae8dfb0b506fadb582add97a229b8203
     bootstrap: [AppComponent]
 })
 export class AppModule {}

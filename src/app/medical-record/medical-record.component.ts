@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { Component, OnInit, ViewChild } from '@angular/core';
-=======
 import { Component, OnInit } from '@angular/core';
 import { MedicalRecord } from './../model/model';
->>>>>>> 9c8f8c20ae8dfb0b506fadb582add97a229b8203
 import * as _ from "lodash";
 import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
 
