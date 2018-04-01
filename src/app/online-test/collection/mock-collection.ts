@@ -1,4 +1,4 @@
-import {Collection} from './collection';
+import {Collection} from '../../model/model';
 
 export const Collections: Collection[] = [
     {

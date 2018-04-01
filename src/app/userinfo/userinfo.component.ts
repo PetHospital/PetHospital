@@ -7,9 +7,12 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./userinfo.component.scss']
 })
 export class UserinfoComponent implements OnInit, AfterViewInit {
-
+  file: Array<Object>;
   currentTab: number;
-  constructor() { }
+  constructor() { 
+    this.file = [];
+  }
+  
   formData = {} as any;
   isUploadingImage: boolean;
   formErrors = {
@@ -74,11 +77,22 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   }
 
   changeAvatar = () => {
-    
+    this.isUploadingImage = true;
+    console.log(this.isUploadingImage);
   }
 
   switchTabs = (tabId) => {
     this.currentTab = tabId;
+  }
+
+  imageUploaded(event) {
+    console.log(event);
+    this.file.push(event.file);
+    console.log(this.file);
+  }
+
+  imageRemoved(event) {
+    console.log(event);
   }
 
 }

@@ -17,9 +17,9 @@ export class DialogComponent implements OnInit {
   ];
 
   clickMessages = [
+    '前台',
     null,
-    'wc',
-    'pet',
+    '档案室',
     null
   ];
 
