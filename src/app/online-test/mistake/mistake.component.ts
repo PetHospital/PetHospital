@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ExamQuestion, Mistake} from '../../model/model';
-import {MistakeService} from './mistake.service';
+import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-mistake',
   templateUrl: './mistake.component.html',
@@ -8,16 +8,14 @@ import {MistakeService} from './mistake.service';
 })
 export class MistakeComponent implements OnInit {
 
-  WrongList: Mistake[];
+  WrongList: any[];
 
-  constructor(private mistakeService: MistakeService) { }
-
-  ngOnInit() {
-    this.getMisatkes();
+  constructor(private dataService: DataService) { 
+    this.dataService.getMistakes()
+                        .subscribe(data => this.WrongList = data);
   }
-
-  getMisatkes(): void {
-    this.WrongList = this.mistakeService.getMistakes();
+  ngOnInit() {
+    
   }
 
   viewSolution(id): void {
