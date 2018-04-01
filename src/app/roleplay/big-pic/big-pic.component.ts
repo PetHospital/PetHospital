@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-big-pic',
@@ -7,42 +7,53 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BigPicComponent implements OnInit {
 
-  isHide: boolean;
-  index: number;
-  pageCount: number;
-  currentPic: string;
+    isHide: boolean;
+    index: number;
+    pageCount: number;
+    currentPic: string;
+    pictures: Array<string>;
+    // @ViewChild('box')
+    // boxDiv: ElementRef;
 
-  @Input() pictures: Array<string>;
-  ngOnInit () {
-    this.currentPic = this.pictures[this.index];
-    this.pageCount = this.pictures.length;
-  }
-  
-  constructor() {
-    this.isHide = true;
-    this.index = 0;
-  }
+    // constructor(private elementRef: ElementRef, private renderer: Renderer) {
+    constructor() {
+        this.isHide = true;
+        this.index = 0;
+        this.pictures = [];
+        this.pageCount = 0;
+    }
 
-  showPic() {
-    this.isHide = false;
-  }
+    ngOnInit() {
+    }
 
-  closePic() {
-    this.isHide = true;
-  }
+    // ngAfterViewInit() {
+      
+    //     this.renderer.setElementStyle(this.boxDiv.nativeElement, 'width', '1620px');
+    //     console.log(this.boxDiv.nativeElement.style.width);
+    // }
+    
+    showPic() {
+      this.isHide = false;
+      this.currentPic = this.pictures[0];
+      console.log(this.pictures);
+    }
 
-  upPage() {
-    if (this.index < this.pageCount - 1) {
-        this.index++;
+    closePic() {
+      this.isHide = true;
+    }
+
+    upPage() {
+      if (this.index < this.pageCount - 1) {
+          this.index++;
+          this.currentPic = this.pictures[this.index];
+      }
+    }
+
+    downPage() {
+      if (this.index > 0) {
+        this.index--;
         this.currentPic = this.pictures[this.index];
+      }
     }
-  }
-
-  downPage() {
-    if (this.index > 0) {
-      this.index--;
-      this.currentPic = this.pictures[this.index];
-    }
-  }
 
 }

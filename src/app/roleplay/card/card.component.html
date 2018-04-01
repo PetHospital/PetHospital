@@ -1,20 +1,19 @@
 <div class="main">
-  <div class="content">
-    <app-big-pic [pictures]="pictures"></app-big-pic>
+  <div *ngIf = "content.title != ''" class="content">
+    <div *ngIf="content.pic.length"><app-big-pic></app-big-pic></div>
     <div class="info">
-      <span class="title">title</span>
-      <span>{{content}}
-      </span>
+      <span class="title">{{content.title}}</span>
+      <span>{{content.content}}</span>
     </div>
     <div class="media">
       <div class="pic">
-        <img [src]="coverPic">
+        <img [src]="content.pic[0]">
       </div>
       <div class="cover" (click)="onShowPic()">
         <span>点击放大图片</span>
       </div>
       <div class="vedio">
-        <img [src]="coverPic">
+        <img [src]="content.pic[0]">
       </div>
       <div class="media">
         <div class="pic">
