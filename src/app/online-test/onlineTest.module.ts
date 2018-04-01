@@ -8,7 +8,6 @@ import { ExamService } from './exam/exam.service';
 import { MistakeComponent } from './mistake/mistake.component';
 import { MistakeService } from './mistake/mistake.service';
 import { CollectionService } from './collection/collection.service';
-import { Collection } from './collection/collection';
 import { CollectionComponent } from './collection/collection.component';
 import {  } from './onlineTest-routing.module';
 

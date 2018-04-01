@@ -1,4 +1,4 @@
-import {Mistake} from './mistake';
+import {Mistake} from '../../model/model';
 
 export const Mistakes: Mistake[] = [
     {id: 1,

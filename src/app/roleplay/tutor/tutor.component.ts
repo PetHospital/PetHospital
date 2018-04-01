@@ -10,32 +10,29 @@ import * as _ from 'lodash';
     styleUrls: ['./tutor.component.scss']
 })
 export class TutorComponent implements OnInit {
-    contentInfo: string;
-    isHide: boolean = true;
     @ViewChild(CardComponent)
     card: CardComponent;
     roleInfo: any[];
+    isHide: boolean = true;
 
     constructor(private dataService: DataService) {
         this.dataService.getRoleInfo()
                         .subscribe(data => this.roleInfo = data);
     }
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 
     getContentInfo(contentMsg: string) {
-        this.contentInfo = contentMsg;
-        console.log("message:");
-        console.log(this.contentInfo);
-
-        switch (this.contentInfo) {
-        case "close":
+       if (contentMsg === "close") {
             this.isHide = true;
-            break;
-        }
-
-        this.card.content = _.filter(this.roleInfo, {id: contentMsg});
+        } else if (contentMsg) {
+        let rawContent = _.filter(this.roleInfo, {id: contentMsg})[0];
+        this.card.content.title = rawContent.id;
+        this.card.content.content = rawContent.data.content;
+        this.card.content.pic = rawContent.data.pic;
+        this.card.content.vedio = rawContent.data.vedio;
         console.log(this.card.content);
+        this.isHide = false;
+       }
     }
 }
