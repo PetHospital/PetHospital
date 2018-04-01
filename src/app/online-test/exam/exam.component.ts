@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ExamQuestion} from '../../model/model';
-import {ExamService} from './exam.service';
+import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-exam',
   templateUrl: './exam.component.html',
@@ -8,14 +8,13 @@ import {ExamService} from './exam.service';
 })
 export class ExamComponent implements OnInit {
 
-  QuestionLists: ExamQuestion[];
+  QuestionLists: any[];
 
-  constructor(private examService: ExamService) { }
+  constructor(private dataService: DataService) { 
+    this.dataService.getQuestions()
+                        .subscribe(data => this.QuestionLists = data);
+  }
 
   ngOnInit() {
-    this.getQuestions();
-  }
-  getQuestions(): void {
-    this.QuestionLists = this.examService.getQuestions();
   }
 }
