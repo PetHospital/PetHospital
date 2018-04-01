@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PracticeItem} from './practice-item';
+import {PracticeItem} from '../../model/model';
 import {PracticeList} from './practice-list';
 import {PracticeTab} from './practice-tab';
 import {PracticeService} from './practice.service';

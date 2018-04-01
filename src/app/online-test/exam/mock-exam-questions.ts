@@ -1,4 +1,4 @@
-import {ExamQuestion} from './exam-question';
+import {ExamQuestion} from '../../model/model';
 
 export const Questions: ExamQuestion[] = [
     {id: 1, type: '单选', subject: '宠物狗能不能巧克力？', options: [{id: 'A', content: '能'}, {id: 'B', content: '不能'}], answer: 'A', solution: '巧克力中含有的咖啡因等物质对狗是致命的！'},

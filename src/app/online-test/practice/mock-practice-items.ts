@@ -1,4 +1,4 @@
-import {PracticeItem} from './practice-item';
+import {PracticeItem} from '../../model/model';
 
 export const ITEMS: PracticeItem[] = [
     {id: 1 , name: '官方练习-1', items: [{id: 1, name: 'Part one' , level : 'easy'} , {id: 2, name: 'Part two' , level : 'easy'} , {id: 3, name: 'Part hard' , level : 'easy'}]},

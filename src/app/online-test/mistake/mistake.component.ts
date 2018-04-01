@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ExamQuestion} from '../exam/exam-question';
-import {Mistake} from './mistake';
+import {ExamQuestion, Mistake} from '../../model/model';
 import {MistakeService} from './mistake.service';
 @Component({
   selector: 'app-mistake',

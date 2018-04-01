@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Mistake } from './mistake';
+import { Mistake } from '../../model/model';
 import { Mistakes } from './mock-mistakes';
 @Injectable()
 export class MistakeService {
