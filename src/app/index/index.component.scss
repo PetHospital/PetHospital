@@ -67,6 +67,9 @@
                                 }
 
                                 &:hover {
+                                    transform: scale(1.15);
+                                    transition: transform 300ms ease-in-out;
+
                                     &::before {
                                         transform: translateX(0);
                                         transition: transform 300ms ease-in-out;
@@ -225,7 +228,7 @@
                         line-height: 250%;
                     }
                     &::after {
-                        background: url('./../../assets/images/index/right-arrow.png') 0 0 no-repeat;
+                        background: url('/assets/images/index/right-arrow.png') 0 0 no-repeat;
                         content: "";
                         position: absolute;
                         right: 0.75rem;
@@ -374,25 +377,25 @@
 
         #feature1 {
             .side-img {
-                background-image: url('./../../assets/images/index/feature1.jpg');
+                background-image: url('/assets/images/index/feature1.jpg');
             }
         }
 
         #feature2 {
             .side-img {
-                background-image: url('./../../assets/images/index/feature2.jpg');
+                background-image: url('/assets/images/index/feature2.jpg');
             }
         }
 
         #feature3 {
             .side-img {
-                background-image: url('./../../assets/images/index/feature3.jpg');
+                background-image: url('/assets/images/index/feature3.jpg');
             }
         }
 
         #feature4 {
             .side-img {
-                background-image: url('./../../assets/images/index/feature4.jpg');
+                background-image: url('/assets/images/index/feature4.jpg');
             }
         }
     }
@@ -452,25 +455,25 @@
 
                 .p-address {
                     span::before {
-                        background: url('./../../assets/images/index/location.png');
+                        background: url('/assets/images/index/location.png');
                     }
                 }
 
                 .p-phone {
                     span::before {
-                        background: url('./../../assets/images/index/phone.png');
+                        background: url('/assets/images/index/phone.png');
                     }
                 }
 
                 .p-email {
                     span::before {
-                        background: url('./../../assets/images/index/email.png');
+                        background: url('/assets/images/index/email.png');
                     }
                 }
 
                 .p-chat {
                     span::before {
-                        background: url('./../../assets/images/index/chat.png');
+                        background: url('/assets/images/index/chat.png');
                     }
                 }
             }

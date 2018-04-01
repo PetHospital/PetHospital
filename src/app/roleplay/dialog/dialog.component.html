@@ -5,25 +5,29 @@
     <div class="btn-close" (click) = "onClose()">
       <img src="../../../assets/images/role/quit2.png">
     </div>
-  </div>
-
-  <div class="dialog-ctnt">
-    <ul class="dialog-ul">
-      <li *ngFor="let message of messages" class="animate">
-        <div *ngIf="!message.isUser">
-          <div class="sys-msg" (click) = "onClickMsg(message.clickMsg)">
-            <div class="avatar"><img src="../../../assets/images/role/A2.jpg"></div>
-            <div class="text">{{message.content}}</div>
-          </div>
-        </div>
-        <div *ngIf="message.isUser">
-          <div class="usr-msg">
-            <div class="text">{{message.content}}</div>
-            <div class="avatar"><img src="../../../assets/images/role/A1.jpg"></div>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <div class="dialog-ctnt">
+      <ul>
+          <li>
+            <div *ngFor="let message of messages">
+                <div *ngIf="!message.isUser" class="sys-msg">
+                    <div class="avatar"></div>
+                    <div class="text">{{message.content}}</div>
+                </div> 
+                <div *ngIf="message.isUser" class="usr-msg">
+                  <div class="text">{{message.content}}</div>
+                </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+    <ul class="dialog-btm">
+        <li>
+          <button class="btn" (click)="addUserMessage(true)">Yes, I understand.</button>
+        </li>
+        <li>
+          <button class="btn" (click)="addUserMessage(false)">No, I don't understand.</button>
+        </li>
+      </ul>
   </div>
   <ul class="dialog-btm">
     <li>

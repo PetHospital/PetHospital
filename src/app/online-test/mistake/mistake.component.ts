@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ExamQuestion} from '../exam/exam-question';
-import {Mistake} from './mistake';
+import {ExamQuestion, Mistake} from '../../model/model';
 import {MistakeService} from './mistake.service';
 @Component({
   selector: 'app-mistake',
@@ -10,7 +9,6 @@ import {MistakeService} from './mistake.service';
 export class MistakeComponent implements OnInit {
 
   WrongList: Mistake[];
-  CollectList: Mistake[];
 
   constructor(private mistakeService: MistakeService) { }
 
@@ -27,8 +25,7 @@ export class MistakeComponent implements OnInit {
   }
 
   manageCollection(id): void {
-    this.WrongList[id - 1].collectStatus = '取消收藏';
-    this.CollectList.push(this.WrongList[id - 1]);
+    this.WrongList[id - 1].collectStatus = !this.WrongList[id - 1].collectStatus;
   }
 
 }

@@ -15,8 +15,15 @@
       <div class="vedio">
         <img [src]="content.pic[0]">
       </div>
-      <div class="cover">
-        <span>点击播放视频</span>
+      <div class="media">
+        <div class="pic">
+          <img [src]="coverPic">
+        </div>
+        <div class="cover" (click)="onShowPic()"><span>点击放大图片</span></div>
+        <div class="video">
+          <img [src]="coverPic">
+        </div>
+        <div class="cover"><span>点击播放视频</span></div>
       </div>
     </div>
   </div>

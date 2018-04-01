@@ -20,6 +20,35 @@
       <h2>请选择您想要学习的病例</h2>
     </div>
   </div>
-  <div>{{currentRecord.name}}</div>
+  <div *ngIf="currentRecord.name !== null" class="content">
+    <div>
+      <div>
+        <div class="diseaseTitle">
+            <p class="bigger"><span>名称:&nbsp;</span>{{currentRecord.name}}</p>          
+        </div>
+        <div class="intro" >
+          <br>
+          <p><span>多发群体:&nbsp;</span>狗、纯种狗/警犬多发</p>
+          <br>          
+          <p><span>常见症状:&nbsp;</span> 犬瘟热症状初期狗的体温高达39．5～41摄氏度，食欲不振，精神沉郁，
+            眼鼻流出水样分泌物，打喷嚏，有腹泻。在以后2～14天内再次出现体温升高，咳嗽，
+            有脓性鼻涕、脓性眼屎，这时候已经是犬瘟中期了。同时继发胃肠道疾病，呕吐、拉稀，食欲废绝。
+            精神高度沉郁，嗜睡。犬瘟热发病后期就会出现典型的神经症状，口吐白沫，抽搐，此时比较难治，主要看照料方法。
+          </p>
+          <br>          
+          <p><span>传染性:&nbsp;</span> 有传染性、高</p>
+          <br>          
+          <p><span>传播途径:&nbsp;</span>空气、接触、病犬分泌物/排泄物等</p>
+          <br>          
+          <p><span>死亡率:&nbsp;</span>80%以上</p>
+        </div>
+        <div class="imageandvideo">
+            <img [src]="coverPic" class="image" (click)="onShowPic()">
+            <app-big-pic [pictures] = "pictures"></app-big-pic>
+            <video class="video" width="300" height="250" src="../../assets/videos/mango.MP4" controls="controls"></video>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

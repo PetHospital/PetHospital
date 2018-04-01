@@ -1,0 +1,152 @@
+<div class="header">
+  <div class="img-container">
+    <a href="/">
+      <img class="logo" src="../../assets/images/index/logo.png" />
+    </a>
+  </div>
+</div>
+
+<div>
+  <div class="left">
+    <div class="avatar">
+      <img src="../../assets/images/7.jpg" class="avatar_img"/>
+      <br>
+      <button (click)="changeAvatar()" class="change_ava_btn">更改头像</button>
+    </div>
+    <div class="tabs">
+      <div class="tab" [ngClass]="{'active':currentTab == 0}"><a href="javascript:;" (click)="switchTabs(0)">账号信息</a></div>
+      <div class="tab" [ngClass]="{'active':currentTab == 1}"><a href="javascript:;" (click)="switchTabs(1)">学习记录</a></div>
+      <div class="tab" [ngClass]="{'active':currentTab == 2}"><a href="javascript:;" (click)="switchTabs(2)">错题记录</a></div>
+    </div>
+  </div>
+  <div class="right">
+      <div class="tab0" *ngIf="currentTab==0">
+        <form class="changeInfo" #changeInfoForm="ngForm" (ngSubmit)="doSubmit(changeInfoForm.value)">
+          <label name="username" for="username" class="label">
+              用户名&nbsp;<i class="fa fa-user"></i></label>
+          <input type="text" class="input" name="username" required [(ngModel)]="formData.userName" #userName="ngModel" minlength="4"/>
+          <div *ngIf="userName.errors && (userName.dirty || userName.touched)" class="error">
+              <span [hidden]="!userName.errors.required">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;用户名必须输入
+              </span>
+              <span [hidden]="!userName.errors.minlength">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;用户名至少4位
+              </span>
+          </div>
+          <br>
+          <label for="password1" class="label">
+              密码&nbsp;<i class="fa fa-key"></i></label>
+          <input type="password" class="input"  id="password1" name="password1" [(ngModel)]="formData.password1" #password1="ngModel"  required minlength="8">
+          <div *ngIf="password1.errors && (password1.dirty || password1.touched)" class="error">
+              <span [hidden]="!password1.errors.required">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;密码必须输入
+              </span>
+              <span [hidden]="!password1.errors.minlength">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;密码至少8位
+              </span>
+          </div>
+          <br>
+          <label for="password2" class="label">
+              重复密码&nbsp;<i class="fa fa-key"></i></label>
+          <input type="password" id="password2" class="input" name="password2" [(ngModel)]="formData.password2" #password2="ngModel" required>
+          <div *ngIf="password1.value != password2.value && (password2.dirty || password2.touched)" class="error">
+              <span>
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;两次输入不一致 
+              </span>
+          </div>
+          <br>
+          <label name="email" for="email" class="label">
+              邮箱&nbsp;<i class="fa fa-envelope"></i></label>
+          <input type="email" class="input" name="email" [(ngModel)]="formData.email" #email="ngModel" pattern="[\w]+?@[\w]+?\.[a-z]+?" required/>
+          <div *ngIf="email.errors && (email.dirty || email.touched)" class="error">
+              <span [hidden]="!email.errors.required">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;邮箱必须输入</span>
+              <span [hidden]="!email.errors.pattern">
+                  <i class="fa fa-info-circle large"></i>
+                  &nbsp;邮箱格式不对</span>            
+          </div>      
+          <br>
+          <label name="phone" for="phone" class="label">
+              手机号&nbsp;<i class="fa fa-mobile-phone fa-large"></i></label>
+          <input type="text" class="input" name="phone" [(ngModel)]="formData.phone" #phone="ngModel" pattern="^[0-9]*$"/>
+          <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="error">
+                  <span [hidden]="!phone.errors.pattern">
+                      <i class="fa fa-info-circle large"></i>
+                      &nbsp;手机号格式不对
+                  </span>
+          </div>    
+          <br>
+          <input type="submit" value="确认修改" class="submit" (click)="doSubmit(changeInfoForm.value)">
+        </form>
+      </div>
+      <div class="tab1" *ngIf="currentTab==1">
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+        <p>学习记录</p>
+      </div>
+      <div class="tab2" *ngIf="currentTab==2">
+        <p>错题记录</p>
+      </div>
+  </div>
+</div>
+<footer class="index-footer clearfix">
+    <div class="footer-content clearfix">
+        <div class="footer-left">
+            <h4 class="p-name">
+                <span>Virtual Pet Hospital</span>
+            </h4>
+            <p class="p-address p-icon">
+                <span>3663 North Zhongshan Rd</span>
+            </p>
+            <p class="p-phone p-icon">
+                <span>(021)8888-8888</span>
+            </p>
+            <p class="p-email p-icon">
+                <span>1542752218@qq.com</span>
+            </p>
+            <p class="p-chat p-icon">
+                <span>Live Chat</span>
+            </p>
+        </div>
+        <div class="footer-right" id="contactUs">
+            <div class="social-links">
+                <a href="/">
+                    <img src="./../../assets/images/index/qq.png">
+                </a>
+                <a href="/">
+                    <img src="./../../assets/images/index/wechat.png"></a>
+                <a href="/">
+                    <img src="./../../assets/images/index/facebook.png">
+                </a>
+                <a href="/">
+                    <img src="./../../assets/images/index/google.png">
+                </a>
+            </div>
+            <div class="work-hours">
+                <p>
+                    Work hours:<br>Mon - Fri 7:30 am - 5:30 pm<br>Sat 8:00 am - 12:30 pm<br>Closed Sunday
+                </p>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2018 Virtual Pet Hospital</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="mask" (click)="closeImage" *ngIf="isUploadingImage"></div>
+<div class="image-upload-popup" *ngIf="isUploadingImage">
+    <image-upload></image-upload>  
+</div>

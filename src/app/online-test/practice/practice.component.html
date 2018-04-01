@@ -1,12 +1,10 @@
-<div class="header-line">
-  <img class="logo"  src="./../../assets/images/exam/exam-title.png" alt="">
-  <img class="title_show" src="./../../assets/images/exam/title-content.png" alt="">
-</div>
 <div class="left-container">
     <div class="all-see g-mod-shadow">
         <div class="tab-list g-clearfix">
           <li *ngFor="let list of lists"
-            (click)="SelectList(list)"><a [class.list-active]="list===OnSelectedList" class="tab-links">{{list.name}}</a></li>
+            (click)="SelectList(list)"><a [class.list-active]="list===OnSelectedList" class="tab-links">{{list.name}}</a>
+          </li>
+          <a href="/#/mistake" class="tab-links">我的测试</a>
         </div>
         <div class="filtrate-cont">
             <div class="filtrate-btn-cont">
@@ -33,9 +31,9 @@
                     <div class="score_show">
                       <span class="score-num">Last score: </span>
                     </div>
-                    <i class="plan-icon practice-icon">
+                    <a href="exam/{{parent.id}}" class="plan-icon practice-icon">
                       <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
-                    </i>
+                    </a>
                   </div>
                 </div>
               </div>

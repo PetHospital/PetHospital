@@ -50,6 +50,59 @@
     .null-record-image {
         width: 100%;
     }
+
+    .content{
+        margin: 20px;
+        overflow: hidden;
+
+        .diseaseTitle{
+            span {
+                color: #F5F5F5;
+            }
+            text-align: center;
+            width: 90%;
+            font-size: 150%;
+            color: #D7CCC8;
+            padding: 20px;
+            padding-top: 0;
+            margin: 20px;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .intro{
+            color: #D7CCC8;
+            width: 45%;
+            margin: 5px;
+            padding-left: 10px;
+            float: left;
+            line-height: 30px;
+
+            .bigger{
+                font-size: 120%;
+            }
+
+            span {
+                color:#F5F5F5;
+            }
+        }
+
+        .imageandvideo {
+            width: 50%;
+            float: right;
+            .image{
+                width: auto;
+                height: 250px;
+                margin: 20px;
+            }
+            .video {
+                margin: 20px;
+                // width: 400px;
+                // height: 250px;
+            }
+        }
+
+        
+    }
 }
   
   

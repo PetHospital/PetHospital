@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Option, ExamQuestion} from '../exam/exam-question';
-import {Collection} from './collection';
+import {Option, ExamQuestion, Collection} from '../../model/model';
 import {Collections} from './mock-collection';
 @Injectable()
 export class CollectionService {

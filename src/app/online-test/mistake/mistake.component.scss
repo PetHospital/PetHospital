@@ -153,7 +153,7 @@
     }
 }
 .eh_resolve_nexist {
-    padding-bottom: 42px;
+    padding-bottom: 22px;
     color: #999;
 }
 .eh_ts_s {
@@ -179,6 +179,10 @@
 }
 .active {
     display: block;
+}
+.hide {
+    position: absolute;
+    visibility: hidden;
 }
 .ep_active {
     color: #fff;

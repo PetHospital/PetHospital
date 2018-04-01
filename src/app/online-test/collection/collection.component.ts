@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Collection } from './collection';
+import { Collection } from '../../model/model';
 import { CollectionService } from './collection.service';
 @Component({
   selector: 'app-collection',
@@ -18,5 +18,9 @@ export class CollectionComponent implements OnInit {
 
   getCollectionList(): void {
     this.CollectionList = this.collectionService.getCollection(); 
+  }
+
+  viewSolution(id): void {
+    this.CollectionList[id - 1].showSolution = !this.CollectionList[id - 1].showSolution;
   }
 }
