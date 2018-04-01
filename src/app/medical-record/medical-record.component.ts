@@ -15,16 +15,9 @@ export class MedicalRecordComponent implements OnInit {
   // coverPic: string;
   @ViewChild(BigPicComponent)
   bigPic: BigPicComponent;
-  coverPic: string;
-  content: Info;
+
 
   constructor() {
-    this.content = {
-      title: '',
-      content: '',
-      pic: [],
-      vedio: ''
-    }; 
   }
   
   nodes = [
@@ -66,8 +59,8 @@ export class MedicalRecordComponent implements OnInit {
 
   onShowPic() {
     console.log(this.bigPic);
-    this.bigPic.pictures = this.content.pic;
-    this.bigPic.pageCount = this.content.pic.length;
+    this.bigPic.pictures = [""];
+    this.bigPic.pageCount = 0;
     this.bigPic.showPic();
   }
 
