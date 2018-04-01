@@ -4,7 +4,6 @@ import { APP_BASE_HREF, LocationStrategy, PathLocationStrategy } from '@angular/
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RoleplayModule } from './roleplay/roleplay.module';
 import { OnlineTestModule} from './online-test/onlineTest.module';
@@ -20,7 +19,6 @@ import { UserinfoComponent } from './userinfo/userinfo.component';
 
 import { DataService } from './shared/service/data.service';
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -28,13 +26,12 @@ import { DataService } from './shared/service/data.service';
         IndexComponent,
         LoginComponent,
         RegisterComponent,
-        UserinfoComponent,
+        UserinfoComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        BrowserAnimationsModule,
         HttpClientModule,
         RoleplayModule,
         OnlineTestModule,
