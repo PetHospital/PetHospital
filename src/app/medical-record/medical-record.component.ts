@@ -9,16 +9,22 @@ import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
   styleUrls: ['./medical-record.component.scss']
 })
 export class MedicalRecordComponent implements OnInit {
+  // @ViewChild(BigPicComponent)
+  // bigPic: BigPicComponent;
+  // pictures: Array<string>;
+  // coverPic: string;
   @ViewChild(BigPicComponent)
   bigPic: BigPicComponent;
-  pictures: Array<string>;
   coverPic: string;
+  content: Info;
+
   constructor() {
-    this.pictures = [
-    "../../assets/images/cat2.jpg",
-    "../../assets/images/cat1.jpg"
-    ]; 
-    this.coverPic = this.pictures[0];    
+    this.content = {
+      title: '',
+      content: '',
+      pic: [],
+      vedio: ''
+    }; 
   }
   
   nodes = [
@@ -59,6 +65,9 @@ export class MedicalRecordComponent implements OnInit {
   }
 
   onShowPic() {
+    console.log(this.bigPic);
+    this.bigPic.pictures = this.content.pic;
+    this.bigPic.pageCount = this.content.pic.length;
     this.bigPic.showPic();
   }
 

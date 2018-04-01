@@ -148,7 +148,7 @@
 
 <div class="mask" *ngIf="isUploadingImage">
     <div class="image-upload-popup">
-        <image-upload url="https://httpbin.org/status/200" (uploadFinished)="imageUploaded($event)"
+        <image-upload url="" (uploadFinished)="imageUploaded($event)"
         (removed)="imageRemoved($event)"
       (isPending)="disableSendButton($event)"></image-upload>  
     </div>
