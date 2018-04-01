@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Collection } from '../../model/model';
-import { CollectionService } from './collection.service';
+import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-collection',
   templateUrl: './collection.component.html',
@@ -8,16 +8,14 @@ import { CollectionService } from './collection.service';
 })
 export class CollectionComponent implements OnInit {
 
-  CollectionList: Collection[];
+  CollectionList: any[];
 
-  constructor(private collectionService: CollectionService) { }
-
-  ngOnInit() {
-    this.getCollectionList();  
+  constructor(private dataService: DataService) {
+    this.dataService.getCollection()
+                        .subscribe(data => this.CollectionList = data);
   }
 
-  getCollectionList(): void {
-    this.CollectionList = this.collectionService.getCollection(); 
+  ngOnInit() {
   }
 
   viewSolution(id): void {

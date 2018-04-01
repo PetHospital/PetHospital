@@ -4,11 +4,9 @@ import { ExamComponent } from './exam/exam.component';
 import { PracticeComponent } from './practice/practice.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { PracticeService } from './practice/practice.service';
-import { ExamService } from './exam/exam.service';
 import { MistakeComponent } from './mistake/mistake.component';
-import { MistakeService } from './mistake/mistake.service';
-import { CollectionService } from './collection/collection.service';
 import { CollectionComponent } from './collection/collection.component';
+import { DataService } from './../shared/service/data.service';
 import {  } from './onlineTest-routing.module';
 
 @NgModule({
@@ -24,9 +22,7 @@ import {  } from './onlineTest-routing.module';
     ],
     providers: [
         PracticeService,
-        ExamService,
-        MistakeService,
-        CollectionService
+        DataService
     ],
     exports: [PracticeComponent]
 })
