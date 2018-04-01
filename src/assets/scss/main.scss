@@ -18,6 +18,16 @@
   src: url('./../fonts/SourceSerifPro-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Roboto-Slab-Regular';
+    src: url('./../fonts/RobotoSlab-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Slab-Thin';
+    src: url('./../fonts/RobotoSlab-Thin.ttf');
+}
+
 .clearfix {
     &::after {
         content: "";
