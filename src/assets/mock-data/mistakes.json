@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "question": [
+            {
+                "id" : 1,
+                "type": "单选",
+                "subject": "宠物狗能不能吃巧克力？",
+                "options":[
+                    {
+                        "id": "A",
+                        "content": "能"
+                    },
+                    {
+                        "id": "B",
+                        "content": "不能"
+                    }
+                ],
+                "answer": "B",
+                "solution": "巧克力中含有的咖啡因等物质对狗是致命的！"
+            }
+        ],
+        "wrongAnswer": "A",
+        "showSolution": false,
+        "collectStatus": false
+    },
+    {
+        "id": 2,
+        "question": [
+            {
+                "id" : 2,
+                "type": "单选",
+                "subject": "宠物狗断奶后可以直接喂食狗粮吗？",
+                "options":[
+                    {
+                        "id": "A",
+                        "content": "能"
+                    },
+                    {
+                        "id": "B",
+                        "content": "不能"
+                    }
+                ],
+                "answer": "B",
+                "solution": "断奶后牙齿还未长全，若直接喂食狗粮，会影响牙齿发育。可以用牛奶将其泡软后喂食！"
+            }
+        ],
+        "wrongAnswer": "A",
+        "showSolution": false,
+        "collectStatus": false
+    }
+]
