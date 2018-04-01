@@ -7,6 +7,7 @@ import { SceneComponent } from './scene/scene.component';
 import { TutorComponent } from './roleplay/tutor/tutor.component';
 import { MedicalRecordComponent } from './medical-record/medical-record.component';
 import { PracticeComponent } from './online-test/practice/practice.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ExamComponent } from './online-test/exam/exam.component';
 import { MistakeComponent } from './online-test/mistake/mistake.component';
 import { CollectionComponent } from './online-test/collection/collection.component';
@@ -19,13 +20,16 @@ export const appRoutes: Routes = [
     { path: 'scene', component: SceneComponent},
     { path: 'role', component: TutorComponent },
     { path: 'disease', component: MedicalRecordComponent},
-    { path: 'practice', component: PracticeComponent},
+    { path: 'tutor', component: TutorComponent},
+    { path: 'practice', component: PracticeComponent },
+    { path: 'userinfo', component: UserinfoComponent},
     { path: 'mistake', component: MistakeComponent},
-    { path: 'collection', component: CollectionComponent}
+    { path: 'collection', component: CollectionComponent},
+    { path: 'exma/:id', component: ExamComponent}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes), RouterModule.forChild(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true}), RouterModule.forChild(appRoutes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}

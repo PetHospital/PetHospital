@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MedicalRecord } from './../model/model';
 import * as _ from "lodash";
+import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
 
 @Component({
   selector: 'app-medical-record',
@@ -7,9 +9,18 @@ import * as _ from "lodash";
   styleUrls: ['./medical-record.component.scss']
 })
 export class MedicalRecordComponent implements OnInit {
-
-  constructor() { }
-
+  @ViewChild(BigPicComponent)
+  bigPic: BigPicComponent;
+  pictures: Array<string>;
+  coverPic: string;
+  constructor() {
+    this.pictures = [
+    "../../assets/images/cat2.jpg",
+    "../../assets/images/cat1.jpg"
+    ]; 
+    this.coverPic = this.pictures[0];    
+  }
+  
   nodes = [
     {
       name: '传染病',
@@ -30,7 +41,7 @@ export class MedicalRecordComponent implements OnInit {
       ],
       isExpanded: false
     },
-    { name: '内科' , 
+    { name: '内科' ,
       id: 2,
       children: [
         { name: '口炎', id: 0 },
@@ -40,16 +51,23 @@ export class MedicalRecordComponent implements OnInit {
     }
   ];
 
-  currentRecord: object;
+  currentRecord: MedicalRecord;
 
   showDetail = (parent, child) => {
     console.log(parent, child);
     this.currentRecord = child;
   }
 
+  onShowPic() {
+    this.bigPic.showPic();
+  }
+
   ngOnInit() {
     this.currentRecord = {
-      "name": null
+      name: null,
+      id: null,
+      children: null,
+      isExpanded: null
     };
   }
 
