@@ -1,31 +1,32 @@
 [
     {
         "id": 1,
-        "question": [
-            {
+        "question":{
                 "id" : 1,
                 "type": "单选",
-                "subject": "宠物狗能不能吃巧克力？",
+                "subject": "宠物狗出去运动的强度要多大？",
                 "options":[
                     {
                         "id": "A",
-                        "content": "能"
+                        "content": "2小时"
                     },
                     {
                         "id": "B",
-                        "content": "不能"
+                        "content": "3小时"
+                    },
+                    {
+                        "id": "C",
+                        "content": "试品种决定"
                     }
                 ],
-                "answer": "B",
-                "solution": "巧克力中含有的咖啡因等物质对狗是致命的！"
-            }
-        ],
+                "answer": "C",
+                "solution": "猎犬需要大的运动量，小狗少一点，运动量尽量多一点，有助于保持宠物狗健康。"
+            },
         "showSolution": false
     },
     {
         "id": 2,
-        "question": [
-            {
+        "question":{
                 "id" : 2,
                 "type": "单选",
                 "subject": "宠物狗断奶后可以直接喂食狗粮吗？",
@@ -41,8 +42,7 @@
                 ],
                 "answer": "B",
                 "solution": "断奶后牙齿还未长全，若直接喂食狗粮，会影响牙齿发育。可以用牛奶将其泡软后喂食！"
-            }
-        ],
+        },
         "showSolution": false
     }
 ]
