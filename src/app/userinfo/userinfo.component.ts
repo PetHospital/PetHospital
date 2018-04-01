@@ -7,10 +7,11 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./userinfo.component.scss']
 })
 export class UserinfoComponent implements OnInit, AfterViewInit {
-  file: Array<Object>;
+  file: Object;
   currentTab: number;
+  customStyle: object;
   constructor() { 
-    this.file = [];
+    this.file = {};
   }
   
   formData = {} as any;
@@ -53,6 +54,9 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   }
 
   onValueChanged(data) {
+    if (!this.changeInfoForm) {
+      return;
+    }
     if (this.formErrors) {
       for (const field in this.formErrors) {
         this.formErrors[field] = '';
@@ -71,6 +75,32 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.currentTab = 0;
     this.isUploadingImage = false;
+    this.customStyle = {
+      selectButton: {
+        "background-color": "yellow",
+        "border-radius": "10px",
+        "color": "#000"
+      },
+      clearButton: {
+        "background-color": "#FFF",
+        "border-radius": "10px",
+        "color": "#000",
+        "margin-left": "10px"
+      },
+      layout: {
+        "background-color": "purple",
+        "border-radius": "10px",
+        "color": "#FFF",
+        "font-size": "15px",
+        "margin": "10px",
+        "padding-top": "5px",
+        "width": "500px"
+      },
+      previewPanel: {
+        "background-color": "white",
+        "border-radius": "0 0 10px 10px",
+      }
+    };
   }
   closeImage = () => {
     this.isUploadingImage = false;
@@ -87,12 +117,16 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
 
   imageUploaded(event) {
     console.log(event);
-    this.file.push(event.file);
+    this.file = event.file;
     console.log(this.file);
   }
 
   imageRemoved(event) {
     console.log(event);
+  }
+
+  confirmImage = () => {
+    this.closeImage();
   }
 
 }

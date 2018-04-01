@@ -146,12 +146,16 @@
     </div>
 </footer>
 
-<div class="mask" *ngIf="isUploadingImage">
-    <div class="image-upload-popup">
-        <image-upload url="" (uploadFinished)="imageUploaded($event)"
-        (removed)="imageRemoved($event)"
-      (isPending)="disableSendButton($event)"></image-upload>  
-    </div>
+<div class="mask" *ngIf="isUploadingImage" (click)="closeImage()">
 </div>    
-
+<div class="image-upload-popup" *ngIf="isUploadingImage">
+    <image-upload url="" (uploadFinished)="imageUploaded($event)"
+    (removed)="imageRemoved($event)"  [style]="customStyle"
+  (isPending)="disableSendButton($event)">
+    </image-upload>  
+    <div class="confirm-div">
+        <button class="confirm-button" (click)="confirmImage()">确定</button>
+        <button class="confirm-button" (click)="closeImage()">取消</button>
+    </div>
+</div>
 
