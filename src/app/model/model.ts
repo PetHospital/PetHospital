@@ -43,6 +43,8 @@ export interface PracticeItem {
     id: number;
     name: String;
     items: SingleItem[];
+    startTime: String;
+    Duration: String;
 }
 export interface Mistake {
     id: number;
@@ -55,4 +57,14 @@ export interface Collection {
     id: number;
     question: ExamQuestion;
     showSolution: boolean;
+}
+
+export interface PracticeTitle {
+    id: number;
+    name: String;
+}
+
+export interface PracticeTab {
+    id: number;
+    name: String;
 }

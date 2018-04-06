@@ -25,7 +25,7 @@ export const appRoutes: Routes = [
     { path: 'userinfo', component: UserinfoComponent},
     { path: 'mistake', component: MistakeComponent},
     { path: 'collection', component: CollectionComponent},
-    { path: 'exma/:id', component: ExamComponent}
+    { path: 'exam/:id', component: ExamComponent}
 ];
 
 @NgModule({

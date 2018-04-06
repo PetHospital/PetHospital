@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PracticeItem} from '../../model/model';
-import {PracticeList} from './practice-list';
-import {PracticeTab} from './practice-tab';
-import {PracticeService} from './practice.service';
+import {PracticeItem, PracticeTitle, PracticeTab} from '../../model/model';
+import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
@@ -10,34 +8,28 @@ import {PracticeService} from './practice.service';
 })
 export class PracticeComponent implements OnInit {
 
-  lists: PracticeList[];
+  practiceTitles: PracticeTitle[];
 
-  OnSelectedList: PracticeList;
+  OnSelectedTitle: PracticeTitle;
 
-  tabs: PracticeTab[];
+  practiceTabs: PracticeTab[];
 
   OnSelectedTab: PracticeTab;
 
-  items: PracticeItem[];
+  practiceItems: PracticeItem[];
 
   OnSelectedItem: PracticeItem;
 
-  constructor(private practiceService: PracticeService) { }
+  constructor(private dataService: DataService) {
+    this.dataService.getPracticeTitle().subscribe(data => this.practiceTitles = data);
+    this.dataService.getPracticeTab().subscribe(data => this.practiceTabs = data);
+    this.dataService.getPracticeItem().subscribe(data => this.practiceItems = data);
+   }
   ngOnInit() {
-    this.getPractice();
   }
 
-  getPractice(): void {
-    this.items = this.practiceService.getItems();
-    this.OnSelectedItem = this.items[0];
-    this.lists = this.practiceService.getLists();
-    this.OnSelectedList = this.lists[0];
-    this.tabs = this.practiceService.getTabs();
-    this.OnSelectedTab = this.tabs[0];
-  }
-
-  SelectList(list: PracticeList): void {
-    this.OnSelectedList = list;
+  SelectList(title: PracticeTitle): void {
+    this.OnSelectedTitle = title;
   }
   
   SelectTab(tab: PracticeTab): void {
