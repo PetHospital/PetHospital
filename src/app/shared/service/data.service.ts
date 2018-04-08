@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree } from './../../model/model';
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree, PracticeTitle, PracticeTab } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -45,6 +45,21 @@ export class DataService {
     getUserInfo(): Observable<Object> {
         let dataUrl = JSON_URL + '/userinfo.json';
         return this.http.get<Object>(dataUrl);
+    }
+    
+    getPracticeTitle(): Observable<PracticeTitle[]> {
+        let dataUrl = JSON_URL + '/practiceTitle.json';
+        return this.http.get<PracticeTitle[]>(dataUrl);
+    }
+
+    getPracticeTab(): Observable<PracticeTab[]> {
+        let dataUrl = JSON_URL + '/practiceTab.json';
+        return this.http.get<PracticeTab[]>(dataUrl);
+    }
+
+    getPracticeItem(): Observable<PracticeItem[]> {
+        let dataUrl = JSON_URL + '/examlist.json';
+        return this.http.get<PracticeItem[]>(dataUrl);
     }
 }
 

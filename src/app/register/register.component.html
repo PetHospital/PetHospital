@@ -70,20 +70,20 @@
         <input type="submit" value="注册" class="submit" (click)="doSubmit(registerForm.value)">
       </form>
 </div>
-<div class="shade">
+<div class="shade" [class.hide] = "isHide">
 </div>
-<div class="bright">
+<div class="bright" [class.hide] = "isHide">
     <div class="title">
         <img src="../../assets/images/exam/exam-title.png">
         <span>Mother Xie's Care</span>
     </div>
     <div class="content">
-          <div class="one">激活邮件</div>
+          <div class="one" >激活邮件</div>
           <div class="two">系统已发送激活邮件，请查收，并点击邮件中的链接完成注册。</div>
     </div>
     <div class="bottom">
-        <div class="index">主页</div>
-        <div class="login">返回登陆</div>
+        <a class="index" routerLink="/">主页</a>
+        <a class="login" routerLink="/login">返回登陆</a>
     </div>
         
 </div>

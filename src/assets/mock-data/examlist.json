@@ -2,18 +2,69 @@
     {
         "id": 1,
         "name": "2018年春季第一次测试",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"easy"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"normal"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"hard"
+            }
+        ],
         "startTime": "2018-05-01 09:00:00",
         "Duration": 60
     },
     {
         "id": 2,
         "name": "2018年春季第二次测试",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"easy"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"normal"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"hard"
+            }
+        ],
         "startTime": "2018-05-02 09:00:00",
         "Duration": 60
     },
     {
         "id": 3,
         "name": "2018年春季第三次测试",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"easy"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"normal"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"hard"
+            }
+        ],
         "startTime": "2018-05-03 09:00:00",
         "Duration": 60
     }

@@ -1,8 +1,8 @@
 <div class="left-container">
     <div class="all-see g-mod-shadow">
         <div class="tab-list g-clearfix">
-          <li *ngFor="let list of lists"
-            (click)="SelectList(list)"><a [class.list-active]="list===OnSelectedList" class="tab-links">{{list.name}}</a>
+          <li *ngFor="let title of practiceTitles"
+            (click)="SelectList(title)"><a [class.list-active]="title===OnSelectedTitle" class="tab-links">{{title.name}}</a>
           </li>
           <a href="/#/mistake" class="tab-links">我的测试</a>
         </div>
@@ -10,13 +10,13 @@
             <div class="filtrate-btn-cont">
               <div class="filtrate-msg">难度选择：</div>
               <div class="filtrate-btn">
-                  <li *ngFor="let tab of tabs"
+                  <li *ngFor="let tab of practiceTabs"
                   (click)="SelectTab(tab)" style="display:inline;">
                   <a [class.active]="tab===OnSelectedTab" class="filtrate-links">{{tab.name}}</a>
               </li></div>
             </div>
         </div>
-        <div class="list-cont" *ngFor="let parent of items">
+        <div class="list-cont" *ngFor="let parent of practiceItems">
             <div class="practice-list-cont">
                 <div class="list-title-cont">
                     <div class="list-title">{{parent.name}}</div>
