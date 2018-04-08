@@ -43,8 +43,13 @@ export interface PracticeItem {
     id: number;
     name: String;
     items: SingleItem[];
+}
+
+export interface ExamItem {
+    id: number;
+    name: String;
     startTime: String;
-    Duration: String;
+    duration: number;
 }
 export interface Mistake {
     id: number;

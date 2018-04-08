@@ -1,0 +1,28 @@
+<div class="ec_sider">
+    <div class="er_containerbox">     
+        <div class="eo_subject eo_sj_next green">
+            <div class="eo_title_b">
+                <div class="eo_c_title">虚拟宠物医院在线考试</div>
+            </div>
+            <div class="detials-title-cont">
+              <h4 class="details-title">考试名称</h4>
+            </div>
+            <ul class="detail-lists-cont" *ngFor="let exam of examList; index as i;">
+                <li class="detail-list js-detail-list">
+                  <div class="detail-list-box" [class.bottom_list]="i===examList.length-1">
+                      <span class="detial-serial-num">{{exam.id}}</span>
+                      <div class="subject-title float-l">
+                          <em class="subject-icons listen-list-icons"></em>
+                          <p href="" class="js-subject-title" data-tipsclass="g-kmf-tips-title" data-msg="" data-class="">
+                            {{exam.name}}
+                          </p>
+                      </div>
+                      <a href="exam/{{exam.id}}" class="redo-exam">
+                          <b class="redo-msg">开始考试</b>
+                      </a>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

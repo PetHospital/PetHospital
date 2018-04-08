@@ -8,21 +8,26 @@ import { DataService } from './../../shared/service/data.service';
 })
 export class PracticeComponent implements OnInit {
 
-  practiceTitles: PracticeTitle[];
+  practiceTitles: PracticeTitle[] = [
+    { id: 1, name: "顺序练习"},
+    { id: 3, name: "在线考试"}];
 
-  OnSelectedTitle: PracticeTitle;
+  OnSelectedTitle = this.practiceTitles[0];
 
-  practiceTabs: PracticeTab[];
+  practiceTabs: PracticeTab[] = [
+    {id: 1, name: "全部"},
+    {id: 2, name: "入门题目"},
+    {id: 3, name: "中等题目"},
+    {id: 4, name: "官方难题"}
+  ];
 
-  OnSelectedTab: PracticeTab;
+  OnSelectedTab = this.practiceTabs[0];
 
   practiceItems: PracticeItem[];
 
   OnSelectedItem: PracticeItem;
 
   constructor(private dataService: DataService) {
-    this.dataService.getPracticeTitle().subscribe(data => this.practiceTitles = data);
-    this.dataService.getPracticeTab().subscribe(data => this.practiceTabs = data);
     this.dataService.getPracticeItem().subscribe(data => this.practiceItems = data);
    }
   ngOnInit() {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, PracticeTitle, PracticeTab } from './../../model/model';
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, ExamItem } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -37,19 +37,14 @@ export class DataService {
         return this.http.get<ExamQuestion[]>(dataUrl);
     }
 
-    getPracticeTitle(): Observable<PracticeTitle[]> {
-        let dataUrl = JSON_URL + '/practiceTitle.json';
-        return this.http.get<PracticeTitle[]>(dataUrl);
-    }
-
-    getPracticeTab(): Observable<PracticeTab[]> {
-        let dataUrl = JSON_URL + '/practiceTab.json';
-        return this.http.get<PracticeTab[]>(dataUrl);
-    }
-
     getPracticeItem(): Observable<PracticeItem[]> {
-        let dataUrl = JSON_URL + '/examlist.json';
+        let dataUrl = JSON_URL + '/practicelist.json';
         return this.http.get<PracticeItem[]>(dataUrl);
+    }
+
+    getExamItem(): Observable<ExamItem[]> {
+        let dataUrl = JSON_URL + '/examlist.json';
+        return this.http.get<ExamItem[]>(dataUrl);
     }
 }
 
