@@ -64,6 +64,19 @@ export interface Collection {
     showSolution: boolean;
 }
 
+export interface DiseaseTree {
+    id: number;
+    name: string;
+    children: Disease[];
+}
+
+export interface Disease {
+    id: number;
+    name: string;
+    description: string;
+    images: string[];
+    video: string;
+}
 export interface PracticeTitle {
     id: number;
     name: String;
