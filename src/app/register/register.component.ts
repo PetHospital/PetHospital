@@ -11,9 +11,11 @@ import { HttpClient } from "@angular/common/http";
 
 export class RegisterComponent implements OnInit, AfterViewInit {
   formData = {} as any;
+  isHide: boolean;
   constructor(
     private http: HttpClient,
   ) {
+    this.isHide = true;
   }
   formErrors = {
     'email': '',
@@ -69,6 +71,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
   }
 
+  doJumpIndex() {
+    console.log("zhuye");
+  }
+
+  doJumpLogin() {
+    console.log("login");
+  }
   doSubmit(obj: any) {
     if (!this.registerForm.valid) {
       this.onValueChanged(obj);
@@ -78,6 +87,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     this.http.post(url, obj).subscribe(
       data => {
         console.log(data);
+        if (true) {
+            this.isHide = false;
+        }
       },
       err => {
         console.log(err);
