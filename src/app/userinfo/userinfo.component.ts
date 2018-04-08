@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { DataService } from '../shared/service/data.service';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-userinfo',
@@ -10,11 +12,22 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   file: Object;
   currentTab: number;
   customStyle: object;
-  constructor() { 
-    this.file = {};
-  }
-  
+  userinfo: object;
   formData = {} as any;
+  isChanging: boolean;
+
+  constructor(private dataService: DataService, private http: HttpClient) {
+    this.file = {};
+    this.dataService.getUserInfo()
+      .subscribe(data => {
+        console.log(data);
+        this.userinfo = data;
+        this.formData = this.userinfo;
+        this.formData.password1 = "";
+        this.formData.password2 = "";
+      });
+  }
+
   isUploadingImage: boolean;
   formErrors = {
     'email': '',
@@ -74,6 +87,7 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   }
   ngOnInit() {
     this.currentTab = 0;
+    this.isChanging = false;
     this.isUploadingImage = false;
     this.customStyle = {
       selectButton: {
@@ -127,6 +141,27 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
 
   confirmImage = () => {
     this.closeImage();
+  }
+
+  doSubmit = (formData) => {
+    console.log('submit');
+    if (!formData.password1 || !formData.password2 || formData.password1 !== formData.password2) {
+      console.log("error");
+      this.onValueChanged(formData);
+      return;
+    }
+    let url = 'http://localhost:8000/changepw';
+    this.http.post(url, formData).subscribe(
+      data => {
+        console.log(data);
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  changePw = () => {
+    this.isChanging = !this.isChanging;
   }
 
 }

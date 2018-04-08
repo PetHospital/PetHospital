@@ -56,3 +56,17 @@ export interface Collection {
     question: ExamQuestion;
     showSolution: boolean;
 }
+
+export interface DiseaseTree {
+    id: number;
+    name: string;
+    children: Disease[];
+}
+
+export interface Disease {
+    id: number;
+    name: string;
+    description: string;
+    images: string[];
+    video: string;
+}

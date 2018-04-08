@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection } from './../../model/model';
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -35,6 +35,16 @@ export class DataService {
     getQuestions(): Observable<ExamQuestion[]> {
         let dataUrl = JSON_URL + '/questionList.json';
         return this.http.get<ExamQuestion[]>(dataUrl);
+    }
+
+    getDiseases(): Observable<DiseaseTree[]> {
+        let dataUrl = JSON_URL + '/diseaseTree.json';
+        return this.http.get<DiseaseTree[]>(dataUrl);
+    }
+
+    getUserInfo(): Observable<Object> {
+        let dataUrl = JSON_URL + '/userinfo.json';
+        return this.http.get<Object>(dataUrl);
     }
 }
 
