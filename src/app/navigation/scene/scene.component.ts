@@ -11,6 +11,7 @@ import { Vector3 } from 'three';
   templateUrl: './scene.component.html',
   styleUrls: ['./scene.component.scss']
 })
+
 export class SceneComponent implements AfterViewInit {
     private renderer: THREE.WebGLRenderer;
     private camera: THREE.PerspectiveCamera;

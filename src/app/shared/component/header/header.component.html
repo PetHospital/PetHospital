@@ -1,3 +1,29 @@
-<p>
-  header works!
-</p>
+<header>
+    <h1 class="header-left">
+        <a class="head-logo" [routerLink]="['/']">
+            <img src="/assets/images/share/logo.png">
+            <span>Family Pet Hospital</span>
+        </a>
+    </h1>
+    <nav class="header-nav">
+        <ul>
+            <li>
+                <a [routerLink]="['/navigation']">3D Navigation</a>
+            </li>
+            <li>
+                <a [routerLink]="['/role']">Role Study</a>
+            </li>
+            <li>
+                <a [routerLink]="['/disease']">Disease Study</a>
+            </li>
+            <li>
+                <a [routerLink]="['/practice']">Online Test</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="user" [routerLink]="['/userinfo']">
+        <img class="user-avatar" src="/assets/images/7.jpg">
+        <span class="user-name">Pandaice</span>
+    </div>
+</header>
+
