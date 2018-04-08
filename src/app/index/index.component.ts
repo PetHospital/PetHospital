@@ -7,13 +7,20 @@ import { DataService } from './../shared/service/data.service';
     styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+    private status: boolean;
+    private username: string;
 
     constructor(private dataService: DataService) {
-        this.dataService.getRoomInfo()
-                 .subscribe(data => console.log(data));
+        this.status = false;
+        this.username = 'Pandaice';
     }
 
     ngOnInit() {
+
+    }
+
+    Logout() {
+        this.status = false;
     }
 
 }

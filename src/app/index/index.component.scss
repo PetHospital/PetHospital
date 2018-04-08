@@ -88,12 +88,11 @@
                     text-align: center;
                     padding: 0 2rem;
 
-                    .login-button {
+                    .index-btn {
                         border: 2px solid #e1ebed;
-                        border-radius: 20px;
                         color: #e1ebed;
+                        border-radius: 20px;
                         padding: 0.5rem 0;
-                        text-transform: uppercase;
                         cursor: pointer;
 
                         a {
@@ -117,6 +116,31 @@
                             100% {
                                 transform: scale3d(1, 1, 1);
                             }
+                        }
+                    }
+
+                    .userinfo-btn {
+                        display: inline-block;
+                        width: 75%;
+                        margin-right: 3%;
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            vertical-align: middle;
+                            padding-right: .8rem;
+                        }
+
+                        span {
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .logout-btn {
+                        display: inline-block;
+                        cursor: pointer;
+                        width: 15%;
+                        img {
+                            vertical-align: middle;
                         }
                     }
                 }
@@ -486,9 +510,11 @@
                 font-size: 0.8rem;
 
                 .social-links {
+                    position: relative;
                     margin-bottom: 0.5rem;
 
                     a {
+                        cursor: pointer;
                         margin: 0 0 0 0.65rem;
                         display: inline-block;
                         height: 40px;

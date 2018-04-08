@@ -96,7 +96,7 @@ export class SceneComponent implements AfterViewInit {
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.renderer.setClearColor(0xADD8E6, 1);
+        this.renderer.setClearColor(0xFFFFFF, 1);
         this.renderer.autoClear = true;
 
         let component: SceneComponent = this;

@@ -3,7 +3,7 @@
         <div class="header-wrap">
             <div class="logo-container">
                 <div class="logo-card">
-                    <a href="/">
+                    <a [routerLink]="['/']">
                         <img src="/assets/images/index/logo.png">
                     </a>
                 </div>
@@ -39,8 +39,17 @@
                     </ul>
                 </div>
                 <div class="login-container">
-                    <div class="login-button">
-                        <a href="/login">Login</a>
+                    <div *ngIf="!status" class="index-btn">
+                        <a [routerLink]="['/login']">LOGIN</a>
+                    </div>
+                    <div *ngIf="status" class="index-btn userinfo-btn">
+                        <a [routerLink]="['/userinfo']">
+                            <span><img src="/assets/images/index/avatar.png"></span>
+                            <span>{{username}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="status" class="logout-btn">
+                        <img (click)="Logout()" src="/assets/images/index/logout.png">
                     </div>
                 </div>
             </div>
@@ -106,7 +115,7 @@
                         <div class="side-text-text">3D Navigation shows you the structure of pet hospital.</div>
                     </div>
                     <div class="side-button">
-                        <a href="/scene">Go to start</a>
+                        <a [routerLink]="['/navigation']">Go to start</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +128,7 @@
                         <div class="side-text-text">Role Study shows you the reponsibilities of the vets.</div>
                     </div>
                     <div class="side-button">
-                        <a href="/role">Go to start</a>
+                        <a [routerLink]="['/role']">Go to start</a>
                     </div>
                 </div>
                 <div class="side-img-container">
@@ -138,7 +147,7 @@
                         <div class="side-text-text">Disease Study shows you the diversity of diseases of the pets.</div>
                     </div>
                     <div class="side-button">
-                        <a href="/disease">Go to start</a>
+                        <a [routerLink]="['/disease']">Go to start</a>
                     </div>
                 </div>
             </div>
@@ -151,7 +160,7 @@
                         <div class="side-text-text">Online Test can test your knowledge of pet care.</div>
                     </div>
                     <div class="side-button">
-                        <a href="/practice">Go to start</a>
+                        <a [routerLink]="['/practice']">Go to start</a>
                     </div>
                 </div>
                 <div class="side-img-container">
@@ -181,15 +190,16 @@
             </div>
             <div class="footer-right" id="contactUs">
                 <div class="social-links">
-                    <a href="/">
+                    <a href="https://user.qzone.qq.com/437209901" target="_blank">
                         <img src="/assets/images/index/qq.png">
                     </a>
-                    <a href="/">
-                        <img src="/assets/images/index/wechat.png"></a>
-                    <a href="/">
+                    <a href="https://wx.qq.com/" target="_blank">
+                        <img src="/assets/images/index/wechat.png">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100016947257733" target="_blank">
                         <img src="/assets/images/index/facebook.png">
                     </a>
-                    <a href="/">
+                    <a href="mailto:binicex@gmail.com">
                         <img src="/assets/images/index/google.png">
                     </a>
                 </div>
