@@ -4,30 +4,36 @@
             <div class="Navigation">
                 <span class="ep_sidel_span">
                     <li class="ec_title">距离考试结束还有：</li>
-                    <span class="time_show">{{hour}}:{{minute}}:{{second}}</span>
+                    <span class="time_show">{{hour}}: {{minute}}: {{second}}</span>
                 </span>
-                <a class="ep_sidel_a">
-                     <img class="ep_img" src="./../../assets/images/exam/submit.png" alt="">
-                     <span class="ec_sa_span">立即交卷</span>
-                </a>
             </div>
         </div>
     </div>
-    <div class="ec_sider" *ngFor="let parent of QuestionLists">
-        <div class="ep_topic">
-            <div class="ep_t_topic">
-                <div class="ep_tt_num">{{parent.id}}</div>
-                <div class="ep_tt_topic pading">【{{parent.type}}】</div>
-                <div class="pading"><span>{{parent.subject}}</span></div>
-            </div>
-            <ul class="ep_t_ul" *ngFor="let child of parent.options">
-            <li>
-                <label>
-                    <input class="ep_radio" name="{{parent.id}}" type="radio" value="A">
-                    <b>{{child.id}}.</b><p>{{child.content}}</p>                                
-                </label>
-            </li>
-            </ul>
+    <form action="#" method="post" #examForm="ngForm" (ngSubmit)="doSubmit(examForm.value)">
+        <div class="ec_sider" *ngFor="let parent of QuestionLists">
+            <div class="ep_topic">
+                <div class="ep_t_topic">
+                    <div class="ep_tt_num">{{parent.id}}</div>
+                    <div class="ep_tt_topic pading">【{{parent.type}}】</div>
+                    <div class="pading"><span>{{parent.subject}}</span></div>
+                </div>
+                        <ul class="ep_t_ul" *ngFor="let child of parent.options">
+                        <li>
+                            <label>
+                                <input class="ep_radio" name="{{parent.id}}" type="radio" value="A">
+                                <b>{{child.id}}.</b><p>{{child.content}}</p>                                
+                            </label>
+                        </li>
+                        </ul>
+                    </div>
         </div>
-    </div>
+        <div class="ec_sider">
+            <button type="submit" tabindex="4" class="btn_submit">交 卷</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="isFinished" class="ex_alert_background"></div>
+<div *ngIf="isFinished" class="ex_alert_box">
+    <p class="ex_alert_title">已完成考试！</p>
+    <a class="show_result_button">查看结果</a>
 </div>

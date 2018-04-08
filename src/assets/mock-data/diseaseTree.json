@@ -1,0 +1,26 @@
+[
+    {
+      "name": "传染病",
+      "id": 0,
+      "children": [
+        { "name": "犬瘟热", "id": 0 , "description": "blabla", "images":[""], "video": ""},
+        { "name": "犬细小病毒", "id": 1 , "description": "blppppabla", "images":[""], "video": ""},
+        { "name": "犬传染性肝炎", "id": 2, "description": "dwedwdwedewd", "images":[""], "video": ""}
+      ]
+    },
+    {
+      "name": "寄生虫病",
+      "id": 1,
+      "children": [
+        { "name": "蛔虫病", "id": 0, "description": "dedwdwed", "images":[""], "video": ""},
+        { "name": "钩虫病", "id": 1, "description": "dwedwdwed", "images":[""], "video": "" }
+      ]
+    },
+    { "name": "内科" ,
+      "id": 2,
+      "children": [
+        { "name": "口炎", "id": 0 , "description": "dwedwedwedw", "images":[""], "video": ""},
+        { "name": "肠炎", "id": 1, "description": "bldczxccdabla", "images":[""], "video": "" }
+    ]
+    }
+  ]

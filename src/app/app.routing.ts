@@ -13,6 +13,7 @@ import { ExamComponent } from './online-test/exam/exam.component';
 import { MistakeComponent } from './online-test/mistake/mistake.component';
 import { CollectionComponent } from './online-test/collection/collection.component';
 import { ErrorComponent } from './error/error.component';
+import {TestListComponent} from './online-test/test-list/test-list.component';
 
 
 export const appRoutes: Routes = [
@@ -28,7 +29,9 @@ export const appRoutes: Routes = [
     { path: 'mistake', component: MistakeComponent},
     { path: 'collection', component: CollectionComponent},
     { path: 'exam/:id', component: ExamComponent},
+    { path: 'testList', component: TestListComponent},
     { path: '**', component: ErrorComponent }
+    
 ];
 
 @NgModule({

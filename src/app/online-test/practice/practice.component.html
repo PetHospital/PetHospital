@@ -1,9 +1,8 @@
 <div class="left-container">
     <div class="all-see g-mod-shadow">
         <div class="tab-list g-clearfix">
-          <li *ngFor="let title of practiceTitles"
-            (click)="SelectList(title)"><a [class.list-active]="title===OnSelectedTitle" class="tab-links">{{title.name}}</a>
-          </li>
+          <a class="tab-links list-active">顺序练习</a>
+          <a href="/testList" class="tab-links">在线考试</a>
           <a href="/mistake" class="tab-links">我的测试</a>
         </div>
         <div class="filtrate-cont">
@@ -31,7 +30,7 @@
                     <div class="score_show">
                       <span class="score-num">Last score: </span>
                     </div>
-                    <a href="exam/{{parent.id}}" class="plan-icon practice-icon">
+                    <a href="/#/exam/{{parent.id}}" class="plan-icon practice-icon">
                       <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                     </a>
                   </div>
