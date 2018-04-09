@@ -86,3 +86,18 @@ export interface PracticeTab {
     id: number;
     name: String;
 }
+
+export interface QuestionResult  {
+    question: ExamQuestion;
+    myAnswer: String;
+    isCorrect: boolean;
+}
+
+export interface TestResult {
+    id: number;
+    examName: String;
+    score: number;
+    correctNumber: number;
+    wrongNumber: number;
+    questionResult: QuestionResult[];
+}

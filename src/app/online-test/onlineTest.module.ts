@@ -8,6 +8,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { DataService } from './../shared/service/data.service';
 import {  } from './onlineTest-routing.module';
 import { TestListComponent } from './test-list/test-list.component';
+import { TestResultComponent } from './test-result/test-result.component';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import { TestListComponent } from './test-list/test-list.component';
         PracticeComponent,
         MistakeComponent,
         CollectionComponent,
-        TestListComponent
+        TestListComponent,
+        TestResultComponent
     ],
     providers: [
         DataService
