@@ -30,7 +30,7 @@ export class RoomDetailComponent implements OnInit, AfterViewInit {
     document.getElementById('image').onload = () => {
       let offsetHeight = document.getElementById('image').clientHeight;
       let top = offsetHeight - 60 + 'px';
-      document.getElementsByClassName('learn-more')[0].style.top = top;
+      document.getElementsByClassName('learn-more')[0].setAttribute('top', top);
     };
   }
 
