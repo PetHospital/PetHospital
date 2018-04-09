@@ -1,4 +1,26 @@
 <app-header></app-header>
-<canvas #canvas (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event)">
-</canvas>
+<div class="onoffswitch-container clearfix">
+    <div class="onoffswitch fr">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" [checked]="switchValue" (change)="switchChange()">
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</div>
+<div class="scene-wrap">
+    <canvas #canvas (mousedown)="onMouseDown($event)">
+    </canvas>
+</div>
+<div *ngIf="!switchValue" class="marker-group">
+    <div class="marker-container" id="marker1">
+        <p>Operating Room</p>
+        <a class="left tooltip">
+            <figure>
+                <img src="/assets/images/hospital/Operating-room.jpg">
+                <figcaption>Operating Room</figcaption>
+            </figure>
+        </a>
+    </div>
+</div>
 <app-gallery></app-gallery>

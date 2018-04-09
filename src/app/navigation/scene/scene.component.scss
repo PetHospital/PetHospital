@@ -1,4 +1,170 @@
-canvas {
-    height: 100%;
-    width: 100%;
+.onoffswitch-container {
+    padding: 21px 3vw;
+
+    .onoffswitch {
+        position: relative;
+        width: 100px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .onoffswitch-checkbox {
+        display: none;
+    }
+
+    .onoffswitch-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #999999;
+        border-radius: 20px;
+    }
+
+    .onoffswitch-inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+
+    .onoffswitch-inner:before,
+    .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 30px;
+        padding: 0;
+        line-height: 30px;
+        font-size: 1rem;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    .onoffswitch-inner:before {
+        content: "3D ON";
+        padding-left: 13px;
+        background-color: #4FACDB;
+        color: #FFFFFF;
+    }
+
+    .onoffswitch-inner:after {
+        content: "3D OFF";
+        padding-right: 13px;
+        background-color: #F50E4C;
+        color: #FAFAFA;
+        text-align: right;
+    }
+
+    .onoffswitch-switch {
+        display: block;
+        width: 21px;
+        margin: 4.5px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 65px;
+        border: 2px solid #999999;
+        border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+    }
+}
+
+.scene-wrap {
+    width: 94vw;
+    padding: 0 3vw 6vh 3vw;
+    height: 90vh;
+
+    canvas {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.marker-group {
+    position: absolute;
+    left: 3vw;
+    top: 186px;
+    width: 94vw;
+    height: 94vh;
+
+    .marker-container {
+        position: absolute;
+        width: 22px;
+        height: 35px;
+        cursor: pointer;
+        z-index: 50;
+        background: transparent url('./../../../assets/images/share/marker-shadow.png') no-repeat left bottom;
+        &:hover {
+            .tooltip {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        p {
+            margin-top: 3px;
+            display: block;
+            position: absolute;
+            width: 22px;
+            height: 32px;
+            text-indent: -5555px;
+            background: transparent url('./../../../assets/images/share/marker.png') no-repeat left bottom;
+            background-size: 22px 32px;
+        }
+
+        .left {
+            padding: 0 10px 0 0;
+
+            figcaption {
+                margin: 0 10px 0 0;
+            }
+        }
+
+        .tooltip {
+            width: 248px;
+            height: 210px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            font-size: .8rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-left: 15px;
+            padding: 0 0 0 10px;
+            display: none;
+            opacity: 0;
+
+            figure {
+                margin: 0;
+                img {
+                    display: block;
+                    user-select: none;
+                    width: 248px;
+                    height: 156px;
+                }
+
+                figcaption {
+                    position: relative;
+                    width: 248px;
+                    height: 53px;
+                    background: #333333;
+                    text-align: center;
+                    line-height: 53px;
+                    border-radius: 0px 0px 5px 5px;
+                }
+            }
+        }
+    }
 }

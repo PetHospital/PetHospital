@@ -4,7 +4,7 @@ import './js/EnableThreeExamples';
 import 'three/examples/js/controls/OrbitControls';
 import 'three/examples/js/loaders/OBJLoader';
 import 'three/examples/js/loaders/MTLLoader';
-import { Vector3 } from 'three';
+import { Vector3, BooleanKeyframeTrack } from 'three';
 
 @Component({
   selector: 'app-scene',
@@ -24,10 +24,13 @@ export class SceneComponent implements AfterViewInit {
 
     public controls: THREE.OrbitControls;
 
+    private switchValue: boolean;
+
     @ViewChild('canvas')
     private canvasRef: ElementRef;
 
     constructor() {
+        this.switchValue = false;
         this.render = this.render.bind(this);
         this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
     }
@@ -76,7 +79,6 @@ export class SceneComponent implements AfterViewInit {
         this.camera.position.x = 400;
         this.camera.position.y = 2800;
         this.camera.position.z = 2000;
-
     }
 
     private getAspectRatio(): number {
@@ -97,7 +99,7 @@ export class SceneComponent implements AfterViewInit {
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.renderer.setClearColor(0xFFFFFF, 1);
+        this.renderer.setClearColor(0xe1ebed, 1);
         this.renderer.autoClear = true;
 
         let component: SceneComponent = this;
@@ -113,13 +115,15 @@ export class SceneComponent implements AfterViewInit {
     }
 
     public addControls() {
-        this.controls = new THREE.OrbitControls(this.camera);
+        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
         this.controls.maxDistance = 3600;
         this.controls.minDistance = 0;
         this.controls.maxPolarAngle = Math.PI / 2;
         this.controls.minPolarAngle = 0;
         this.controls.rotateSpeed = 1.0;
         this.controls.zoomSpeed = 1.0;
+        this.controls.enableKeys = false;
+        this.controls.enabled = false;
         this.controls.addEventListener('change', this.render);
     }
 
@@ -154,11 +158,7 @@ export class SceneComponent implements AfterViewInit {
         }
     }
 
-    public onMouseUp(event: MouseEvent) {
-        console.log("onMouseUp");
-    }
-
-    @HostListener('window:resize', ['$event'])
+    @HostListener('resize', ['$event'])
     public onResize(event: Event) {
         this.canvas.style.width = "100%";
         this.canvas.style.height = "100%";
@@ -170,16 +170,21 @@ export class SceneComponent implements AfterViewInit {
         this.render();
     }
 
-    @HostListener('document:keypress', ['$event'])
-    public onKeyPress(event: KeyboardEvent) {
-        console.log("onKeyPress: " + event.key);
-    }
-
     ngAfterViewInit() {
         this.createScene();
         this.createLight();
         this.createCamera();
         this.startRendering();
         this.addControls();
+    }
+
+    switchChange() {
+        this.switchValue = !this.switchValue;
+        if (this.switchValue) {
+            this.controls.enabled = true;
+        } else {
+            this.controls.enabled = false;
+            this.controls.reset();
+        }
     }
 }
