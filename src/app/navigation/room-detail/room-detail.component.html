@@ -5,7 +5,7 @@
 </div>
 <div class="content">
   <div class="image-wrapper">
-    <img src="../../../assets/images/hospital/Department of Ophtalmology.jpg" id="image" class="image" />
+    <img *ngIf="room" src={{room.image}} id="image" class="image" />
   </div>
   <div class="learn-more" (click)="learnMore()">
     <p class="word">LEARN MORE</p>
