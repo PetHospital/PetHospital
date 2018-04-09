@@ -51,7 +51,7 @@ export class DataService {
         let dataUrl = JSON_URL + '/userinfo.json';
         return this.http.get<Object>(dataUrl);
     }
- 
+
 
     getExamItem(): Observable<ExamItem[]> {
         let dataUrl = JSON_URL + '/examlist.json';
