@@ -3,6 +3,7 @@ import {ExamQuestion} from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-exam',
   templateUrl: './exam.component.html',
@@ -21,14 +22,16 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
   private timer;
   formData = {} as any;
   @ViewChild('examForm') examForm: NgForm;
+  id: number;
 
-  constructor(private dataService: DataService, private http: HttpClient) { 
+  constructor(private dataService: DataService, private http: HttpClient, private route: ActivatedRoute) { 
     this.dataService.getQuestions()
                         .subscribe(data => this.QuestionLists = data);
   }
 
   ngOnInit() {
     this.isFinished = false;
+    this.route.params.subscribe((params) => this.id = params.id);
   }
   
   private get diff() {
