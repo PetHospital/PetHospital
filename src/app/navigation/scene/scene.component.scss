@@ -4,9 +4,7 @@
     .onoffswitch {
         position: relative;
         width: 100px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
+        user-select: none;
     }
 
     .onoffswitch-checkbox {
@@ -114,9 +112,9 @@
         }
 
         p {
-            margin-top: 3px;
             display: block;
             position: absolute;
+            margin-top: 3px;
             width: 22px;
             height: 32px;
             text-indent: -5555px;
@@ -124,19 +122,11 @@
             background-size: 22px 32px;
         }
 
-        .left {
-            padding: 0 10px 0 0;
-
-            figcaption {
-                margin: 0 10px 0 0;
-            }
-        }
-
         .tooltip {
             width: 248px;
             height: 210px;
             position: absolute;
-            top: 0px;
+            top: -20px;
             left: 0;
             font-size: .8rem;
             color: #ffffff;
@@ -153,18 +143,90 @@
                     user-select: none;
                     width: 248px;
                     height: 156px;
+                    clip-path: polygon(4% 0, 100% 0%, 100% 100%, 4% 100%, 4% 30%, 0 23%, 4% 16%);
                 }
 
                 figcaption {
                     position: relative;
-                    width: 248px;
+                    width: 238px;
                     height: 53px;
                     background: #333333;
                     text-align: center;
                     line-height: 53px;
+                    margin-left: 10px;
                     border-radius: 0px 0px 5px 5px;
                 }
             }
         }
+    }
+
+    #marker1 {
+        top: 150px;
+        left: 900px;
+    }
+
+    #marker2 {
+        top: 250px;
+        left: 870px;
+    }
+
+    #marker3 {
+        top: 370px;
+        left: 750px;
+    }
+
+    #marker4 {
+        top: 200px;
+        left: 750px;
+    }
+
+    #marker5 {
+        top: 215px;
+        left: 690px;
+    }
+
+    #marker6 {
+        top: 170px;
+        left: 680px;
+    }
+
+    #marker7 {
+        top: 170px;
+        left: 620px;
+    }
+
+    #marker8 {
+        top: 110px;
+        left: 560px;
+    }
+
+    #marker9 {
+        top: 180px;
+        left: 500px;
+    }
+
+    #marker10 {
+        top: 150px;
+        left: 420px;
+    }
+
+    #marker11 {
+        top: 390px;
+        left: 400px;
+    }
+
+    #marker12 {
+        top: 290px;
+        left: 400px;
+    }
+
+    #marker13 {
+        top: 210px;
+        left: 390px;
+    }
+
+    #marker14 {
+        top: 370px;
+        left: 240px;
     }
 }
