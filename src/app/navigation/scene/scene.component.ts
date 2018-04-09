@@ -158,7 +158,6 @@ export class SceneComponent implements AfterViewInit {
         console.log("onMouseUp");
     }
 
-
     @HostListener('window:resize', ['$event'])
     public onResize(event: Event) {
         this.canvas.style.width = "100%";
