@@ -28,11 +28,11 @@ export class RoomDetailComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    document.getElementById('image').onload = () => {
-      let offsetHeight = document.getElementById('image').clientHeight;
-      let top = offsetHeight - 60 + 'px';
-      document.getElementsByClassName('learn-more')[0].setAttribute('top', top);
-    };
+    // document.getElementById('image').onload = () => {
+    //   let offsetHeight = document.getElementById('image').clientHeight;
+    //   let top = offsetHeight - 60 + 'px';
+    //   document.getElementsByClassName('learn-more')[0].setAttribute('top', top);
+    // };
   }
 
   learnMore = () => {
