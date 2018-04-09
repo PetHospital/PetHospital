@@ -18,6 +18,12 @@ export class DataService {
         return this.http.get<RoomInfo[]>(dataUrl);
     }
 
+    getSingleRoomInfo(id): Observable<RoomInfo> {
+        console.log(id);
+        let dataUrl = JSON_URL + '/singleRoom.json';
+        return this.http.get<RoomInfo>(dataUrl);
+    }
+
     getRoleInfo(): Observable<RoleInfo[]> {
         let dataUrl = JSON_URL + '/role-info.json';
         return this.http.get<RoleInfo[]>(dataUrl);

@@ -66,14 +66,12 @@
                         </span>
                     </span>
                 </span> -->
-                <span *ngIf="!isChanging" class="changepw_btn" (click)="changePw()">修改</span>
-                <span *ngIf="isChanging" class="changepw_btn" (click)="changePw()">取消</span>
-                <br><br>           
-                <label for="password2" class="label">
+                <button *ngIf="!isChanging" class="changepw_btn" (click)="changePw()">修改</button>
+                <button *ngIf="isChanging" class="changepw_btn" (click)="changePw()">取消</button>      
+                <label *ngIf="isChanging" for="password2" class="label">
                     重复密码&nbsp;
                     <i class="fa fa-key"></i>
                 </label>
-                <span *ngIf="!isChanging">xxxxxxxx</span> 
                 <input *ngIf="isChanging" type="password" id="password2" class="input" name="password2" [(ngModel)]="formData.password2" #password2="ngModel"
                     required>
                 <!-- <span *ngIf="isChanging">

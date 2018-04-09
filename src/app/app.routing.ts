@@ -15,6 +15,7 @@ import { CollectionComponent } from './online-test/collection/collection.compone
 import { ErrorComponent } from './error/error.component';
 import {TestListComponent} from './online-test/test-list/test-list.component';
 import { TestResultComponent } from './online-test/test-result/test-result.component';
+import { RoomDetailComponent } from './navigation/room-detail/room-detail.component';
 
 
 export const appRoutes: Routes = [
@@ -32,6 +33,7 @@ export const appRoutes: Routes = [
     { path: 'exam/:id', component: ExamComponent},
     { path: 'testList', component: TestListComponent},
     { path: 'testResult/:id', component: TestResultComponent},
+    { path: 'roomDetail/:id', component: RoomDetailComponent},
     { path: '**', component: ErrorComponent }
     
 ];

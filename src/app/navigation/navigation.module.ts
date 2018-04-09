@@ -6,6 +6,7 @@ import { SharedModule } from './../shared/shared.module';
 
 import { SceneComponent } from './scene/scene.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     ],
     declarations: [
         SceneComponent,
-        GalleryComponent
+        GalleryComponent,
+        RoomDetailComponent
     ],
     exports: [
         SceneComponent
