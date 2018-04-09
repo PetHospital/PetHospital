@@ -35,7 +35,7 @@ export const appRoutes: Routes = [
     { path: 'testResult/:id', component: TestResultComponent},
     { path: 'roomDetail/:id', component: RoomDetailComponent},
     { path: '**', component: ErrorComponent }
-    
+
 ];
 
 @NgModule({
