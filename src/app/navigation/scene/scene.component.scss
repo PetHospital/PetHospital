@@ -1,3 +1,5 @@
+$scroll: calc(100vw - 100%);
+
 .onoffswitch-container {
     padding: 21px 3vw;
 
@@ -80,22 +82,74 @@
 }
 
 .scene-wrap {
-    width: 94vw;
-    padding: 0 3vw 6vh 3vw;
-    height: 90vh;
+    width: calc(94vw - $scroll);
+    margin: 0 3vw 6vh 3vw;
+    position: relative;
+    text-align: center;
 
     canvas {
-        height: 100%;
-        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        height: 600px;
+        width: 1000px;
+    }
+
+    .room-list {
+        display: inline-block;
+        vertical-align: middle;
+        ul {
+            position: relative;
+            width: 12vw;
+            background: #a9ba95;
+            overflow: hidden;
+            padding: .5rem 0;
+            li {
+                cursor: pointer;
+                span {
+                    font-family: 'Roboto-Slab-Regular';
+                    padding: 0 .5rem;
+                    line-height: 2rem;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #fff;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to left, rgba(50, 50, 50, 1), rgba(100, 100, 100, 0.5));
+                    transform: translateX(100%);
+                    z-index: -1;
+                }
+
+                &:hover {
+                    transform: scale(1.15);
+                    transition: transform 300ms ease-in-out;
+
+                    &::before {
+                        transform: translateX(0);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                    span {
+                        color: #e6b02b;
+                    }
+                }
+            }
+        }
     }
 }
 
 .marker-group {
     position: absolute;
-    left: 3vw;
+    left: calc((100% - 1000px) / 2);
     top: 186px;
-    width: 94vw;
-    height: 94vh;
+    width: 1000px;
+    height: 600px;
 
     .marker-container {
         position: absolute;
@@ -161,53 +215,53 @@
     }
 
     #marker1 {
-        top: 150px;
-        left: 900px;
+        top: 130px;
+        left: 780px;
     }
 
     #marker2 {
-        top: 250px;
-        left: 870px;
+        top: 230px;
+        left: 770px;
     }
 
     #marker3 {
-        top: 370px;
-        left: 750px;
+        top: 350px;
+        left: 600px;
     }
 
     #marker4 {
         top: 200px;
-        left: 750px;
+        left: 660px;
     }
 
     #marker5 {
-        top: 215px;
-        left: 690px;
+        top: 200px;
+        left: 580px;
     }
 
     #marker6 {
-        top: 170px;
-        left: 680px;
+        top: 150px;
+        left: 580px;
     }
 
     #marker7 {
-        top: 170px;
-        left: 620px;
+        top: 160px;
+        left: 520px;
     }
 
     #marker8 {
-        top: 110px;
-        left: 560px;
+        top: 100px;
+        left: 460px;
     }
 
     #marker9 {
         top: 180px;
-        left: 500px;
+        left: 410px;
     }
 
     #marker10 {
-        top: 150px;
-        left: 420px;
+        top: 120px;
+        left: 325px;
     }
 
     #marker11 {
@@ -216,17 +270,17 @@
     }
 
     #marker12 {
-        top: 290px;
-        left: 400px;
+        top: 280px;
+        left: 300px;
     }
 
     #marker13 {
-        top: 210px;
-        left: 390px;
+        top: 200px;
+        left: 290px;
     }
 
     #marker14 {
-        top: 370px;
-        left: 240px;
+        top: 350px;
+        left: 170px;
     }
 }

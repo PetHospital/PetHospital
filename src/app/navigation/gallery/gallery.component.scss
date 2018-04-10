@@ -1,6 +1,6 @@
 section {
     position: relative;
-    padding: 0 3.5vw;
+    padding: 0 3vw;
 
     .gallery-item {
         display: block;
@@ -43,7 +43,7 @@ section {
 
     .gallery-col {
         position: relative;
-        width: 22.5vw;
+        width: calc(50% - 24vw);
         li {
             padding-bottom: 1vw;
         }
@@ -63,7 +63,7 @@ section {
             height: 32vw;
 
             figure {
-                    height: 22.5vw;
+                height: 22.5vw;
             }
 
             div {

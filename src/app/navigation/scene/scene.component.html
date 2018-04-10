@@ -11,6 +11,55 @@
 <div class="scene-wrap">
     <canvas #canvas (mousedown)="onMouseDown($event)">
     </canvas>
+    <div *ngIf="switchValue" class="room-list">
+        <ul>
+            <li id="room0" (click)="showRoom($event)">
+                <span>All rooms</span>
+            </li>
+            <li id="room1" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room2" (click)="showRoom($event)">
+                <span>Department-of-dog</span>
+            </li>
+            <li id="room3" (click)="showRoom($event)">
+                <span>Department of opathlogy</span>
+            </li>
+            <li id="room4" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room5" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room6" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room7" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room8" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room9" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room10" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room11" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room12" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room13" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+            <li id="room14" (click)="showRoom($event)">
+                <span>Operating-room</span>
+            </li>
+        </ul>
+    </div>
 </div>
 <div *ngIf="!switchValue" class="marker-group">
     <div class="marker-container" id="marker1">
