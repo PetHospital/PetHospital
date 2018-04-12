@@ -65,6 +65,7 @@
         padding-top: 50px;
         width: 700px;
         margin: 0 auto;
+        height: 120vh;
 
         .title {
             font: 40px/45px "visitAB", Helvetica, Arial, sans-serif;
@@ -88,13 +89,26 @@
             margin-bottom: 30px;
 
             .intro {
-                p {
+                float: left;
+                width: 40%;
 
+                p {
+                    word-wrap:break-word
                 }
             }
 
             .imageandvideo {
+                float: right;
+                width: 50%;
+                img {
+                    width: 400px;
+                    height: 300px;
+                }
 
+                video {
+                    object-fit: inherit;
+                    margin-top: 10vh;
+                }
             }
         }
     }
