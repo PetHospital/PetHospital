@@ -35,7 +35,7 @@ export const appRoutes: Routes = [
     { path: 'exercise/:id', component: ExerciseComponent},
     { path: 'testList', component: TestListComponent},
     { path: 'testResult/:type/:id', component: TestResultComponent},
-    { path: 'roomDetail/:name', component: RoomDetailComponent},
+    { path: 'roomDetail/:id', component: RoomDetailComponent},
     { path: '**', component: ErrorComponent }
 
 ];

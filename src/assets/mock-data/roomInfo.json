@@ -66,7 +66,7 @@
         "id": 10,
         "name": "Operation Room",
         "intro": "包括手术室的布局介绍，手术室消毒流程，手术无菌要求，常规手术、特殊手等的操作规范。",
-        "image": "assets/images/hospital/Operation-room.jpg",
+        "image": "assets/images/hospital/Operating-room.jpg",
         "charge": "执业兽医师"
     },
     {
