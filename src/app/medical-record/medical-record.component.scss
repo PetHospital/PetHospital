@@ -19,9 +19,17 @@
         margin-bottom: 10px;
         cursor: pointer;
 
+        .doctor {
+            width: 20px;
+        }
+
         .child {
             margin-left: 10px;
             margin-top: 5px;
+
+            .listen {
+                width: 20px;
+            }
         }
     }
 }
@@ -33,11 +41,12 @@
     background-color: #706e65;
 
     .tip{
-        width: 300px;
+        width: 450px;
         height: 100px;
         position: absolute;
         right: 0;
-        top: 40%;
+        top: 15%;
+        border-radius: 10px 0 0 10px;
         color: wheat;
         background-color: rgba(98,97,89,0.8);
         display:flex;/*Flex布局*/
@@ -98,8 +107,6 @@
                 object-fit: inherit;
             }
         }
-
-
     }
 }
 

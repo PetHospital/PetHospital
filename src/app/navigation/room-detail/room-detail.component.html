@@ -1,21 +1,30 @@
 <div class="header-wrapper">
-  <div class="content-header">
-    <app-header></app-header>
-  </div>
+    <div class="content-header">
+        <app-header></app-header>
+    </div>
 </div>
 <div class="content">
-  <div class="image-wrapper">
-    <img *ngIf="room" src={{room.image}} id="image" class="image" />
-  </div>
-  <div class="learn-more" (click)="learnMore()">
-    <p class="word">LEARN MORE</p>
-  </div>
-  <div class="detail">
-    <div class="title">{{room && room.name}}</div>
-    <p class="charge">主要负责人：助理、执业兽医师</p>
-    <p class="word-content">
-      {{room && room.intro}}
-    </p>
-  </div>
+    <div class="image-wrapper">
+        <img *ngIf="room" src={{room.image}} id="image" class="image" />
+        <div class="learn-more">
+            <p class="word">LEARN MORE</p>
+            <p class="arrow-bottom">
+                <img src="/assets/images/share/arrow-bottom.png">
+            </p>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="title">{{room && room.name}}</div>
+        <p class="charge">主要负责人：助理、执业兽医师</p>
+        <div class="word-content">
+            <div class="intro">
+                <p>{{room && room.intro}}</p>
+            </div>
+            <div class="imageandvideo">
+                <img src="/assets/images/7.jpg">
+                <video poster="/assets/images/7.jpg" class="video" width="380" height="250" src="../../assets/videos/mango.MP4" controls="controls"></video>
+            </div>
+        </div>
+    </div>
 </div>
 <app-footer></app-footer>

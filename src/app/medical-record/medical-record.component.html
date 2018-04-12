@@ -1,12 +1,13 @@
+<app-header></app-header>
 <div class="categories">
   <h2 class="title">病例目录</h2>
   <div *ngFor="let parent of diseaseList" class="parent">
     <span (click)="parent.isExpanded = !parent.isExpanded;">
-      <i [ngClass]="{'fa-caret-down' : parent.isExpanded, 'fa-caret-right' : !parent.isExpanded }" class="fa large"></i>&nbsp;{{parent.name}}
+      <img src="../../assets/images/medicalRecord/doctor.png" class="doctor"/>&nbsp;{{parent.name}}
     </span>
     <div *ngIf="parent.isExpanded">
       <div *ngFor="let child of parent.children" class="child">
-        <span (click)="showDetail(parent, child)"><i class="fa fa-user-md large"></i>&nbsp;
+        <span (click)="showDetail(parent, child)"><img src="../../assets/images/medicalRecord/listen.png" class="listen"/>&nbsp;
           {{child.name}}</span>
       </div>
     </div>
@@ -17,7 +18,7 @@
   <div *ngIf="currentRecord.name === null">
     <img src="../../assets/images/medicalRecord/nullrecord.jpeg" class="null-record-image"/>
     <div class="tip">
-      <h2>请选择您想要学习的病例</h2>
+      <h2>请在左侧目录中选择您想要学习的病例</h2>
     </div>
   </div>
   <div *ngIf="currentRecord.name !== null" class="content">
