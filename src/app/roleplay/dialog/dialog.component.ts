@@ -7,21 +7,13 @@ import { Component, OnInit, Input, ViewChild, EventEmitter, Output} from '@angul
 export class DialogComponent implements OnInit {
   @Output() dialogMsg: EventEmitter<any> = new EventEmitter();
   isClose: boolean;
-  constructor() { }
+  progresses: Array<string>;
+  clickMessages: Array<string>;
 
-  progresses = [
-    'first stepfirst',
-    'second stepsecond',
-    'third step',
-    'fourth step'
-  ];
-
-  clickMessages = [
-    '前台',
-    null,
-    '档案室',
-    null
-  ];
+  constructor() { 
+    this.progresses = ['您好，我是您的医疗助手。'];
+    this.clickMessages = [];
+  }
 
   userMessage = {
     "true": "Yes I understand",

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, PracticeTitle, PracticeTab } from './../../model/model';
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, PracticeTitle, PracticeTab, DialogInfo } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -50,6 +50,11 @@ export class DataService {
     getPracticeItem(): Observable<PracticeItem[]> {
         let dataUrl = JSON_URL + '/examlist.json';
         return this.http.get<PracticeItem[]>(dataUrl);
+    }
+
+    getDialogInfo(): Observable<DialogInfo[]> {
+        let dataUrl = JSON_URL + '/role-dialog.json';
+        return this.http.get<DialogInfo[]>(dataUrl);
     }
 }
 

@@ -1,4 +1,4 @@
-<div class="dialog" [class.hide] = "isClose">
+<div class="dialog">
 
   <div class="dialog-bar">
     <span>test</span>
@@ -11,7 +11,7 @@
             <div *ngFor="let message of messages">
                 <div *ngIf="!message.isUser" class="sys-msg">
                     <div class="avatar"></div>
-                    <div class="text">{{message.content}}</div>
+                    <div class="text" (click)="onClickMsg(message.clickMsg)">{{message.content}}</div>
                 </div> 
                 <div *ngIf="message.isUser" class="usr-msg">
                   <div class="text">{{message.content}}</div>

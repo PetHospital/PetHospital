@@ -1,8 +1,15 @@
 <div class="content">
-    <div class="top-bar"></div>
-    <div class="department-info" [class.hide]="isHide"><app-card></app-card></div>
-    <div class="btm-bar"></div>
-    <div class="right">
-        <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+    <div [class.hide]="isShow">
+            <div class="top-bar"></div>
+            <div class="department-info" [class.hide]="isHide"><app-card></app-card></div>
+            <div class="btm-bar"></div>
+            <div class="right">
+                <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+            </div>
+    </div>
+    <div *ngIf="isShow" [class.hide]="!isShow">
+        <div class="select" (click)=onClickQian()>前台</div>
+        <div class="select" (click)=onClickYi()>医助</div>
+        <div class="select" (click)=onClickShou()>兽医师</div>
     </div>
 </div>

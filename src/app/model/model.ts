@@ -68,3 +68,9 @@ export interface PracticeTab {
     id: number;
     name: String;
 }
+
+export interface DialogInfo {
+    role: string;
+    progresess: Array<string>;
+    clickMessages: Array<string>;
+}
