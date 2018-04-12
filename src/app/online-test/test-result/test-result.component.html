@@ -1,7 +1,8 @@
 <div class="test-result-title" *ngIf="result">
   <h3 class="test-name-title ">
-    {{result.examName}}
-    <a class="back-to-list" href="/testList">返回考试列表</a>
+    查看练习结果
+    <a [class.hide]="isExam===false" class="back-to-list" href="/testList">返回考试列表</a>
+    <a [class.hide]="isExam===true" class="back-to-list" href="/practice">返回练习列表</a>
   </h3>
   <div class="result-info">
     <div class="test-result-number">
@@ -11,7 +12,7 @@
   </div>
   <div class="result-info">
     <div class="test-result-score">
-        <p>考试得分：</p>
+        <p>最终得分：</p>
         <h1 style="color:gold">{{result.score}}</h1>
     </div>
   </div>
@@ -49,6 +50,12 @@
               </p>
             </div>
         </div>
+      </div>
     </div>
+    <div class="gre-ugc-wrapper" *ngIf="selectedQuestion">
+      <h3>题目解析</h3>
+      <div class="explain-cont">
+        <span>{{selectedQuestion.question.solution}}</span>
+      </div>
     </div>
 </div>

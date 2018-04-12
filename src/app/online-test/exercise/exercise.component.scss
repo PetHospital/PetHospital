@@ -1,0 +1,202 @@
+.em_main {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.ec_sidel {
+    width: 162px;
+    float: left;
+    position: relative;
+}
+.ec_sider {
+    width: 802px;
+    float: right;
+}
+.golbal_side {
+    position: fixed;
+    z-index: 1000;
+}
+.Navigation {
+    width: 160px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.ec_card {
+    width: 160px;
+    min-height: 100px;
+    border: 1px solid #bec2c5;
+    background: #f0f0f0;
+    font-family: 'Microsoft Yahei';
+    padding-bottom: 20px;
+}
+.ec_ca_cpt {
+    height: 20px;
+    line-height: 20px;
+    padding: 8px;
+    font-size: 16px;
+    color: #838383;
+}
+.ep_sidel_span {
+    color: #999;
+    height: 119px;
+    cursor: default;
+    background: #f0f0f0;
+    float: left;
+    width: 160px;
+    color: #555;
+    text-shadow: 1px 1px 0 #fff;
+    border-radius: 15px 15px 15px 15px; 
+}
+.ep_sidel_a:hover{
+	background: #6C6C6C;
+}
+.ec_sa_span {
+    width: 160px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-top: -9px;
+}
+.ep_topic {
+    width: 796px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: solid 1px #d9d9d9;
+}
+.ep_t_topic {
+    padding: 7px 0;
+    background: #eee;
+    overflow: hidden;
+}
+.ep_tt_num {
+    color: #97b7cd;
+    font-size: 30px;
+    font-family: 'Verdana';
+    padding: 0 8px 0 14px;
+    float: left;
+}
+.ep_tt_topic{
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-family: 宋体;
+    line-height: 24px;
+    float: left;
+}
+.ep_t_ul {
+    list-style-position: inside;
+    margin-top: 2%;
+    li{
+        margin-bottom: 10px;
+        b {
+            display: inline-block;
+            padding-right: 5px;
+            font-size: 14px;
+            font-family: 'Arial';
+            color: #333;
+        }
+        p {
+            display: inline;
+        }
+    }
+}
+.ep_radio {
+    margin-left: 3%;
+    display: inline-block;
+    margin-right: 13px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.pading{
+	 padding: 7px 0;
+}
+.ep_img{
+    width: 55px;
+    height:55px;
+    margin-left: 48px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.ec_title {
+    width: 160px;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.time_show {
+    width: 160px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-top: -9px;
+}
+.btn_submit {
+    float: right;
+    color: #d9eef7;
+    border: solid 1px #0076a3;
+    width: 100px;
+    height: 30px;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    border-radius: 2em;
+    text-align: center;
+  }
+  .ex_alert_background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1001;
+    background-color: rgba(0,0,0,.541176);
+  }
+  .ex_alert_box {
+    position: absolute; 
+    align-content: center;
+    justify-content: center;
+    width: 340px;
+    height: 200px;
+    z-index: 1002;
+    margin-top: -21%;
+    margin-left: 37%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .ex_alert_title {
+    color: #222c37;
+    font-weight: 300;
+    font-size: 30px;
+    margin-left: 25%;
+    margin-top: 20px;
+  }
+  .show_result_button {
+    float: right;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #fef4e9;
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+    margin-right: 14px;
+    margin-top: 90px;
+}
