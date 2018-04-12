@@ -9,21 +9,34 @@ export class DialogComponent implements OnInit {
   isClose: boolean;
   progresses: Array<string>;
   clickMessages: Array<string>;
+  messages: Array<Object>;
+  currentIndex: number;
 
   constructor() { 
     this.progresses = ['您好，我是您的医疗助手。'];
-    this.clickMessages = [];
+    this.clickMessages = [''];
+    this.messages = [];
+    this.currentIndex = 0;
   }
 
   userMessage = {
-    "true": "Yes I understand",
-    "false": "Sorry I don't get it"
+    "true": "好的明白了！",
+    "false": "可以再讲一遍吗？"
   };
 
-  currentIndex = 0;
-  messages = [];
-
   ngOnInit() {
+    this.messages = [];
+    this.currentIndex = 0;
+    this.messages.push({
+      "content": this.progresses[0],
+      "isUser": false,
+      "clickMsg": this.clickMessages[0]
+    });
+  }
+
+  initMessages() {
+    this.messages = [];
+    this.currentIndex = 0;
     this.messages.push({
       "content": this.progresses[0],
       "isUser": false,

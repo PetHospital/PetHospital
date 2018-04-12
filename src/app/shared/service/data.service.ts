@@ -2,12 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-<<<<<<< HEAD
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, PracticeTitle, PracticeTab, DialogInfo } from './../../model/model';
-=======
 
-import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree, PracticeTitle, PracticeTab, ExamItem, TestResult } from './../../model/model';
->>>>>>> d3eff754ba6bb4290e8bba168117a34bec4e0c1c
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree, PracticeTitle, PracticeTab, ExamItem, TestResult, DialogInfo } from './../../model/model';
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;

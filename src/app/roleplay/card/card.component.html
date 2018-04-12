@@ -5,26 +5,18 @@
       <span class="title">{{content.title}}</span>
       <span>{{content.content}}</span>
     </div>
-    <div class="media">
-      <div class="pic">
-        <img [src]="content.pic[0]">
-      </div>
-      <div class="cover" (click)="onShowPic()">
-        <span>点击放大图片</span>
-      </div>
-      <div class="vedio">
-        <img [src]="content.pic[0]">
-      </div>
+
+   
       <div class="media">
         <div class="pic">
-          <img [src]="coverPic">
+          <img [src]="content.pic[0]">
         </div>
         <div class="cover" (click)="onShowPic()"><span>点击放大图片</span></div>
         <div class="video">
-          <img [src]="coverPic">
+          <img [src]="content.pic[0]">
         </div>
         <div class="cover"><span>点击播放视频</span></div>
       </div>
-    </div>
+
   </div>
 </div>
