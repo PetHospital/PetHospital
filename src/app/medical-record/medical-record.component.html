@@ -1,6 +1,6 @@
 <div class="categories">
   <h2 class="title">病例目录</h2>
-  <div *ngFor="let parent of nodes" class="parent">
+  <div *ngFor="let parent of diseaseList" class="parent">
     <span (click)="parent.isExpanded = !parent.isExpanded;">
       <i [ngClass]="{'fa-caret-down' : parent.isExpanded, 'fa-caret-right' : !parent.isExpanded }" class="fa large"></i>&nbsp;{{parent.name}}
     </span>
@@ -28,7 +28,7 @@
         </div>
         <div class="intro" >
           <br>
-          <p><span>多发群体:&nbsp;</span>狗、纯种狗/警犬多发</p>
+          <p><span>多发群体:&nbsp;</span>{{currentRecord.description}}</p>
           <br>          
           <p><span>常见症状:&nbsp;</span> 犬瘟热症状初期狗的体温高达39．5～41摄氏度，食欲不振，精神沉郁，
             眼鼻流出水样分泌物，打喷嚏，有腹泻。在以后2～14天内再次出现体温升高，咳嗽，
@@ -45,7 +45,7 @@
         <div class="imageandvideo">
             <img [src]="coverPic" class="image" (click)="onShowPic()">
             <app-big-pic></app-big-pic>
-            <video class="video" width="300" height="250" src="../../assets/videos/mango.MP4" controls="controls"></video>
+            <video poster="../../assets/images/7.jpg" class="video" width="380" height="250" src="../../assets/videos/mango.MP4" controls="controls"></video>
         </div>
       </div>
     </div>

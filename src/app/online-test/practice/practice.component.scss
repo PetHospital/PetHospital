@@ -136,6 +136,7 @@ background-repeat: no-repeat;
     margin-right: 12px;
     margin-bottom: 8px;
     line-height: 24px;
+    cursor: pointer;
 }
 .filtrate-links.active {
     background: #4C91FF;
@@ -161,6 +162,10 @@ background-repeat: no-repeat;
 .list-cont {
     overflow: hidden;
     margin: 0px 32px;
+    display: none;
+}
+.show-area {
+    display: block;
 }
 .practice-list-cont {
     margin-bottom: 40px;

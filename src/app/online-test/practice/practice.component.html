@@ -1,9 +1,8 @@
 <div class="left-container">
     <div class="all-see g-mod-shadow">
         <div class="tab-list g-clearfix">
-          <li *ngFor="let title of practiceTitles"
-            (click)="SelectList(title)"><a [class.list-active]="title===OnSelectedTitle" class="tab-links">{{title.name}}</a>
-          </li>
+          <a class="tab-links list-active">顺序练习</a>
+          <a href="/testList" class="tab-links">在线考试</a>
           <a href="/mistake" class="tab-links">我的测试</a>
         </div>
         <div class="filtrate-cont">
@@ -16,7 +15,7 @@
               </li></div>
             </div>
         </div>
-        <div class="list-cont" *ngFor="let parent of practiceItems">
+        <div id="all-list" class="list-cont" *ngFor="let parent of practiceItems" [class.show-area]="easy===true && normal===true && hard===true">
             <div class="practice-list-cont">
                 <div class="list-title-cont">
                     <div class="list-title">{{parent.name}}</div>
@@ -31,7 +30,7 @@
                     <div class="score_show">
                       <span class="score-num">Last score: </span>
                     </div>
-                    <a href="exam/{{parent.id}}" class="plan-icon practice-icon">
+                    <a href="/#/exam/{{parent.id}}" class="plan-icon practice-icon">
                       <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                     </a>
                   </div>
@@ -39,6 +38,75 @@
               </div>
             </div>
         </div>
+        <div id="easy-list" class="list-cont" *ngFor="let parent of easyItems" [class.show-area]="easy===true && normal===false && hard===false">
+          <div class="practice-list-cont">
+              <div class="list-title-cont">
+                  <div class="list-title">{{parent.name}}</div>
+              </div>
+              <div *ngFor="let child of parent.items">
+                <div class="practice-list">
+                  <div class="practice-lists">
+                  <a class="practice-title">{{child.name}}</a>
+                  <div class="tab-cout">
+                    <span class="type {{child.level}}">{{child.level}}</span>
+                  </div>
+                  <div class="score_show">
+                    <span class="score-num">Last score: </span>
+                  </div>
+                  <a href="/#/exam/{{parent.id}}" class="plan-icon practice-icon">
+                    <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="normal-list" class="list-cont" *ngFor="let parent of normalItems" [class.show-area]="easy===false && normal===true && hard===false">
+          <div class="practice-list-cont">
+              <div class="list-title-cont">
+                  <div class="list-title">{{parent.name}}</div>
+              </div>
+              <div *ngFor="let child of parent.items">
+                <div class="practice-list">
+                  <div class="practice-lists">
+                  <a class="practice-title">{{child.name}}</a>
+                  <div class="tab-cout">
+                    <span class="type {{child.level}}">{{child.level}}</span>
+                  </div>
+                  <div class="score_show">
+                    <span class="score-num">Last score: </span>
+                  </div>
+                  <a href="/#/exam/{{parent.id}}" class="plan-icon practice-icon">
+                    <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="hard-list" class="list-cont" *ngFor="let parent of hardItems" [class.show-area]="easy===false && normal===false && hard===true">
+        <div class="practice-list-cont">
+            <div class="list-title-cont">
+                <div class="list-title">{{parent.name}}</div>
+            </div>
+            <div *ngFor="let child of parent.items">
+              <div class="practice-list">
+                <div class="practice-lists">
+                <a class="practice-title">{{child.name}}</a>
+                <div class="tab-cout">
+                  <span class="type {{child.level}}">{{child.level}}</span>
+                </div>
+                <div class="score_show">
+                  <span class="score-num">Last score: </span>
+                </div>
+                <a href="/#/exam/{{parent.id}}" class="plan-icon practice-icon">
+                  <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
+                </a>
+              </div>
+             </div>
+            </div>
+          </div>
+      </div>
     </div>
 </div>
 <div class="right-container">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PracticeItem, PracticeTitle, PracticeTab} from '../../model/model';
+import {SingleItem, PracticeItem, PracticeTitle, PracticeTab} from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-practice',
@@ -8,36 +8,69 @@ import { DataService } from './../../shared/service/data.service';
 })
 export class PracticeComponent implements OnInit {
 
-  practiceTitles: PracticeTitle[];
+  practiceTabs: PracticeTab[] = [
+    {id: 1, name: "全部"},
+    {id: 2, name: "入门题目"},
+    {id: 3, name: "中等题目"},
+    {id: 4, name: "官方难题"}
+  ];
 
-  OnSelectedTitle: PracticeTitle;
-
-  practiceTabs: PracticeTab[];
-
-  OnSelectedTab: PracticeTab;
+  OnSelectedTab = this.practiceTabs[0];
 
   practiceItems: PracticeItem[];
+  easyItems: Array<PracticeItem> = [];
+  normalItems: Array<PracticeItem> = [];
+  hardItems: Array<PracticeItem> = [];
 
-  OnSelectedItem: PracticeItem;
+  easy: boolean;
+  normal: boolean;
+  hard: boolean;
 
   constructor(private dataService: DataService) {
-    this.dataService.getPracticeTitle().subscribe(data => this.practiceTitles = data);
-    this.dataService.getPracticeTab().subscribe(data => this.practiceTabs = data);
-    this.dataService.getPracticeItem().subscribe(data => this.practiceItems = data);
+    this.dataService.getPracticeItem().subscribe(data => { 
+      this.practiceItems = data;
+      for (let i in this.practiceItems) {
+        if (this.practiceItems[i].level === "easy") {
+          this.easyItems.push(this.practiceItems[i]);
+       }else if (this.practiceItems[i].level === "normal") {
+         this.normalItems.push(this.practiceItems[i]);
+       }else if (this.practiceItems[i].level === "hard") {
+         this.hardItems.push(this.practiceItems[i]);
+       }
+      }
+      console.log(this.easyItems);
+      console.log(this.normalItems);
+      console.log(this.hardItems);
+      this.easy = true;
+      this.normal = true;
+      this.hard = true;
+    });
    }
   ngOnInit() {
-  }
-
-  SelectList(title: PracticeTitle): void {
-    this.OnSelectedTitle = title;
   }
   
   SelectTab(tab: PracticeTab): void {
     this.OnSelectedTab = tab;
-  }
-
-  SelectItem(item: PracticeItem): void {
-    this.OnSelectedItem = item;
+    console.log(this.easy);
+    console.log(this.normal);
+    console.log(this.hard);
+    if (tab.name === "全部") {
+      this.easy = true;
+      this.normal = true;
+      this.hard = true;
+    }else if (tab.name === "入门题目") {
+      this.easy = true;
+      this.normal = false;
+      this.hard = false;
+    }else if (tab.name === "中等题目") {
+      this.easy = false;
+      this.normal = true;
+      this.hard = false;
+    }else if (tab.name === "官方难题") {
+      this.easy = false;
+      this.normal = false;
+      this.hard = true;
+    }
   }
 
 }

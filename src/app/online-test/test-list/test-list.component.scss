@@ -1,0 +1,78 @@
+.ec_sider {
+    width: 802px;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+.er_containerbox {
+    width: 802px;
+    overflow: hidden;
+}
+.eo_sj_next {
+    display: inline;
+    padding-bottom: 11px;
+}
+.eo_title_b {
+    border-bottom: solid 2px #e7e5e5;
+    height: 45px;
+    width: 802px;
+}
+.green .eo_c_title {
+    color: #5ea72e;
+    border-bottom: solid 2px #5ea72e;
+}
+.eo_c_title {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    font-size: 22px;
+    font-family: 微软雅黑;
+    padding: 0px 9px;
+}
+.detail-lists-cont {
+    font-size: 14px;
+}
+.detail-list {
+    padding: 0 32px;
+    overflow: hidden;
+    .detail-list-box {
+        line-height: 24px;
+        padding: 12px 0;
+        overflow: hidden;
+        border-top: 1px dashed #d5d5d5;
+        .detial-serial-num {
+            display: block;
+            float: left;
+            width: 28px;
+            font-size: 14px;
+            color: #999;
+            margin-right: 8px;
+        }
+    }
+}
+.js-subject-title {
+    display: inline;
+    max-width: 92%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.redo-exam {
+    float: right;
+    margin-right: 40px;
+    color: #4c91ff;
+}
+.details-title {
+    line-height: 28px;
+    font-size: 18px;
+    float: left;
+    font-weight: 700;
+}
+.detials-title-cont {
+    margin-top: 20px;
+    padding: 0 32px 8px;
+    overflow: hidden;
+}
+.bottom_list{
+    border-bottom: 1px dashed #d5d5d5;
+}

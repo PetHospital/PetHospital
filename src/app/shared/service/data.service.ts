@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
+<<<<<<< HEAD
 import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, PracticeTitle, PracticeTab, DialogInfo } from './../../model/model';
+=======
+
+import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree, PracticeTitle, PracticeTab, ExamItem, TestResult } from './../../model/model';
+>>>>>>> d3eff754ba6bb4290e8bba168117a34bec4e0c1c
 
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
@@ -15,6 +20,12 @@ export class DataService {
     getRoomInfo(): Observable<RoomInfo[]> {
         let dataUrl = JSON_URL + '/navigation.json';
         return this.http.get<RoomInfo[]>(dataUrl);
+    }
+
+    getSingleRoomInfo(id): Observable<RoomInfo> {
+        console.log(id);
+        let dataUrl = JSON_URL + '/singleRoom.json';
+        return this.http.get<RoomInfo>(dataUrl);
     }
 
     getRoleInfo(): Observable<RoleInfo[]> {
@@ -37,19 +48,29 @@ export class DataService {
         return this.http.get<ExamQuestion[]>(dataUrl);
     }
 
-    getPracticeTitle(): Observable<PracticeTitle[]> {
-        let dataUrl = JSON_URL + '/practiceTitle.json';
-        return this.http.get<PracticeTitle[]>(dataUrl);
-    }
-
-    getPracticeTab(): Observable<PracticeTab[]> {
-        let dataUrl = JSON_URL + '/practiceTab.json';
-        return this.http.get<PracticeTab[]>(dataUrl);
-    }
-
     getPracticeItem(): Observable<PracticeItem[]> {
-        let dataUrl = JSON_URL + '/examlist.json';
+        let dataUrl = JSON_URL + '/practicelist.json';
         return this.http.get<PracticeItem[]>(dataUrl);
+    }
+    getDiseases(): Observable<DiseaseTree[]> {
+        let dataUrl = JSON_URL + '/diseaseTree.json';
+        return this.http.get<DiseaseTree[]>(dataUrl);
+    }
+
+    getUserInfo(): Observable<Object> {
+        let dataUrl = JSON_URL + '/userinfo.json';
+        return this.http.get<Object>(dataUrl);
+    }
+
+
+    getExamItem(): Observable<ExamItem[]> {
+        let dataUrl = JSON_URL + '/examlist.json';
+        return this.http.get<ExamItem[]>(dataUrl);
+    }
+
+    getTestResult(): Observable<TestResult> {
+        let dataUrl = JSON_URL + '/testResult.json';
+        return this.http.get<TestResult>(dataUrl);
     }
 
     getDialogInfo(): Observable<DialogInfo[]> {

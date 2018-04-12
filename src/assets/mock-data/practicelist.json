@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "宠物犬饲养经典练习-1",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"easy"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"easy"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"easy"
+            }
+        ],
+        "level": "easy"
+    },
+    {
+        "id": 2,
+        "name": "宠物犬饲养经典练习-2",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"normal"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"normal"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"normal"
+            }
+        ],
+        "level":"normal"
+    },
+    {
+        "id": 3,
+        "name": "宠物犬饲养经典练习-3",
+        "items":[
+            {
+                "id":1,
+                "name":"Part-1",
+                "level":"hard"
+            },
+            {
+                "id":2,
+                "name":"Part-2",
+                "level":"hard"
+            },
+            {
+                "id":3,
+                "name":"Part-3",
+                "level":"hard"
+            }
+        ],
+        "level":"hard"
+    }
+]

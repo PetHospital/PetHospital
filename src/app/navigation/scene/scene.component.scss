@@ -1,0 +1,286 @@
+$scroll: calc(100vw - 100%);
+
+.onoffswitch-container {
+    padding: 21px 3vw;
+
+    .onoffswitch {
+        position: relative;
+        width: 100px;
+        user-select: none;
+    }
+
+    .onoffswitch-checkbox {
+        display: none;
+    }
+
+    .onoffswitch-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #999999;
+        border-radius: 20px;
+    }
+
+    .onoffswitch-inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+
+    .onoffswitch-inner:before,
+    .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 30px;
+        padding: 0;
+        line-height: 30px;
+        font-size: 1rem;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    .onoffswitch-inner:before {
+        content: "3D ON";
+        padding-left: 13px;
+        background-color: #4FACDB;
+        color: #FFFFFF;
+    }
+
+    .onoffswitch-inner:after {
+        content: "3D OFF";
+        padding-right: 13px;
+        background-color: #F50E4C;
+        color: #FAFAFA;
+        text-align: right;
+    }
+
+    .onoffswitch-switch {
+        display: block;
+        width: 21px;
+        margin: 4.5px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 65px;
+        border: 2px solid #999999;
+        border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+    }
+}
+
+.scene-wrap {
+    width: calc(94vw - $scroll);
+    margin: 0 3vw 6vh 3vw;
+    position: relative;
+    text-align: center;
+
+    canvas {
+        display: inline-block;
+        vertical-align: middle;
+        height: 600px;
+        width: 1000px;
+    }
+
+    .room-list {
+        display: inline-block;
+        vertical-align: middle;
+        ul {
+            position: relative;
+            width: 12vw;
+            background: #a9ba95;
+            overflow: hidden;
+            padding: .5rem 0;
+            li {
+                cursor: pointer;
+                span {
+                    font-family: 'Roboto-Slab-Regular';
+                    padding: 0 .5rem;
+                    line-height: 2rem;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #fff;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to left, rgba(50, 50, 50, 1), rgba(100, 100, 100, 0.5));
+                    transform: translateX(100%);
+                    z-index: -1;
+                }
+
+                &:hover {
+                    transform: scale(1.15);
+                    transition: transform 300ms ease-in-out;
+
+                    &::before {
+                        transform: translateX(0);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                    span {
+                        color: #e6b02b;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.marker-group {
+    position: absolute;
+    left: calc((100% - 1000px) / 2);
+    top: 186px;
+    width: 1000px;
+    height: 600px;
+
+    .marker-container {
+        position: absolute;
+        width: 22px;
+        height: 35px;
+        cursor: pointer;
+        z-index: 50;
+        background: transparent url('./../../../assets/images/share/marker-shadow.png') no-repeat left bottom;
+        &:hover {
+            .tooltip {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        p {
+            display: block;
+            position: absolute;
+            margin-top: 3px;
+            width: 22px;
+            height: 32px;
+            text-indent: -5555px;
+            background: transparent url('./../../../assets/images/share/marker.png') no-repeat left bottom;
+            background-size: 22px 32px;
+        }
+
+        .tooltip {
+            width: 248px;
+            height: 210px;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            font-size: .8rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-left: 15px;
+            padding: 0 0 0 10px;
+            display: none;
+            opacity: 0;
+
+            figure {
+                margin: 0;
+                img {
+                    display: block;
+                    user-select: none;
+                    width: 248px;
+                    height: 156px;
+                    clip-path: polygon(4% 0, 100% 0%, 100% 100%, 4% 100%, 4% 30%, 0 23%, 4% 16%);
+                }
+
+                figcaption {
+                    position: relative;
+                    width: 238px;
+                    height: 53px;
+                    background: #333333;
+                    text-align: center;
+                    line-height: 53px;
+                    margin-left: 10px;
+                    border-radius: 0px 0px 5px 5px;
+                }
+            }
+        }
+    }
+
+    #marker1 {
+        top: 130px;
+        left: 780px;
+    }
+
+    #marker2 {
+        top: 230px;
+        left: 770px;
+    }
+
+    #marker3 {
+        top: 350px;
+        left: 600px;
+    }
+
+    #marker4 {
+        top: 200px;
+        left: 660px;
+    }
+
+    #marker5 {
+        top: 200px;
+        left: 580px;
+    }
+
+    #marker6 {
+        top: 150px;
+        left: 580px;
+    }
+
+    #marker7 {
+        top: 160px;
+        left: 520px;
+    }
+
+    #marker8 {
+        top: 100px;
+        left: 460px;
+    }
+
+    #marker9 {
+        top: 180px;
+        left: 410px;
+    }
+
+    #marker10 {
+        top: 120px;
+        left: 325px;
+    }
+
+    #marker11 {
+        top: 390px;
+        left: 400px;
+    }
+
+    #marker12 {
+        top: 280px;
+        left: 300px;
+    }
+
+    #marker13 {
+        top: 200px;
+        left: 290px;
+    }
+
+    #marker14 {
+        top: 350px;
+        left: 170px;
+    }
+}

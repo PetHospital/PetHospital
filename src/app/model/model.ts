@@ -43,8 +43,14 @@ export interface PracticeItem {
     id: number;
     name: String;
     items: SingleItem[];
+    level: String;
+}
+
+export interface ExamItem {
+    id: number;
+    name: String;
     startTime: String;
-    Duration: String;
+    duration: number;
 }
 export interface Mistake {
     id: number;
@@ -59,6 +65,19 @@ export interface Collection {
     showSolution: boolean;
 }
 
+export interface DiseaseTree {
+    id: number;
+    name: string;
+    children: Disease[];
+}
+
+export interface Disease {
+    id: number;
+    name: string;
+    description: string;
+    images: string[];
+    video: string;
+}
 export interface PracticeTitle {
     id: number;
     name: String;
@@ -73,4 +92,18 @@ export interface DialogInfo {
     role: string;
     progresess: Array<string>;
     clickMessages: Array<string>;
+}
+export interface QuestionResult  {
+    question: ExamQuestion;
+    myAnswer: String;
+    isCorrect: boolean;
+}
+
+export interface TestResult {
+    id: number;
+    examName: String;
+    score: number;
+    correctNumber: number;
+    wrongNumber: number;
+    questionResult: QuestionResult[];
 }

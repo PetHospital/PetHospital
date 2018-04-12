@@ -4,13 +4,14 @@ import './js/EnableThreeExamples';
 import 'three/examples/js/controls/OrbitControls';
 import 'three/examples/js/loaders/OBJLoader';
 import 'three/examples/js/loaders/MTLLoader';
-import { Vector3 } from 'three';
+import { Vector3, BooleanKeyframeTrack } from 'three';
 
 @Component({
-  selector: 'app-scene',
-  templateUrl: './scene.component.html',
-  styleUrls: ['./scene.component.scss']
+    selector: 'app-scene',
+    templateUrl: './scene.component.html',
+    styleUrls: ['./scene.component.scss']
 })
+
 export class SceneComponent implements AfterViewInit {
     private renderer: THREE.WebGLRenderer;
     private camera: THREE.PerspectiveCamera;
@@ -23,10 +24,13 @@ export class SceneComponent implements AfterViewInit {
 
     public controls: THREE.OrbitControls;
 
+    private switchValue: boolean;
+
     @ViewChild('canvas')
     private canvasRef: ElementRef;
 
     constructor() {
+        this.switchValue = false;
         this.render = this.render.bind(this);
         this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
     }
@@ -37,7 +41,6 @@ export class SceneComponent implements AfterViewInit {
 
     private createScene() {
         this.scene = new THREE.Scene();
-        // this.scene.add(new THREE.AxesHelper(1000));
         let loader = new THREE.MTLLoader();
         loader.setPath('assets/model/hospital_mtl/');
         loader.load('hospital.mtl', this.onModelLoadingCompleted);
@@ -75,7 +78,6 @@ export class SceneComponent implements AfterViewInit {
         this.camera.position.x = 400;
         this.camera.position.y = 2800;
         this.camera.position.z = 2000;
-
     }
 
     private getAspectRatio(): number {
@@ -96,7 +98,7 @@ export class SceneComponent implements AfterViewInit {
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.renderer.setClearColor(0xADD8E6, 1);
+        this.renderer.setClearColor(0xe1ebed, 1);
         this.renderer.autoClear = true;
 
         let component: SceneComponent = this;
@@ -112,20 +114,20 @@ export class SceneComponent implements AfterViewInit {
     }
 
     public addControls() {
-        this.controls = new THREE.OrbitControls(this.camera);
+        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
         this.controls.maxDistance = 3600;
         this.controls.minDistance = 0;
         this.controls.maxPolarAngle = Math.PI / 2;
         this.controls.minPolarAngle = 0;
         this.controls.rotateSpeed = 1.0;
         this.controls.zoomSpeed = 1.0;
+        this.controls.enableKeys = false;
+        this.controls.enabled = false;
         this.controls.addEventListener('change', this.render);
     }
 
     public onMouseDown(event: MouseEvent) {
-        console.log("onMouseDown");
         event.preventDefault();
-
         // mesh selection:
         let raycaster = new THREE.Raycaster();
         let mouse = new THREE.Vector2();
@@ -136,11 +138,6 @@ export class SceneComponent implements AfterViewInit {
         let obj: THREE.Object3D[] = [];
         this.findAllObjects(obj, this.scene);
         let intersects = raycaster.intersectObjects(obj);
-        console.log("Scene has " + obj.length + " objects");
-        console.log(intersects.length + " intersected objects found");
-        intersects.forEach((i) => {
-            console.log(i.object);
-        });
 
     }
 
@@ -153,26 +150,15 @@ export class SceneComponent implements AfterViewInit {
         }
     }
 
-    public onMouseUp(event: MouseEvent) {
-        console.log("onMouseUp");
-    }
-
-
-    @HostListener('window:resize', ['$event'])
+    @HostListener('resize', ['$event'])
     public onResize(event: Event) {
         this.canvas.style.width = "100%";
         this.canvas.style.height = "100%";
-        console.log("onResize: " + this.canvas.clientWidth + ", " + this.canvas.clientHeight);
 
         this.camera.aspect = this.getAspectRatio();
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
         this.render();
-    }
-
-    @HostListener('document:keypress', ['$event'])
-    public onKeyPress(event: KeyboardEvent) {
-        console.log("onKeyPress: " + event.key);
     }
 
     ngAfterViewInit() {
@@ -181,5 +167,114 @@ export class SceneComponent implements AfterViewInit {
         this.createCamera();
         this.startRendering();
         this.addControls();
+    }
+
+    switchChange() {
+        this.switchValue = !this.switchValue;
+        if (this.switchValue) {
+            this.controls.enabled = true;
+            this.camera.position.x = 0;
+            this.camera.position.y = 3500;
+            this.camera.position.z = 0;
+            this.camera.lookAt(new Vector3(0, 0, 0));
+        } else {
+            this.controls.enabled = false;
+            this.controls.reset();
+        }
+    }
+
+    showRoom(event) {
+        switch (event.path[1].id) {
+            case 'room0':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room1':
+                this.camera.position.x = 650;
+                this.camera.position.y = 1800;
+                this.camera.position.z = 450;
+                this.camera.lookAt(new Vector3(650, 0, 450));
+                break;
+            case 'room2':
+                this.camera.position.x = 1500;
+                this.camera.position.y = 1500;
+                this.camera.position.z = -500;
+                this.camera.lookAt(new Vector3(1500, 0, -500));
+                break;
+            case 'room3':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room4':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room5':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room6':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room7':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room8':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room9':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room10':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room11':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room12':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room13':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+            case 'room14':
+                this.camera.position.x = 0;
+                this.camera.position.y = 3500;
+                this.camera.position.z = 0;
+                this.camera.lookAt(new Vector3(0, 0, 0));
+                break;
+        }
     }
 }

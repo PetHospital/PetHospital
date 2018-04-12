@@ -1,0 +1,120 @@
+.index-footer {
+    padding-left: 22rem;
+    @media screen and (max-width: 82rem) {
+        padding-left: 25%;
+    }
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    background: #706e65;
+
+    .footer-content {
+        padding: 0 1.25rem;
+        color: #fff;
+
+        .footer-left {
+            float: left;
+            padding-left: 1.25rem;
+
+            .p-name {
+                position: relative;
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
+                text-align: center;
+                font-size: 1rem;
+
+                &::after {
+                    transform: translateX(-50%);
+                    content: '';
+                    background-color: #a9ba95;
+                    display: block;
+                    height: 5px;
+                    width: 80px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                }
+            }
+
+            .p-icon {
+                font-size: 0.8rem;
+                line-height: 20px;
+                padding-bottom: 0.25rem;
+                font-weight: 600;
+
+                span::before {
+                    content: "";
+                    display: inline-block;
+                    margin-right: 0.5rem;
+                    width: 20px;
+                    height: 20px;
+                    vertical-align: middle;
+                }
+            }
+
+            .p-address {
+                span::before {
+                    background: url('/assets/images/index/location.png');
+                }
+            }
+
+            .p-phone {
+                span::before {
+                    background: url('/assets/images/index/phone.png');
+                }
+            }
+
+            .p-email {
+                span::before {
+                    background: url('/assets/images/index/email.png');
+                }
+            }
+
+            .p-chat {
+                span::before {
+                    background: url('/assets/images/index/chat.png');
+                }
+            }
+        }
+
+        .footer-right {
+            float: right;
+            padding-right: 1.25rem;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.8rem;
+
+            .social-links {
+                position: relative;
+                margin-bottom: 0.5rem;
+
+                a {
+                    cursor: pointer;
+                    margin: 0 0 0 0.65rem;
+                    display: inline-block;
+                    height: 40px;
+                    width: 40px;
+                    background-color: #a9ba95;
+                    border-radius: 5px;
+                    text-align: center;
+
+                    img {
+                        height: 60%;
+                        transform: translateY(30%);
+                    }
+                }
+
+                a:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            .work-hours {
+                margin-bottom: 0.5rem;
+            }
+
+            .copyright {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
