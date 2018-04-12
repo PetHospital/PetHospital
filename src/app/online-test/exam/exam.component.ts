@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild  } from '@angular/core';
-import {ExamQuestion} from '../../model/model';
+import { ExamQuestion } from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";

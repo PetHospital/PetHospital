@@ -13,31 +13,51 @@
     text-align: center;
 
     .image-wrapper {
+        position: relative;
         width: 100%;
+        height: 100vh;
 
         .image {
             width: 100%;
-            height: 500px;
+            height: 100%;
         }
-    }
 
-    .learn-more {
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 50px;
-        text-align: center;
-        top:440px;
-
-
-        .word {
+        .learn-more {
+            position: absolute;
+            bottom: 0;
+            left: calc(150% - 100vw - 120px);
+            text-align: center;
             background: #ff4e1c;
             color: white;
             width: 240px;
-            height: 60px;
             padding: 10px;
-            margin: 0 auto;
-            cursor: pointer;
+
+            .word {
+                font-family: 'Roboto-Slab-Regular';
+            }
+
+            .arrow-bottom {
+                margin-top: 0;
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &:hover {
+                animation: button-pop .5s ease infinite;
+                @keyframes button-pop {
+                    0% {
+                        transform: scale3d(1, 1, 1);
+                    }
+                    50% {
+                        transform: scale3d(1.05, 1.05, 1);
+                    }
+                    100% {
+                        transform: scale3d(1, 1, 1);
+                    }
+                }
+            }
         }
     }
 
@@ -45,6 +65,7 @@
         padding-top: 50px;
         width: 700px;
         margin: 0 auto;
+        height: 120vh;
 
         .title {
             font: 40px/45px "visitAB", Helvetica, Arial, sans-serif;
@@ -53,20 +74,42 @@
             margin-bottom: 40px;
         }
 
-        ::-moz-selection{background: #ff4e1c;color: #ffffff;} 
+        ::-moz-selection{background: #ff4e1c;color: #ffffff;}
         ::selection{background: #ff4e1c;color: #ffffff;}
 
         .charge {
-            font: 18px/26px "visitAR", Helvetica, Arial, sans-serif;
+            font: 18px/26px "Roboto-Slab-Regular", Helvetica, Arial, sans-serif;
             color: #ff4e1c;
             text-align: center;
             margin-bottom: 30px;
         }
         .word-content {
-            font: 14px/26px "visitAR", Helvetica, Arial, sans-serif;
+            font: 14px/26px "Roboto-Slab-Regular", Helvetica, Arial, sans-serif;
             color: #4c4c4c;
-            margin-bottom: 30px;            
+            margin-bottom: 30px;
+
+            .intro {
+                float: left;
+                width: 40%;
+
+                p {
+                    word-wrap:break-word
+                }
+            }
+
+            .imageandvideo {
+                float: right;
+                width: 50%;
+                img {
+                    width: 400px;
+                    height: 300px;
+                }
+
+                video {
+                    object-fit: inherit;
+                    margin-top: 10vh;
+                }
+            }
         }
     }
-    
 }

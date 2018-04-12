@@ -16,6 +16,7 @@ import { ErrorComponent } from './error/error.component';
 import {TestListComponent} from './online-test/test-list/test-list.component';
 import { TestResultComponent } from './online-test/test-result/test-result.component';
 import { RoomDetailComponent } from './navigation/room-detail/room-detail.component';
+import { ExerciseComponent } from './online-test/exercise/exercise.component';
 
 
 export const appRoutes: Routes = [
@@ -31,8 +32,9 @@ export const appRoutes: Routes = [
     { path: 'mistake', component: MistakeComponent},
     { path: 'collection', component: CollectionComponent},
     { path: 'exam/:id', component: ExamComponent},
+    { path: 'exercise/:id', component: ExerciseComponent},
     { path: 'testList', component: TestListComponent},
-    { path: 'testResult/:id', component: TestResultComponent},
+    { path: 'testResult/:type/:id', component: TestResultComponent},
     { path: 'roomDetail/:id', component: RoomDetailComponent},
     { path: '**', component: ErrorComponent }
 
