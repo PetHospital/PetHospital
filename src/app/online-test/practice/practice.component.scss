@@ -162,6 +162,10 @@ background-repeat: no-repeat;
 .list-cont {
     overflow: hidden;
     margin: 0px 32px;
+    display: none;
+}
+.show-area {
+    display: block;
 }
 .practice-list-cont {
     margin-bottom: 40px;

@@ -43,6 +43,7 @@ export interface PracticeItem {
     id: number;
     name: String;
     items: SingleItem[];
+    level: String;
 }
 
 export interface ExamItem {

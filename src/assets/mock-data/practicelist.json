@@ -18,7 +18,8 @@
                 "name":"Part-3",
                 "level":"easy"
             }
-        ]
+        ],
+        "level": "easy"
     },
     {
         "id": 2,
@@ -39,7 +40,8 @@
                 "name":"Part-3",
                 "level":"normal"
             }
-        ]
+        ],
+        "level":"normal"
     },
     {
         "id": 3,
@@ -60,6 +62,7 @@
                 "name":"Part-3",
                 "level":"hard"
             }
-        ]
+        ],
+        "level":"hard"
     }
 ]
