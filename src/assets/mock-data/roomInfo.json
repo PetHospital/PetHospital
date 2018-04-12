@@ -7,13 +7,6 @@
         "charge": "前台"
     },
     {
-        "id": 1,
-        "name": "Record Room",
-        "intro": "包括病例档案的合理保存与数据统计等。",
-        "image": "assets/images/hospital/Record-room.jpeg",
-        "charge": "前台"
-    },
-    {
         "id": 2,
         "name": "Department of Ophtalmology",
         "intro": "包括诊室的布局介绍；对宠物进行临床基本检查（视、听、触、嗅等）、疾病诊断；与宠物主人交流并根据情况开具处方。",
@@ -39,13 +32,6 @@
         "name": "Laboratory",
         "intro": "包括对送检样本的预处理，对相应样本进行血常规、血液生化、电解质、血气、血凝指标、激素指标、尿常规、微生物学检查、药敏、皮肤刮片、粪便检查、传染病检查等检查操作流程。",
         "image": "assets/images/hospital/Laboratory.jpg",
-        "charge": "助理、执业兽医师"
-    },
-    {
-        "id": 6,
-        "name": "X Ray Room",
-        "intro": "包括X线检查、B超检查以及CT、MRI检查。如X线检查：X光机的结构功能介绍、全身各部位的摆位、拍摄条件的选择、拍摄流程、洗片的操作流程。B超检查：扫查探头的选择、全身各个部位扫查的摆位、腹部扫查流程。",
-        "image": "assets/images/hospital/X-ray-room.jpg",
         "charge": "助理、执业兽医师"
     },
     {
@@ -85,16 +71,9 @@
     },
     {
         "id": 6,
-        "name": "In Patient Department for Cats",
+        "name": "In Patient Department",
         "intro": "包括对需要住院的病例进行护理分级，不同护理级别的要求，住院部的工作流程，住院部的消毒流程等。",
         "image": "assets/images/hospital/In-patient-department-for-cat.jpg",
-        "charge": "住院执业兽医师、助理执业兽医师"
-    },
-    {
-        "id": 7,
-        "name": "In Patient Department for Dogs",
-        "intro": "包括对需要住院的病例进行护理分级，不同护理级别的要求，住院部的工作流程，住院部的消毒流程等。",
-        "image": "assets/images/hospital/In-patient-department-for-Dog.jpg",
         "charge": "住院执业兽医师、助理执业兽医师"
     },
     {

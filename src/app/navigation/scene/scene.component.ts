@@ -1,5 +1,7 @@
-import { Component, AfterViewInit, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, HostListener, OnInit } from '@angular/core';
 import * as THREE from 'three';
+import { HttpClient } from '@angular/common/http';
+import { DataService } from '../../shared/service/data.service';
 import './js/EnableThreeExamples';
 import 'three/examples/js/controls/OrbitControls';
 import 'three/examples/js/loaders/OBJLoader';
@@ -12,11 +14,12 @@ import { Vector3, BooleanKeyframeTrack } from 'three';
     styleUrls: ['./scene.component.scss']
 })
 
-export class SceneComponent implements AfterViewInit {
+export class SceneComponent implements AfterViewInit, OnInit {
     private renderer: THREE.WebGLRenderer;
     private camera: THREE.PerspectiveCamera;
     private cameraTarget: THREE.Vector3;
     public scene: THREE.Scene;
+    roomInfos: any;
 
     public fieldOfView: number = 60;
     public nearClippingPane: number = 1;
@@ -29,10 +32,17 @@ export class SceneComponent implements AfterViewInit {
     @ViewChild('canvas')
     private canvasRef: ElementRef;
 
-    constructor() {
+    constructor(private http: HttpClient, private dataService: DataService) {
         this.switchValue = false;
         this.render = this.render.bind(this);
         this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
+    }
+
+    ngOnInit () {
+        this.dataService.getRoomInfo().subscribe(data => {
+            this.roomInfos = data;
+            console.log(this.roomInfos);
+        });
     }
 
     private get canvas(): HTMLCanvasElement {
