@@ -62,7 +62,16 @@
     </div>
 </div>
 <div *ngIf="!switchValue" class="marker-group">
-    <div class="marker-container" id="marker1">
+    <div class="marker-container" *ngFor="let room of roomInfos">
+        <p>Operating Room</p>
+        <a class="tooltip" [routerLink]="['/roomDetail/1']">
+            <figure>
+                <img src="/assets/images/hospital/Operating-room.jpg">
+                <figcaption>Operating Room</figcaption>
+            </figure>
+        </a>
+    </div>
+    <!-- <div class="marker-container" id="marker1">
         <p>Operating Room</p>
         <a class="tooltip" [routerLink]="['/roomDetail/1']">
             <figure>
@@ -73,7 +82,7 @@
     </div>
     <div class="marker-container" id="marker2">
         <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
+        <a class="tooltip" [routerLink]="['/roomDetail/2']">
             <figure>
                 <img src="/assets/images/hospital/Operating-room.jpg">
                 <figcaption>Operating Room</figcaption>
@@ -82,7 +91,7 @@
     </div>
     <div class="marker-container" id="marker3">
         <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
+        <a class="tooltip" [routerLink]="['/roomDetail/3']">
             <figure>
                 <img src="/assets/images/hospital/Operating-room.jpg">
                 <figcaption>Operating Room</figcaption>
@@ -187,6 +196,6 @@
                 <figcaption>Operating Room</figcaption>
             </figure>
         </a>
-    </div>
+    </div> -->
 </div>
 <app-gallery></app-gallery>

@@ -14,7 +14,7 @@ export class DataService {
     constructor(private http: HttpClient) {}
 
     getRoomInfo(): Observable<RoomInfo[]> {
-        let dataUrl = JSON_URL + '/navigation.json';
+        let dataUrl = JSON_URL + '/roomInfo.json';
         return this.http.get<RoomInfo[]>(dataUrl);
     }
 
