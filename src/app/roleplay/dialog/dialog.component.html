@@ -1,7 +1,7 @@
-<div class="dialog" [class.hide] = "isClose">
+<div class="dialog">
 
   <div class="dialog-bar">
-    <span>test</span>
+    <span>您的医疗助手</span>
     <div class="btn-close" (click) = "onClose()">
       <img src="../../../assets/images/role/quit2.png">
     </div>
@@ -10,11 +10,12 @@
           <li>
             <div *ngFor="let message of messages">
                 <div *ngIf="!message.isUser" class="sys-msg">
-                    <div class="avatar"></div>
-                    <div class="text">{{message.content}}</div>
+                    <div class="avatar"><img src="../../../assets/images/role/A1.jpg"></div>
+                    <div class="text" (click)="onClickMsg(message.clickMsg)">{{message.content}}</div>
                 </div> 
                 <div *ngIf="message.isUser" class="usr-msg">
                   <div class="text">{{message.content}}</div>
+                  <div class="avatar"><img src="../../../assets/images/role/A2.jpg"></div>
                 </div>
             </div>
           </li>
@@ -22,19 +23,19 @@
     </div>
     <ul class="dialog-btm">
         <li>
-          <button class="btn" (click)="addUserMessage(true)">Yes, I understand.</button>
+          <button class="btn" (click)="addUserMessage(true)">好的明白了！</button>
         </li>
         <li>
-          <button class="btn" (click)="addUserMessage(false)">No, I don't understand.</button>
+          <button class="btn" (click)="addUserMessage(false)">可以再讲一遍吗？</button>
         </li>
       </ul>
   </div>
   <ul class="dialog-btm">
     <li>
-      <button class="btn" (click)="addUserMessage(true)">Yes, I understand.</button>
+      <button class="btn" (click)="addUserMessage(true)">好的明白了！</button>
     </li>
     <li>
-      <button class="btn" (click)="addUserMessage(false)">No, I don't understand.</button>
+      <button class="btn" (click)="addUserMessage(false)">可以再讲一遍吗？</button>
     </li>
   </ul>
 

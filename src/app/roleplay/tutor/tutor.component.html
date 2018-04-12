@@ -1,8 +1,24 @@
 <div class="content">
-    <div class="top-bar"></div>
-    <div class="department-info" [class.hide]="isHide"><app-card></app-card></div>
-    <div class="btm-bar"></div>
-    <div class="right">
-        <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+        <div class="bg"><img src="../../../assets/images/role/tutor-background.png" class="blur"></div>
+
+    <div [class.hide]="isShow">
+        <div class="front">
+            <!-- <div class="top-bar" [class.hide]="!showBar"></div> -->
+            <div class="department-info" [class.hide]="isHide"><app-card></app-card></div>
+            <!-- <div class="btm-bar" [class.hide]="!showBar"></div> -->
+            <div class="right">
+                <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+            </div>
+        </div>
+        <div class="bg"><img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur"></div>
     </div>
+    <div *ngIf="isShow" [class.hide]="!isShow" class="select-content">
+        <span>请选择你要扮演的角色</span>
+        <div class="select-bar">
+            <div class="select" (click)=onClickQian()>前台</div>
+            <div class="select" (click)=onClickYi()>医助</div>
+            <div class="select" (click)=onClickShou()>兽医师</div>
+        </div>
+    </div>
+    
 </div>

@@ -1,28 +1,26 @@
-.hide{
-    display: none;
-}
-
-.top-bar{
-    position: fixed;
-    top:0;
-    background: #111;
-    height: 100px;
-    width: 100%;
-    transition: height 1s ease-in;
-}
-
-.btm-bar{
-    position: fixed;
-    bottom:0;
-    background: #111;
-    height: 100px;
-    width: 100%;
-    transition: height 1s ease-in;
-}
-
 .content{
     height: 100%;
     width: 100%;
+    font-family: 'Roboto-Slab-Regular';
+
+    .front{
+        z-index: 10000;
+    }
+
+    .bg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -100;
+    
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
     .right{
         position: fixed;
         top: 0;
@@ -35,6 +33,7 @@
         width: 50%;
         font-size: 16px;
         line-height: 1.5;
+        z-index: 200000;
     }
 
     .department-info{
@@ -43,6 +42,68 @@
         bottom: 100px;
         width: 50%;
     }
+
+    .select-content{
+        width: 100%;
+        font-family: 'Roboto-Slab-Regular';
+        
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            padding-top: 130px;
+        }
+        .select-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            position: absolute;
+            bottom: 200px;
+            .select{
+                height: 150px;
+                width: 150px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                box-shadow: 0 0 15px rgba(0,0,0,.12);
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.top-bar{
+    position: fixed;
+    top:0;
+    background: #111;
+    height: 100px;
+    width: 100%;
+    transition: height 1s ease-in;
+    z-index: 10000;
+
+}
+
+.btm-bar{
+    position: fixed;
+    bottom:0;
+    background: #111;
+    height: 100px;
+    width: 100%;
+    transition: height 1s ease-in;
+    z-index: 10000;
+
+}
+
+.blur{
+    filter: blur(3px);
 }
 
 
