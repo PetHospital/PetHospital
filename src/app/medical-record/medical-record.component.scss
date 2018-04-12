@@ -1,25 +1,71 @@
-.record-container {
-    height: calc(100vh - 110px);
-    .categories {
-        width: 20%;
-        height: 100%;
-        overflow: auto;
-        padding-top: 20px;
-        padding-left: 50px;
-        box-sizing: border-box;
-        background-color: #706e65;
-        color: white;
-        .title {
-            font-size: 120%;
+.categories {
+    width: 20%;
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+    padding-top: 20px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    background-color: #706e65;
+    color: white;
+
+    .title{
+        font-size: 120%;
+    }
+
+    .parent{
+        width: 200px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .doctor {
+            width: 20px;
         }
-        .parent {
-            width: 200px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            .child {
-                margin-left: 10px;
-                margin-top: 5px;
+
+        .child {
+            margin-left: 10px;
+            margin-top: 5px;
+
+            .listen {
+                width: 20px;
+            }
+        }
+    }
+}
+
+.recordContent {
+    width: 80%;
+    float: right;
+    height: 100%;
+    background-color: #706e65;
+
+    .tip{
+        width: 450px;
+        height: 100px;
+        position: absolute;
+        right: 0;
+        top: 15%;
+        border-radius: 10px 0 0 10px;
+        color: wheat;
+        background-color: rgba(98,97,89,0.8);
+        display:flex;/*Flex布局*/
+        display: -webkit-flex; /* Safari */
+        align-items:center;
+        justify-content: center;
+    }
+
+    .null-record-image {
+        width: 100%;
+    }
+
+    .content{
+        margin: 20px;
+        overflow: hidden;
+
+        .diseaseTitle{
+            span {
+                color: #F5F5F5;
             }
         }
     }
