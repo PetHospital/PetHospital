@@ -1,0 +1,39 @@
+<div class="em_main">
+  <div class="ec_sidel">
+      <div class="golbal_side">
+          <div class="Navigation">
+              <span class="ep_sidel_span">
+                  <li class="ec_title">练习时间：</li>
+                  <span class="time_show">{{hour}}: {{minute}}: {{second}}</span>
+              </span>
+          </div>
+      </div>
+  </div>
+  <form action="#" method="post" #exerciseForm="ngForm" (ngSubmit)="doSubmit(exerciseForm.value)">
+      <div class="ec_sider" *ngFor="let parent of QuestionLists">
+          <div class="ep_topic">
+              <div class="ep_t_topic">
+                  <div class="ep_tt_num">{{parent.id}}</div>
+                  <div class="ep_tt_topic pading">【{{parent.type}}】</div>
+                  <div class="pading"><span>{{parent.subject}}</span></div>
+              </div>
+                      <ul class="ep_t_ul" *ngFor="let child of parent.options">
+                      <li>
+                          <label>
+                              <input class="ep_radio" name="{{parent.id}}" type="radio" value="A">
+                              <b>{{child.id}}.</b><p>{{child.content}}</p>                                
+                          </label>
+                      </li>
+                      </ul>
+          </div>
+      </div>
+      <div class="ec_sider">
+          <button type="submit" tabindex="4" class="btn_submit">完 成</button>
+      </div>
+  </form>
+</div>
+<div *ngIf="isFinished" class="ex_alert_background"></div>
+<div *ngIf="isFinished" class="ex_alert_box">
+  <p class="ex_alert_title">已完成练习！</p>
+  <a href="/testResult/exercise/{{id}}" class="show_result_button">查看结果</a>
+</div>
