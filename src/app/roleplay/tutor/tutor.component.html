@@ -1,6 +1,4 @@
 <div class="content">
-        <div class="bg"><img src="../../../assets/images/role/tutor-background.png" class="blur"></div>
-
     <div [class.hide]="isShow">
         <div class="front">
             <!-- <div class="top-bar" [class.hide]="!showBar"></div> -->
@@ -13,11 +11,24 @@
         <div class="bg"><img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur"></div>
     </div>
     <div *ngIf="isShow" [class.hide]="!isShow" class="select-content">
-        <span>请选择你要扮演的角色</span>
+        <span>ROLE CHOOSE</span>
+        <div class="line"></div>
         <div class="select-bar">
-            <div class="select" (click)=onClickQian()>前台</div>
-            <div class="select" (click)=onClickYi()>医助</div>
-            <div class="select" (click)=onClickShou()>兽医师</div>
+            <div class="select" (click)=onClickQian()>
+                <div class="title">前台</div>
+                <div class="content">点击进入，对前台非常感兴趣？并学习前台、档案室的各项功能，撑起医院的门面</div>
+                <img src="../../../assets/images/role/qiantai.jpg">
+            </div>
+            <div class="select" (click)=onClickYi()>
+                <div class="title">医助</div>
+                <div class="content">点击进入，并学习免疫室、化验室、影像室、处置室、注射室、住院部、药房的各项功能</div>
+                <img src="../../../assets/images/role/yizhu.jpg">
+            </div>
+            <div class="select" (click)=onClickShou()>
+                <div class="title">兽医师</div>
+                <div class="content">点击进入，了解诊室、免疫室、化验室、影像室、专科检查室、专科检查室、注射室等</div>
+                <img src="../../../assets/images/role/shouyi.jpg">
+            </div>
         </div>
     </div>
     
