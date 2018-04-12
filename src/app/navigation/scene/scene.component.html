@@ -13,189 +13,24 @@
     </canvas>
     <div *ngIf="switchValue" class="room-list">
         <ul>
-            <li id="room0" (click)="showRoom($event)">
-                <span>All rooms</span>
+            <li (click)="showRoom($event)">
+                <span>All Rooms</span>
             </li>
-            <li id="room1" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room2" (click)="showRoom($event)">
-                <span>Department-of-dog</span>
-            </li>
-            <li id="room3" (click)="showRoom($event)">
-                <span>Department of opathlogy</span>
-            </li>
-            <li id="room4" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room5" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room6" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room7" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room8" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room9" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room10" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room11" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room12" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room13" (click)="showRoom($event)">
-                <span>Operating-room</span>
-            </li>
-            <li id="room14" (click)="showRoom($event)">
-                <span>Operating-room</span>
+            <li *ngFor="let room of roomInfos" (click)="showRoom($event)">
+                <span>{{room.name}}</span>
             </li>
         </ul>
     </div>
 </div>
 <div *ngIf="!switchValue" class="marker-group">
     <div class="marker-container" *ngFor="let room of roomInfos">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail/1']">
+        <p>{{room.name}}</p>
+        <a class="tooltip" [routerLink]="['/roomDetail', room.id]">
             <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
+                <img src={{room.image}}>
+                <figcaption>{{room.name}}</figcaption>
             </figure>
         </a>
     </div>
-    <!-- <div class="marker-container" id="marker1">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail/1']">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker2">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail/2']">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker3">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail/3']">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker4">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker5">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker6">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker7">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker8">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker9">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker10">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker11">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker12">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker13">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div>
-    <div class="marker-container" id="marker14">
-        <p>Operating Room</p>
-        <a class="tooltip" [routerLink]="['/roomDetail']" [queryParams]="{id:1}">
-            <figure>
-                <img src="/assets/images/hospital/Operating-room.jpg">
-                <figcaption>Operating Room</figcaption>
-            </figure>
-        </a>
-    </div> -->
 </div>
 <app-gallery></app-gallery>

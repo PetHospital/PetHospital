@@ -19,7 +19,6 @@ export class SceneComponent implements AfterViewInit, OnInit {
     private camera: THREE.PerspectiveCamera;
     private cameraTarget: THREE.Vector3;
     public scene: THREE.Scene;
-    roomInfos: any;
 
     public fieldOfView: number = 60;
     public nearClippingPane: number = 1;
@@ -28,6 +27,8 @@ export class SceneComponent implements AfterViewInit, OnInit {
     public controls: THREE.OrbitControls;
 
     private switchValue: boolean;
+
+    private roomInfos: any;
 
     @ViewChild('canvas')
     private canvasRef: ElementRef;
@@ -41,7 +42,6 @@ export class SceneComponent implements AfterViewInit, OnInit {
     ngOnInit () {
         this.dataService.getRoomInfo().subscribe(data => {
             this.roomInfos = data;
-            console.log(this.roomInfos);
         });
     }
 
@@ -194,92 +194,92 @@ export class SceneComponent implements AfterViewInit, OnInit {
     }
 
     showRoom(event) {
-        switch (event.path[1].id) {
-            case 'room0':
+        switch (event.toElement.innerText) {
+            case 'All Rooms':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room1':
+            case 'Registration Office':
                 this.camera.position.x = 650;
                 this.camera.position.y = 1800;
                 this.camera.position.z = 450;
                 this.camera.lookAt(new Vector3(650, 0, 450));
                 break;
-            case 'room2':
+            case 'Department of Ophtalmology':
                 this.camera.position.x = 1500;
                 this.camera.position.y = 1500;
                 this.camera.position.z = -500;
                 this.camera.lookAt(new Vector3(1500, 0, -500));
                 break;
-            case 'room3':
+            case 'Department of Stomatology':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room4':
+            case 'Immunology Laboratory':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room5':
+            case 'Laboratory':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room6':
+            case 'Treatment Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room7':
+            case 'Pharmacy Dispensary':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room8':
+            case 'Injection Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room9':
+            case 'Operation Preparation Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room10':
+            case 'Operation Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room11':
+            case 'In Patient Department':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room12':
+            case 'Pathological Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room13':
+            case 'Consultation Room':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
                 this.camera.lookAt(new Vector3(0, 0, 0));
                 break;
-            case 'room14':
+            case 'ICU':
                 this.camera.position.x = 0;
                 this.camera.position.y = 3500;
                 this.camera.position.z = 0;
