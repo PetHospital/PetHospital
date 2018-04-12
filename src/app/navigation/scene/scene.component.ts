@@ -214,76 +214,76 @@ export class SceneComponent implements AfterViewInit, OnInit {
                 this.camera.lookAt(new Vector3(1500, 0, -500));
                 break;
             case 'Department of Stomatology':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = 1800;
+                this.camera.position.y = 800;
+                this.camera.position.z = -1300;
+                this.camera.lookAt(new Vector3(1800, 0, -1300));
                 break;
             case 'Immunology Laboratory':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = 1000;
+                this.camera.position.y = 800;
+                this.camera.position.z = -700;
+                this.camera.lookAt(new Vector3(1000, 0, -700));
                 break;
             case 'Laboratory':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = 500;
+                this.camera.position.y = 600;
+                this.camera.position.z = -900;
+                this.camera.lookAt(new Vector3(500, 0, -900));
                 break;
             case 'Treatment Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = 500;
+                this.camera.position.y = 600;
+                this.camera.position.z = -500;
+                this.camera.lookAt(new Vector3(500, 0, -500));
                 break;
             case 'Pharmacy Dispensary':
                 this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.y = 800;
+                this.camera.position.z = -700;
+                this.camera.lookAt(new Vector3(0, 0, -700));
                 break;
             case 'Injection Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -600;
+                this.camera.position.y = 1300;
+                this.camera.position.z = -600;
+                this.camera.lookAt(new Vector3(-600, 0, -600));
                 break;
             case 'Operation Preparation Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -1400;
+                this.camera.position.y = 800;
+                this.camera.position.z = -850;
+                this.camera.lookAt(new Vector3(-1400, 0, -850));
                 break;
             case 'Operation Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -1400;
+                this.camera.position.y = 800;
+                this.camera.position.z = -250;
+                this.camera.lookAt(new Vector3(-1400, 0, -250));
                 break;
             case 'In Patient Department':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -500;
+                this.camera.position.y = 700;
+                this.camera.position.z = -1300;
+                this.camera.lookAt(new Vector3(-500, 0, -1300));
                 break;
             case 'Pathological Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -950;
+                this.camera.position.y = 1000;
+                this.camera.position.z = 350;
+                this.camera.lookAt(new Vector3(-950, 0, 350));
                 break;
             case 'Consultation Room':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -800;
+                this.camera.position.y = 800;
+                this.camera.position.z = 1000;
+                this.camera.lookAt(new Vector3(-800, 0, 1000));
                 break;
             case 'ICU':
-                this.camera.position.x = 0;
-                this.camera.position.y = 3500;
-                this.camera.position.z = 0;
-                this.camera.lookAt(new Vector3(0, 0, 0));
+                this.camera.position.x = -1700;
+                this.camera.position.y = 800;
+                this.camera.position.z = 1000;
+                this.camera.lookAt(new Vector3(-1700, 0, 1000));
                 break;
         }
     }
