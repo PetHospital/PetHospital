@@ -305,3 +305,16 @@ background-repeat: no-repeat;
     background: rgb(240, 236, 7);
     color: #FFF;
 }
+.user-message {
+    float: left;
+    line-height: 23px;
+    margin-left: 8px;
+    margin-top: 7px;
+}
+.user-nikename {
+    line-height: 24px;
+    max-width: 106px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
