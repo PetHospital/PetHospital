@@ -11,8 +11,9 @@ export class CollectionComponent implements OnInit {
   CollectionList: any[];
 
   constructor(private dataService: DataService) {
-    this.dataService.getCollection()
-                        .subscribe(data => this.CollectionList = data);
+    this.dataService.getCollection().subscribe(data => {
+      this.CollectionList = data;
+    });
   }
 
   ngOnInit() {
