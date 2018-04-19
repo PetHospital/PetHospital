@@ -25,13 +25,16 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
   id: number;
 
   constructor(private dataService: DataService, private http: HttpClient, private route: ActivatedRoute) { 
-    this.dataService.getQuestions()
-                        .subscribe(data => this.QuestionLists = data);
+    
   }
 
   ngOnInit() {
     this.isFinished = false;
     this.route.params.subscribe((params) => this.id = params.id);
+    this.dataService.getQuestions(this.id)
+                        .subscribe(data => {
+                          this.QuestionLists = data;
+  });
   }
   
   private get diff() {

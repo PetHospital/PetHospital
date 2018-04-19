@@ -20,23 +20,22 @@ export interface MedicalRecord {
     isExpanded: boolean;
 }
 
-export interface Option {
-    id: String;
-    content: String;
-}
 
 export interface ExamQuestion {
-    id: number;
-    type: String;
-    subject: String;
-    options: Option[];
+    qid: number;
+    text: String;
+    kind: String;
+    choice1: String;
+    choice2: String;
+    choice3: String;
+    choice4: String;
     answer: String;
     solution: String;
 }
 export interface SingleItem {
     id: number;
     name: String;
-    level: String;
+    level: number;
 }
 
 export interface PracticeItem {
@@ -47,9 +46,11 @@ export interface PracticeItem {
 }
 
 export interface ExamItem {
-    id: number;
-    name: String;
-    startTime: String;
+    eid: number;
+    description: String;
+    postdate: String;
+    pubdate: String;
+    author: number;
     duration: number;
 }
 export interface Mistake {

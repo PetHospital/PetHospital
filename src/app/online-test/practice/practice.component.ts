@@ -15,6 +15,10 @@ export class PracticeComponent implements OnInit {
     {id: 4, name: "官方难题"}
   ];
 
+  level: String[] = [
+    "easy", "normal", "hard", "low", "medium", "high"
+  ];
+
   OnSelectedTab = this.practiceTabs[0];
 
   practiceItems: PracticeItem[];

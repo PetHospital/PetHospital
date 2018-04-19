@@ -10,21 +10,39 @@
       </div>
   </div>
   <form action="#" method="post" #exerciseForm="ngForm" (ngSubmit)="doSubmit(exerciseForm.value)">
-      <div class="ec_sider" *ngFor="let parent of QuestionLists">
+      <div class="ec_sider" *ngFor="let parent of QuestionLists; let i = index">
           <div class="ep_topic">
               <div class="ep_t_topic">
-                  <div class="ep_tt_num">{{parent.id}}</div>
-                  <div class="ep_tt_topic pading">【{{parent.type}}】</div>
+                  <div class="ep_tt_num">{{i+1}}</div>
+                  <div class="ep_tt_topic pading">【单选】</div>
                   <div class="pading"><span>{{parent.subject}}</span></div>
               </div>
-                      <ul class="ep_t_ul" *ngFor="let child of parent.options">
-                      <li>
-                          <label>
-                              <input class="ep_radio" name="{{parent.id}}" type="radio" value="A">
-                              <b>{{child.id}}.</b><p>{{child.content}}</p>                                
-                          </label>
-                      </li>
-                      </ul>
+              <ul class="ep_t_ul">
+                <li>
+                    <label>
+                        <input class="ep_radio" name="{{parent.qid}}" type="radio" value="1">
+                        <b>A.</b><p>{{parent.choice1}}</p>                                
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="ep_radio" name="{{parent.qid}}" type="radio" value="2">
+                        <b>B.</b><p>{{parent.choice2}}</p>                                
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="ep_radio" name="{{parent.qid}}" type="radio" value="3">
+                        <b>C.</b><p>{{parent.choice3}}</p>                                
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input class="ep_radio" name="{{parent.qid}}" type="radio" value="4">
+                        <b>D.</b><p>{{parent.choice4}}</p>                                
+                    </label>
+                </li>
+                </ul>
           </div>
       </div>
       <div class="ec_sider">

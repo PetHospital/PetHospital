@@ -12,7 +12,9 @@ export class TestListComponent implements OnInit {
   examList: ExamItem[];
 
   constructor(private dataService: DataService) {
-    this.dataService.getExamItem().subscribe(data => this.examList = data);
+    this.dataService.getExamItem().subscribe(data => {
+      this.examList = data; 
+    });
   }
 
   ngOnInit() {
