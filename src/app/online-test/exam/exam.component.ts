@@ -69,10 +69,15 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.examForm.valid) {
       return;
     }
+    let exam = {
+      examid: this.id,
+      submission: obj,
+    };
+    console.log(exam);
     this.isFinished = true;
-    let url = 'http://localhost:8000/';
+    let url = 'http://115.159.143.108/test/submit';
     console.log(JSON.stringify(obj));
-    this.http.post(url, obj).subscribe(
+    this.http.post(url, exam).subscribe(
       data => {
         console.log(data);
       },

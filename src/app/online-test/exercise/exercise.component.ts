@@ -42,7 +42,6 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
     this.route.params.subscribe((params) => this.level = params.level);
     this.dataService.getExercise(this.level)
                         .subscribe(data => {
-                          console.log(data);
                           this.QuestionLists = data;
                         });
   }
