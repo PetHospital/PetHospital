@@ -20,7 +20,10 @@ export class TutorComponent implements OnInit, AfterViewInit {
     isHide: boolean = true;
     isShow: boolean = true;
     showBar: boolean = false;
-    isBlur: boolean = true;
+    isBlur: boolean = false;
+    currentRole: number;
+    highlightRooms: any[];
+    avaliableRooms: any[];
 
     constructor(private dataService: DataService) {
         this.dataService.getRoleInfo()
@@ -29,34 +32,38 @@ export class TutorComponent implements OnInit, AfterViewInit {
                         .subscribe(data => this.dialogInfo = data);
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.dataService.getRoomInfo().subscribe(
+            data => {
+                this.avaliableRooms = data;
+            }
+        );
+    }
 
     ngAfterViewInit() {
-        this.isBlur = !this.dialog.isClose;
+        // this.isBlur = !this.dialog.isClose;
+    }
+
+    onClickRole(roleIndex) {
+        this.isShow = false;
+        this.currentRole = roleIndex;
+        this.dialog.progresses = this.dialogInfo[roleIndex].progresses;
+        this.dialog.clickMessages = this.dialogInfo[roleIndex].clickMessages;
+        this.dialog.initMessages();
+        this.highlightRooms = this.getHighlightRooms(roleIndex);
+        console.log(this.highlightRooms);
+    }
+
+    getHighlightRooms(roleIndex) {
+        let rooms = [];
+        for (let room of this.avaliableRooms) {
+            if (room.charge.indexOf(roleIndex) !== -1) {
+                rooms.push(room);
+            }
+        }
+        return rooms;
     }
     
-    onClickQian() {
-        this.isShow = false;
-        console.log(this.dialog);
-        this.dialog.progresses = this.dialogInfo[0].progresses;
-        this.dialog.clickMessages = this.dialogInfo[0].clickMessages;
-        this.dialog.initMessages();
-    }
-    onClickYi() {
-        this.isShow = false;
-        this.dialog.progresses = this.dialogInfo[1].progresses;
-        this.dialog.clickMessages = this.dialogInfo[1].clickMessages;
-        this.dialog.initMessages();
-        console.log(this.dialog);
-    }
-    onClickShou() {
-        this.isShow = false;
-        this.dialog.progresses = this.dialogInfo[2].progresses;
-        this.dialog.clickMessages = this.dialogInfo[2].clickMessages;
-        this.dialog.initMessages();
-
-    }
-
     getContentInfo(contentMsg: string) {
        if (contentMsg === "close") {
             this.isHide = true;
@@ -75,5 +82,9 @@ export class TutorComponent implements OnInit, AfterViewInit {
         this.isHide = false;
         this.showBar = true;
        }
+    }
+
+    mouseover(e) {
+        console.log(e.pageX, e.pageY);
     }
 }

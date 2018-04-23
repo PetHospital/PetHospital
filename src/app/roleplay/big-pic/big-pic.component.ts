@@ -12,10 +12,6 @@ export class BigPicComponent implements OnInit {
     pageCount: number;
     currentPic: string;
     pictures: Array<string>;
-    // @ViewChild('box')
-    // boxDiv: ElementRef;
-
-    // constructor(private elementRef: ElementRef, private renderer: Renderer) {
     constructor() {
         this.isHide = true;
         this.index = 0;
@@ -25,17 +21,10 @@ export class BigPicComponent implements OnInit {
 
     ngOnInit() {
     }
-
-    // ngAfterViewInit() {
-      
-    //     this.renderer.setElementStyle(this.boxDiv.nativeElement, 'width', '1620px');
-    //     console.log(this.boxDiv.nativeElement.style.width);
-    // }
     
     showPic() {
       this.isHide = false;
       this.currentPic = this.pictures[0];
-      console.log(this.pictures);
     }
 
     closePic() {
@@ -43,17 +32,21 @@ export class BigPicComponent implements OnInit {
     }
 
     upPage() {
-      if (this.index < this.pageCount - 1) {
+      if (this.index < this.pictures.length - 1) {
           this.index++;
-          this.currentPic = this.pictures[this.index];
+      } else {
+        this.index = 0;
       }
+      this.currentPic = this.pictures[this.index];      
     }
 
     downPage() {
       if (this.index > 0) {
         this.index--;
-        this.currentPic = this.pictures[this.index];
+      } else {
+        this.index = this.pictures.length - 1;
       }
+      this.currentPic = this.pictures[this.index];      
     }
 
 }

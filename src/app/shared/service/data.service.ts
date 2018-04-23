@@ -42,9 +42,19 @@ export class DataService {
         let dataUrl = JSON_URL + '/practicelist.json';
         return this.http.get<PracticeItem[]>(dataUrl);
     }
-    getDiseases(): Observable<DiseaseTree[]> {
-        let dataUrl = JSON_URL + '/diseaseTree.json';
-        return this.http.get<DiseaseTree[]>(dataUrl);
+    getDiseases(): Observable<any[]> {
+        let dataUrl = API_URL + '/disease/group';
+        return this.http.get<any[]>(dataUrl);
+    }
+
+    getDiseaseImages(): Observable<any[]> {
+        let dataUrl = API_URL + '/disease/images';
+        return this.http.get<any[]>(dataUrl);
+    }
+
+    getDiseaseVideos(): Observable<any[]> {
+        let dataUrl = API_URL + '/disease/video';
+        return this.http.get<any[]>(dataUrl);
     }
 
     getUserInfo(): Observable<Object> {

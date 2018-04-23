@@ -72,6 +72,7 @@
                 background: #fff;
                 font-size: 20px;
                 transition: all 0.1s;
+                cursor: pointer;
                 .title{
                     color: rgba(0,0,0,.65);
                     font-size: 30px;
@@ -120,8 +121,92 @@
 
 }
 
-.blur{
-    filter: blur(3px);
+.filter-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .filter {
+        position: absolute;
+    }
+    .filter:nth-child(1) {
+        width: 160px;
+        height: 115px;
+        left: 205px;
+        top: 490px;
+        //左下角ICU
+        background: red;
+    }
+    .filter:nth-child(2) {
+        width: 200px;
+        height: 115px;
+        left: 370px;
+        top: 490px;
+        //左下角第二个住院部
+        background: blue;
+    }
+    .filter:nth-child(3) {
+        width: 75px;
+        height: 230px;
+        left: 205px;
+        top: 145px;
+        //最左边上半部分
+        background: yellow;
+    }
+    .filter:nth-child(4) {
+        width: 360px;
+        height: 115px;
+        left: 205px;
+        top: 375px;
+        //最左边的下半部分pathological room
+        background: white;
+    }
+    .filter:nth-child(5) {
+        width: 120px;
+        height: 115px;
+        left: 280px;
+        top: 145px;
+        //第一排正方形手术室
+        background: red;
+    }
+    .filter:nth-child(6) {
+        width: 120px;
+        height: 115px;
+        left: 280px;
+        top: 260px;
+        //第2排正方形Consultation Room
+        background: blue;
+    }
+    .filter:nth-child(7) {
+        width: 170px;
+        height: 230px;
+        left: 400px;
+        top: 145px;
+        //第1排第三列手术准备室
+        background: white;
+    }
+    .filter:nth-child(8) {
+        width: 90px;
+        height: 80px;
+        left: 485px;
+        top: 60px;
+        //最上面小厕所injection room
+        background: white;
+    }
+    .filter:nth-child(9) {
+        width: 120px;
+        height: 150px;
+        left: 570px;
+        top: 145px;
+        //右半部分 第一排第一个　pharmacy dispensary
+        background: green;
+    }
+    .filter:nth-child(10) {
+        width: 100px;
+        height: 150px;
+        left: 700px;
+        top: 145px;
+        //右半部分 第一排第2个　treatment room
+        background: yellow;
+    }
 }
-
 

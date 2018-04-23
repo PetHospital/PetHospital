@@ -1,3 +1,10 @@
+<div class="back">
+    <p class="back-arrow" (click)="back()">
+        <img src="/assets/images/share/back.png">
+        <br>
+        <span style="color:white">Back</span>
+    </p>
+</div>
 <div class="header-wrapper">
     <div class="content-header">
         <app-header></app-header>
@@ -15,7 +22,7 @@
     </div>
     <div class="detail">
         <div class="title">{{room && room.name}}</div>
-        <p class="charge">主要负责人：执业兽医师</p>
+        <p class="charge">主要负责人:&nbsp;{{room && room.charge}}</p>
         <div class="word-content">
             <div class="intro">
                 <p>{{room && room.intro}}</p>
