@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { MedicalRecord } from './../model/model';
 import * as _ from "lodash";
 import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
@@ -17,6 +17,9 @@ export class MedicalRecordComponent implements OnInit {
   @ViewChild(BigPicComponent)
   bigPic: BigPicComponent;
   coverPic: string;
+
+  @ViewChildren(BigPicComponent)
+  secondBigPic: any;
 
   allImages: any;
   allVideos: any;
@@ -38,7 +41,7 @@ export class MedicalRecordComponent implements OnInit {
                   name: child,
                   text: diseaseData[parent][child].text,
                   images: this.splitImageUrls(this.allImages[child]) ,
-                  video: API_URL + '/media/' + this.allVideos[child]
+                  video: this.allVideos[child] ? API_URL + '/media/' + this.allVideos[child] : "../../assets/videos/nullvideo.mp4"
                 };
                 childDiseases.push(childDisease);
               }
@@ -79,6 +82,12 @@ export class MedicalRecordComponent implements OnInit {
   onShowPic(images) {
     this.bigPic.pictures = images;
     this.bigPic.showPic();
+  }
+
+  showProcess() {
+    console.log(this.secondBigPic.last);
+    this.secondBigPic.last.pictures = ["../../assets/images/medicalRecord/nullrecord.jpeg"];
+    this.secondBigPic.last.showPic();
   }
 
   ngOnInit() {

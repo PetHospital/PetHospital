@@ -31,6 +31,7 @@
             color: white;
             width: 240px;
             padding: 10px;
+            cursor: pointer;
 
             .word {
                 font-family: 'Roboto-Slab-Regular';
@@ -138,7 +139,7 @@
             left: 8px;
         }
         100% {
-            left: 9px;
+            left: 5px;
         }
     }
 

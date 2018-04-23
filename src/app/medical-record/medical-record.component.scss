@@ -79,6 +79,17 @@
                 padding-left: 10px;
                 float: left;
                 line-height: 30px;
+
+                .image-container {
+                    padding: 20px;
+
+                    img {
+                        height: 250px;
+                        width: auto;
+                        cursor: pointer;
+                    }
+                }
+
                 .bigger {
                     font-size: 120%;
                 }
@@ -96,6 +107,7 @@
                     .image {
                         width: auto;
                         height: 250px;
+                        cursor: pointer;
                     }
                 }
                 

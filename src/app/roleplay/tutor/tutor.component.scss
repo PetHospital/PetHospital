@@ -3,6 +3,12 @@
     width: 100%;
     font-family: 'Roboto-Slab-Regular';
 
+    .tip {
+        position: fixed;
+        top: 46px;
+        left: 200px;
+    }
+
     .front{
         z-index: 10000;
     }
@@ -278,7 +284,7 @@
             left: 8px;
         }
         100% {
-            left: 9px;
+            left: 5px;
         }
     }
 

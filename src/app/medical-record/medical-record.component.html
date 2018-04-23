@@ -29,9 +29,14 @@
             <div class="intro">
                 <br>
                 <p>
-                    <span>介绍:&nbsp;</span>{{currentRecord.text}}</p>
+                    <span>介绍:&nbsp;</span>{{currentRecord.text}}
+                </p>
                 <br>
-                <br>
+                <p style="color: white;">点击下图查看治疗过程</p>
+                <div class="image-container">
+                    <img src="../../assets/images/medicalRecord/nullrecord.jpeg" class="processimage" (click)="showProcess()">
+                </div>
+                <app-big-pic></app-big-pic>
             </div>
             <div class="imageandvideo">
                 <div class="image-wrapper">
