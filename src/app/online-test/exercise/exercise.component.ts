@@ -23,7 +23,7 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
   private timer;
   formData = {} as any;
   @ViewChild('exerciseForm') exerciseForm: NgForm;
-  id: number;
+  level: String;
 
   private get diff() {
     return this.time_diff;
@@ -35,10 +35,16 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
     this.second = (this.time_diff % 3600) % 60;
   }
   constructor(private dataService: DataService, private http: HttpClient, private route: ActivatedRoute) {
-    this.dataService.getQuestions()
-                        .subscribe(data => this.QuestionLists = data);
+    
   }
-
+  ngOnInit() {
+    this.isFinished = false;
+    this.route.params.subscribe((params) => this.level = params.level);
+    this.dataService.getExercise(this.level)
+                        .subscribe(data => {
+                          this.QuestionLists = data;
+                        });
+  }
   ngAfterViewInit() {
     this.timer = setInterval(() => {
     this.diff = this.count + 1000;
@@ -51,10 +57,7 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
        clearInterval(this.timer);
     }
   }
-  ngOnInit() {
-    this.isFinished = false;
-    this.route.params.subscribe((params) => this.id = params.id);
-  }
+  
 
   doSubmit(obj: any) {
     if (!this.exerciseForm.valid) {

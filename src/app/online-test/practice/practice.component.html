@@ -25,12 +25,12 @@
                     <div class="practice-lists">
                     <a class="practice-title">{{child.name}}</a>
                     <div class="tab-cout">
-                      <span class="type {{child.level}}">{{child.level}}</span>
+                      <span class="type {{level[child.level-1]}}"> {{level[child.level-1]}}</span>
                     </div>
                     <div class="score_show">
                       <span class="score-num">Last score: </span>
                     </div>
-                    <a href="/exercise/{{parent.id}}" class="plan-icon practice-icon">
+                    <a href="/exercise/{{level[child.level+2]}}" class="plan-icon practice-icon" [class.show-area]="child.level===hard">
                       <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                     </a>
                   </div>
@@ -53,7 +53,7 @@
                   <div class="score_show">
                     <span class="score-num">Last score: </span>
                   </div>
-                  <a href="/exercise/{{parent.id}}" class="plan-icon practice-icon">
+                  <a href="/exercise/low" class="plan-icon practice-icon">
                     <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                   </a>
                 </div>
@@ -76,7 +76,7 @@
                   <div class="score_show">
                     <span class="score-num">Last score: </span>
                   </div>
-                  <a href="/exercise/{{parent.id}}" class="plan-icon practice-icon">
+                  <a href="/exercise/medium" class="plan-icon practice-icon">
                     <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                   </a>
                 </div>
@@ -99,7 +99,7 @@
                 <div class="score_show">
                   <span class="score-num">Last score: </span>
                 </div>
-                <a href="/exercise/{{parent.id}}" class="plan-icon practice-icon">
+                <a href="/exercise/high" class="plan-icon practice-icon">
                   <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
                 </a>
               </div>

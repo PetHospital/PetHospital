@@ -33,8 +33,13 @@ export class DataService {
         return this.http.get<Collection[]>(dataUrl);
     }
 
-    getQuestions(): Observable<ExamQuestion[]> {
-        let dataUrl = JSON_URL + '/questionList.json';
+    getQuestions(id: number): Observable<ExamQuestion[]> {
+        let dataUrl = 'http://115.159.143.108/test/exam/' + id;
+        return this.http.get<ExamQuestion[]>(dataUrl);
+    }
+
+    getExercise(level: String): Observable<ExamQuestion[]> {
+        let dataUrl = 'http://115.159.143.108/test/exercise/' + level;
         return this.http.get<ExamQuestion[]>(dataUrl);
     }
 
@@ -64,7 +69,7 @@ export class DataService {
 
 
     getExamItem(): Observable<ExamItem[]> {
-        let dataUrl = JSON_URL + '/examlist.json';
+        let dataUrl = 'http://115.159.143.108/test/exam-list';
         return this.http.get<ExamItem[]>(dataUrl);
     }
 
