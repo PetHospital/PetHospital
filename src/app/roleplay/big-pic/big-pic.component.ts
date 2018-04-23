@@ -9,14 +9,12 @@ export class BigPicComponent implements OnInit {
 
     isHide: boolean;
     index: number;
-    pageCount: number;
     currentPic: string;
     pictures: Array<string>;
     constructor() {
         this.isHide = true;
         this.index = 0;
         this.pictures = [];
-        this.pageCount = 0;
     }
 
     ngOnInit() {

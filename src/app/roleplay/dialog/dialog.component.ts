@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
   currentIndex: number;
 
   constructor() { 
-    this.progresses = ['您好，我是您的医疗助手。'];
+    this.progresses = ['您好，我是您的医疗学习小助手。'];
     this.clickMessages = [''];
     this.messages = [];
     this.currentIndex = 0;

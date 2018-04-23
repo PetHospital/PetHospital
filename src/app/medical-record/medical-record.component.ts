@@ -26,7 +26,6 @@ export class MedicalRecordComponent implements OnInit {
   constructor(private dataService: DataService) {
     this.dataService.getDiseaseVideos().subscribe(videoData => {
       this.allVideos = videoData;
-      console.log(this.allVideos);
       this.dataService.getDiseaseImages().subscribe(data => {
         this.allImages = data;
         this.dataService.getDiseases()
@@ -65,7 +64,7 @@ export class MedicalRecordComponent implements OnInit {
 
   splitImageUrls = (images) => {
     if (!images) {
-      return "";
+      return ["../../assets/images/medicalRecord/nullrecord.jpeg"];
     }
     if (images.split(',').length === 1) {
       return [API_URL + '/media/' + images];
@@ -74,13 +73,11 @@ export class MedicalRecordComponent implements OnInit {
     for (let image of images.split(',')) {
       fullUrls.push(API_URL + '/media/' + image);
     }
-    console.log(fullUrls);
     return fullUrls;
   }
 
   onShowPic(images) {
     this.bigPic.pictures = images;
-    this.bigPic.pageCount = 0;
     this.bigPic.showPic();
   }
 

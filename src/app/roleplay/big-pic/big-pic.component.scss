@@ -1,34 +1,39 @@
 .pic-box{
-    position: absolute;
-    margin: 20px;
-    top: 0px;
-    bottom: 0px;
-    left: 20px;
-    width: 90%;
-    z-index:11;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 400px;
+    z-index: 101;
     border-radius: 12px;
 
-    &:hover .float-board{
-        display:block;
-    }
-
     .pic{
-        height: 100%;
-        width: 100%;
-        position: absolute;
+        height: 400px;
+        width: 500px;
+        position: fixed;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .image{
+            padding:10px;
             border-radius: 12px;
             border: 1px solid #eee;
-            width: 100%;
-            height: 100%;
+            width: 500px;
+            height: 400px;
             background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             img{
-                width: 100%;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-
+                max-height: 400px;
+                max-width: 500px;
+                display: flex;
+                justify-content: center;
             }
             
         }
@@ -37,8 +42,8 @@
 
 
 .float-board{
-    position:absolute;
-    transition:opacity 1s;
+    position: absolute;
+    transition: opacity 1s;
     width: 100%;
     height: 100%;
     display: block;
@@ -46,10 +51,6 @@
     opacity: 1;
     border-radius: 12px;
     transition-timing-function: ease-in;
-}
-
-.float-board:hover{
-    opacity: 1;
 }
 
 .float-func{

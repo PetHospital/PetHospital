@@ -89,10 +89,16 @@
             .imageandvideo {
                 width: 50%;
                 float: right;
-                .image {
-                    width: auto;
-                    height: 250px;
+                .image-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    width: 400px;
+                    .image {
+                        width: auto;
+                        height: 250px;
+                    }
                 }
+                
                 .video {
                     margin-top: 10px;
                     object-fit: inherit;
