@@ -20,30 +20,30 @@
                         <ul class="ep_t_ul">
                         <li>
                             <label>
-                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="1" ngModel>
+                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="1" ngModel required>
                                 <b>A.</b><p>{{parent.choice1}}</p>                                
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="2" ngModel>
+                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="2" ngModel required>
                                 <b>B.</b><p>{{parent.choice2}}</p>                                
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="3" ngModel>
+                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="3" ngModel required>
                                 <b>C.</b><p>{{parent.choice3}}</p>                                
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="4" ngModel>
+                                <input class="ep_radio" name="{{parent.qid}}" type="radio" value="4" ngModel required>
                                 <b>D.</b><p>{{parent.choice4}}</p>                                
                             </label>
                         </li>
                         </ul>
-                    </div>
+                </div>
         </div>
         <div class="ec_sider">
             <button type="submit" tabindex="4" class="btn_submit">交 卷</button>
@@ -53,5 +53,10 @@
 <div *ngIf="isFinished" class="ex_alert_background"></div>
 <div *ngIf="isFinished" class="ex_alert_box">
     <p class="ex_alert_title">已完成考试！</p>
+    <a href="/testResult/exam/{{id}}" class="show_result_button">查看结果</a>
+</div>
+<div *ngIf="isOutTime" class="ex_alert_background"></div>
+<div *ngIf="isOutTime" class="ex_alert_box">
+    <p class="ex_alert_title">考试时间已到！</p>
     <a href="/testResult/exam/{{id}}" class="show_result_button">查看结果</a>
 </div>

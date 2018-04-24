@@ -31,6 +31,7 @@ export interface ExamQuestion {
     choice3: String;
     choice4: String;
     answer: String;
+    score: number;
     solution: String;
 }
 export interface SingleItem {
@@ -95,17 +96,12 @@ export interface DialogInfo {
     progresess: Array<string>;
     clickMessages: Array<string>;
 }
-export interface QuestionResult  {
-    question: ExamQuestion;
-    myAnswer: String;
-    isCorrect: boolean;
-}
-
 export interface TestResult {
-    id: number;
-    examName: String;
-    score: number;
-    correctNumber: number;
-    wrongNumber: number;
-    questionResult: QuestionResult[];
+    submit_id: number;
+    question: ExamQuestion;
+    date: number;
+    exam_id: String;
+    choice: String;
+    user: number;
+    isCorrect: boolean;
 }

@@ -31,7 +31,7 @@ export const appRoutes: Routes = [
     { path: 'userinfo', component: UserinfoComponent},
     { path: 'mistake', component: MistakeComponent},
     { path: 'collection', component: CollectionComponent},
-    { path: 'exam/:id', component: ExamComponent},
+    { path: 'exam/:id/:duration', component: ExamComponent},
     { path: 'exercise/:level', component: ExerciseComponent},
     { path: 'testList', component: TestListComponent},
     { path: 'testResult/:type/:id', component: TestResultComponent},

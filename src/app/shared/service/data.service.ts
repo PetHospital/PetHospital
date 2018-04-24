@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../../environments/environment';
-
 import { RoomInfo, RoleInfo, ExamQuestion, PracticeItem, Mistake, Collection, DiseaseTree, PracticeTitle, PracticeTab, ExamItem, TestResult, DialogInfo } from './../../model/model';
-
 const API_URL = environment.apiUrl;
 const JSON_URL = environment.jsonUrl;
 
 @Injectable()
 export class DataService {
+    header: HttpHeaders;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+    }
 
     getRoomInfo(): Observable<RoomInfo[]> {
         let dataUrl = JSON_URL + '/roomInfo.json';
@@ -73,9 +73,10 @@ export class DataService {
         return this.http.get<ExamItem[]>(dataUrl);
     }
 
-    getTestResult(): Observable<TestResult> {
-        let dataUrl = JSON_URL + '/testResult.json';
-        return this.http.get<TestResult>(dataUrl);
+    getTestResult(): Observable<TestResult[]> {
+        this.header = new HttpHeaders({'Authorization': 'Token 5261390e5514cae3e6853559302cbb069a83563a'});
+        let dataUrl = 'http://115.159.143.108/test/history';
+        return this.http.get<TestResult[]>(dataUrl, {headers: this.header});
     }
 
     getDialogInfo(): Observable<DialogInfo[]> {

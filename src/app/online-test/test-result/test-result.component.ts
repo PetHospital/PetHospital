@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TestResult, QuestionResult } from '../../model/model';
+import { TestResult} from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,27 +10,41 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TestResultComponent implements OnInit {
 
-  result: TestResult;
-  selectedQuestion: QuestionResult;
+  result: TestResult[];
+  selectedQuestion: TestResult;
   type: String;
+  id: String;
   isExam: boolean;
+  correctNum: number = 0;
+  totalNum: number = 0;
+  score: number = 0;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) { 
-    this.dataService.getTestResult().subscribe(data => {
-      this.result = data;
-    });
   }
 
   ngOnInit() {
     this.route.params.subscribe((params) => this.type = params.type);
+    this.route.params.subscribe((params) => this.id = params.id);
+    this.dataService.getTestResult().subscribe(data => {
+      this.result = data;
+      for (let i in this.result) {
+        if (this.result[i].choice === this.result[i].question.answer) {
+          this.correctNum++;
+          this.result[i].isCorrect = true;
+          this.score += this.result[i].question.score;
+        }else {
+          this.result[i].isCorrect = false;
+        }
+        this.totalNum++;
+      }
+    });
     if (this.type === "exam") {
       this.isExam = true;
     }else {
       this.isExam = false;
     }
-    console.log(this.isExam);
   }
-  selectQuestion(question: QuestionResult): void {
+  selectQuestion(question: TestResult): void {
     this.selectedQuestion = question;
     console.log(this.selectedQuestion);
   }
