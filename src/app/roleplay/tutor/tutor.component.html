@@ -1,33 +1,51 @@
 <div class="content">
     <div [class.hide]="isShow">
+        <div class="back">
+            <p class="back-arrow" (click)="back()">
+                <img src="/assets/images/share/back.png">
+                <span>返回角色列表</span>
+            </p>
+        </div>
+        <div class="tip">
+            <p>请选择您想去的房间</p>
+        </div>
         <div class="front">
-            <div class="department-info" [class.hide]="isHide"><app-card></app-card></div>
-            <div class="right">
+            <div class="department-info" [class.hide]="isHide">
+                <app-card></app-card>
+            </div>
+            <div class="right" *ngIf="isDialogShow">
                 <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
             </div>
         </div>
-        <div class="bg"><img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur"></div>
+        <div class="filter-container">
+            <div class="filter" *ngFor="let room of avaliableRooms; let i = index" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(i) !== -1}"
+                (click)="onClickRoom(i)"></div>
+            <div class="filter" (click)="onClickRoom(14)" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(14) !== -1}"></div>
+            <div class="filter" (click)="onClickRoom(15)" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(15) !== -1}"></div>
+        </div>
+        <div class="bg">
+            <img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur">
+        </div>
     </div>
     <div *ngIf="isShow" [class.hide]="!isShow" class="select-content">
         <span>CHOOSE ROLE</span>
         <div class="line"></div>
         <div class="select-bar">
-            <div class="select" (click)=onClickQian()>
+            <div class="select" (click)="onClickRole(0)">
                 <div class="title">前台</div>
                 <div class="content">点击进入，对前台非常感兴趣？并学习前台、档案室的各项功能，撑起医院的门面</div>
                 <img src="/assets/images/role/qiantai.jpg">
             </div>
-            <div class="select" (click)=onClickYi()>
+            <div class="select" (click)="onClickRole(1)">
                 <div class="title">医助</div>
                 <div class="content">点击进入，并学习免疫室、化验室、影像室、处置室、注射室、住院部、药房的各项功能</div>
                 <img src="/assets/images/role/yizhu.jpg">
             </div>
-            <div class="select" (click)=onClickShou()>
+            <div class="select" (click)="onClickRole(2)">
                 <div class="title">兽医师</div>
                 <div class="content">点击进入，了解诊室、免疫室、化验室、影像室、专科检查室、专科检查室、注射室等</div>
                 <img src="/assets/images/role/shouyi.jpg">
             </div>
         </div>
     </div>
-
 </div>

@@ -23,9 +23,7 @@ export class CardComponent {
   }
 
   onShowPic() {
-    console.log(this.bigPic);
     this.bigPic.pictures = this.content.pic;
-    this.bigPic.pageCount = this.content.pic.length;
     this.bigPic.showPic();
   }
 

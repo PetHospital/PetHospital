@@ -79,6 +79,17 @@
                 padding-left: 10px;
                 float: left;
                 line-height: 30px;
+
+                .image-container {
+                    padding: 20px;
+
+                    img {
+                        height: 250px;
+                        width: auto;
+                        cursor: pointer;
+                    }
+                }
+
                 .bigger {
                     font-size: 120%;
                 }
@@ -89,10 +100,17 @@
             .imageandvideo {
                 width: 50%;
                 float: right;
-                .image {
-                    width: auto;
-                    height: 250px;
+                .image-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    width: 400px;
+                    .image {
+                        width: auto;
+                        height: 250px;
+                        cursor: pointer;
+                    }
                 }
+                
                 .video {
                     margin-top: 10px;
                     object-fit: inherit;

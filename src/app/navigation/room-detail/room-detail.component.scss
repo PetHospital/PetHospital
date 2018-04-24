@@ -31,6 +31,7 @@
             color: white;
             width: 240px;
             padding: 10px;
+            cursor: pointer;
 
             .word {
                 font-family: 'Roboto-Slab-Regular';
@@ -111,5 +112,38 @@
                 }
             }
         }
+    }
+}
+
+.back {
+    position: fixed;
+    top: 35px;
+    left: 10px;
+    z-index: 9999;
+    background: #7d7b71;
+    padding:5px;
+    border-radius: 3px;
+    cursor: pointer;
+    animation: left 1s linear infinite;
+    @keyframes left {
+        0% {
+            left: 5px;
+        }
+        25% {
+            left: 6px;
+        }
+        50% {
+            left: 7px;
+        }
+        75% {
+            left: 8px;
+        }
+        100% {
+            left: 5px;
+        }
+    }
+
+    img {
+        width: 30px;
     }
 }
