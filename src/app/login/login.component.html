@@ -13,7 +13,7 @@
                 <div class="pad">
                     <div class="control-group">
                         <div class="controls">
-                        <label for="username" class="control-label fa fa-user"></label>
+                        <label for="username" class="control-label"><img src="../../assets/images/login/user.png"></label>
                             <input id="username" type="text" name="username" placeholder="用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium" [(ngModel)]="formData.username" #username="ngModel" required>
                             <div *ngIf="username.errors && (username.dirty || username.touched)" class="error">
                                 <span [hidden]="!username.errors.required">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <label for="password" class="control-label fa fa-asterisk"></label>
+                            <label for="password" class="control-label"><img src="../../assets/images/login/pw.png"></label>
                             <input id="password" type="password" name="password" placeholder="password" tabindex="2" class="form-control input-medium" [(ngModel)]="formData.password" #password="ngModel" required>
                             <div *ngIf="password.errors && (password.dirty || password.touched)" class="error">
                                     <span [hidden]="!password.errors.required">

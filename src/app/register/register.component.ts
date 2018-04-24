@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -71,19 +71,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
   }
 
-  doJumpIndex() {
-    console.log("zhuye");
-  }
-
-  doJumpLogin() {
-    console.log("login");
-  }
   doSubmit(obj: any) {
     if (!this.registerForm.valid) {
       this.onValueChanged(obj);
       return;
     }
-    let url = 'http://localhost:8000/user/register';
+    const API_URL = environment.apiUrl;
+    let url = API_URL + '/user/register';
     this.http.post(url, obj).subscribe(
       data => {
         console.log(data);
