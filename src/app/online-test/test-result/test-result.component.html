@@ -7,13 +7,13 @@
   <div class="result-info">
     <div class="test-result-number">
       <p>答对题数：</p>
-      <h1 style="color:greenyellow">{{result.correctNumber}}</h1><h1>/{{result.correctNumber+result.wrongNumber}}</h1>
+      <h1 style="color:greenyellow">{{correctNum}}</h1><h1>/{{totalNum}}</h1>
     </div>
   </div>
   <div class="result-info">
     <div class="test-result-score">
         <p>最终得分：</p>
-        <h1 style="color:gold">{{result.score}}</h1>
+        <h1 style="color:gold">{{score}}</h1>
     </div>
   </div>
 </div>
@@ -22,26 +22,35 @@
       答案与解析
     </h3>
     <ul class="list-num">
-      <li *ngFor="let que of result.questionResult; index as i;" [class.right]="que.isCorrect===true" [class.wrong]="que.isCorrect===false" [class.active]="que===selectedQuestion"
-         (click)="selectQuestion(que)">{{i+1}}</li>
+      <li *ngFor="let para of result; index as i;" [class.right]="para.isCorrect===true" [class.wrong]="para.isCorrect===false" [class.active]="que===selectedQuestion"
+         (click)="selectQuestion(para)">{{i+1}}</li>
     </ul>
     <div class="question-subject" *ngIf="selectedQuestion">
       <h3 class="sub-tit">
         题目信息
       </h3>
       <div class="s-subject-text">
-        <div class="sub-text">{{selectedQuestion.question.subject}}</div>
+        <div class="sub-text">{{selectedQuestion.question.text}}</div>
         <div class="sub-cont">
             <div class="sub-opt">
-              <p class="option" *ngFor="let opt of selectedQuestion.question.options">
-                <span>{{opt.id}}</span>{{opt.content}}
+              <p class="option">
+                <span>A</span>{{selectedQuestion.question.choice1}}
+              </p>
+              <p class="option">
+                <span>B</span>{{selectedQuestion.question.choice2}}
+              </p>
+              <p class="option">
+                <span>C</span>{{selectedQuestion.question.choice3}}
+              </p>
+              <p class="option">
+                <span>D</span>{{selectedQuestion.question.choice4}}
               </p>
             </div>
             <div class="answer-info">
               <p class="my-answer">
                 我的答案：
                 <span [class.a-right]="selectedQuestion.isCorrect===true" [class.a-wrong]="selectedQuestion.isCorrect===false">
-                  {{selectedQuestion.myAnswer}}
+                  {{selectedQuestion.choice}}
                 </span>
               </p>
               <p class="true-answer">

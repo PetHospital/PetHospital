@@ -64,9 +64,11 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     this.isFinished = true;
-    console.log(this.isFinished);
-    let url = 'http://localhost:8000/';
-    console.log(JSON.stringify(obj));
+    let exercise = {
+      examid: -1,
+      submission: obj,
+    };
+    let url = 'http://115.159.143.108/test/submit';
     this.http.post(url, obj).subscribe(
       data => {
         console.log(data);
