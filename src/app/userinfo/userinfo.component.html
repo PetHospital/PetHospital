@@ -69,7 +69,7 @@
                 <button *ngIf="!isChanging" class="changepw_btn" (click)="changePw()">修改</button>
                 <button *ngIf="isChanging" class="changepw_btn" (click)="changePw()">取消</button>      
                 <label *ngIf="isChanging" for="password2" class="label">
-                    重复密码&nbsp;
+                    重复输入新密码&nbsp;
                     <i class="fa fa-key"></i>
                 </label>
                 <input *ngIf="isChanging" type="password" id="password2" class="input" name="password2" [(ngModel)]="formData.password2" #password2="ngModel"
@@ -112,7 +112,7 @@
                     </span>
                 </span> -->
                 <br>
-                <input type="submit" value="确认修改" class="submit" (click)="doSubmit(changeInfoForm.value)">
+                <input type="submit" value="确认修改" class="submit">
             </form>
         </div>
         <div class="tab1" *ngIf="currentTab==1">
@@ -143,4 +143,8 @@
         <button class="confirm-button" (click)="confirmImage()">确定</button>
         <button class="confirm-button" (click)="closeImage()">取消</button>
     </div>
+</div>
+
+<div class="tip" *ngIf="showMessage">
+    <p>修改成功，请去邮箱点击验证链接并重新登录</p>
 </div>

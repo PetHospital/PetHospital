@@ -80,7 +80,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     let url = API_URL + '/user/register';
     this.http.post(url, obj).subscribe(
       data => {
-        console.log(data);
         if (true) {
             this.isHide = false;
         }

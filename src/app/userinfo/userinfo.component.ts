@@ -2,6 +2,9 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { DataService } from '../shared/service/data.service';
 import { HttpClient } from "@angular/common/http";
+import { environment } from '../../environments/environment';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
 
 @Component({
   selector: 'app-userinfo',
@@ -15,12 +18,12 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   userinfo: object;
   formData = {} as any;
   isChanging: boolean;
+  showMessage: boolean;
 
-  constructor(private dataService: DataService, private http: HttpClient) {
+  constructor(private dataService: DataService, private http: HttpClient, private router: Router) {
     this.file = {};
     this.dataService.getUserInfo()
       .subscribe(data => {
-        console.log(data);
         this.userinfo = data;
         this.formData = this.userinfo;
         this.formData.password1 = "";
@@ -89,6 +92,7 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     this.currentTab = 0;
     this.isChanging = false;
     this.isUploadingImage = false;
+    this.showMessage = false;
     this.customStyle = {
       selectButton: {
         "background-color": "yellow",
@@ -122,7 +126,6 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
 
   changeAvatar = () => {
     this.isUploadingImage = true;
-    console.log(this.isUploadingImage);
   }
 
   switchTabs = (tabId) => {
@@ -130,30 +133,51 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   }
 
   imageUploaded(event) {
-    console.log(event);
     this.file = event.file;
-    console.log(this.file);
   }
 
   imageRemoved(event) {
-    console.log(event);
   }
 
   confirmImage = () => {
     this.closeImage();
   }
 
+  getCookie(name) {
+    let arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg)) {
+        return (arr[2]);
+    } else {
+        return null;
+    }
+  }
+
   doSubmit = (formData) => {
-    console.log('submit');
     if (!formData.password1 || !formData.password2 || formData.password1 !== formData.password2) {
-      console.log("error");
       this.onValueChanged(formData);
       return;
     }
-    let url = 'http://localhost:8000/changepw';
-    this.http.post(url, formData).subscribe(
-      data => {
-        console.log(data);
+
+    const API_URL = environment.apiUrl;
+
+    const data = {
+      new_password: formData.password1,
+      new_password_2: formData.password2
+    };
+    
+    let url = API_URL + '/user/password_reset';
+    this.http.post(url, data).subscribe(
+      response => {
+        this.showMessage = true;
+        let exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        let cval = this.getCookie("token");
+        if (cval != null) {
+            document.cookie = "token=" + cval + ";expires=" + exp.toUTCString();
+        }
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 1800);
       },
       err => {
         console.log(err);

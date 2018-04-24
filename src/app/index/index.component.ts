@@ -12,7 +12,6 @@ export class IndexComponent implements OnInit {
 
     constructor(private dataService: DataService) {
         const token = this.getCookie('token');
-        console.log(token);
         if (token && token !== '') {
             this.status = true;
             this.username = 'Pandaice';
