@@ -1,4 +1,5 @@
 <div class="main">
+    <div class="close" (click)="close()"><img src="../../assets/images/role/quit.png"></div>
     <div *ngIf="content.title != ''" class="content">
         <div *ngIf="content.pic.length">
             <app-big-pic></app-big-pic>
@@ -16,12 +17,8 @@
                 <span>点击放大图片</span>
             </div>
             <div class="video">
-                <img [src]="content.pic[0]">
-            </div>
-            <div class="cover">
-                <span>点击播放视频</span>
+                <video poster="/assets/images/7.jpg" class="video" width="230" height="170" src="../../assets/videos/nullvideo.mp4" controls="controls"></video>
             </div>
         </div>
-
     </div>
 </div>

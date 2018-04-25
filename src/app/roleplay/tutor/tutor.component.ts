@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { DataService } from './../../shared/service/data.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import * as _ from 'lodash';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -25,7 +26,8 @@ export class TutorComponent implements OnInit, AfterViewInit {
     highlightRooms: any[];
     avaliableRooms: any[];
 
-    constructor(private dataService: DataService) {
+
+    constructor(private dataService: DataService, private router: Router) {
         this.dataService.getRoleInfo()
             .subscribe(data => this.roleInfo = data);
         this.dataService.getDialogInfo()
@@ -50,6 +52,10 @@ export class TutorComponent implements OnInit, AfterViewInit {
     }
 
     onClickRoom(roomIndex) {
+        console.log(roomIndex);
+        if (this.highlightRooms.indexOf(roomIndex) === -1) {
+            return;
+        }
         this.isDialogShow = true;
         let self = this;
         setTimeout(() => {
@@ -141,11 +147,19 @@ export class TutorComponent implements OnInit, AfterViewInit {
         }
     }
 
+    close = () => {
+        this.isHide = true;
+    }
+
     back = () => {
         this.isHide = true;
         this.isShow = true;
         this.showBar = false;
         this.isDialogShow = false;
+    }
+
+    backToIndex = () => {
+        this.router.navigate(['/']);        
     }
 
 }

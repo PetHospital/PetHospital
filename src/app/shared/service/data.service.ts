@@ -97,6 +97,12 @@ export class DataService {
         return this.http.post<any>(dataUrl, data, {headers: this.header});
     }
 
+    getAllExams(): Observable<any> {
+        let dataUrl = API_URL + '/test/exam-list';
+        console.log(this.header);
+        return this.http.get<any>(dataUrl, {headers: this.header});
+    }
+    
     getOperation(): Observable<Operation[]> {
         let dataUrl = JSON_URL + '/operation.json';
         return this.http.get<Operation[]>(dataUrl);

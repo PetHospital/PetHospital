@@ -267,7 +267,44 @@
     position: fixed;
     top: 35px;
     left: 10px;
-    z-index: 9999;
+    z-index: 20001;
+    padding: 5px;
+    border-radius: 3px;
+    height: 30px;
+    cursor: pointer;
+    animation: left 1s linear infinite;
+    @keyframes left {
+        0% {
+            left: 5px;
+        }
+        25% {
+            left: 6px;
+        }
+        50% {
+            left: 7px;
+        }
+        75% {
+            left: 8px;
+        }
+        100% {
+            left: 5px;
+        }
+    }
+
+    .back-arrow {
+        display: flex;
+        align-items: center;
+    }
+    img {
+        width: 30px;
+    }
+}
+
+.back-to-index {
+    position: fixed;
+    top: 35px;
+    left: 10px;
+    z-index: 20001;
     padding: 5px;
     border-radius: 3px;
     height: 30px;

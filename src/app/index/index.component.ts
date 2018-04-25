@@ -14,7 +14,7 @@ export class IndexComponent implements OnInit {
         const token = this.getCookie('token');
         if (token && token !== '') {
             this.status = true;
-            this.username = 'Pandaice';
+            this.username = 'yxrr';
         } else {
             this.status = false;
         }

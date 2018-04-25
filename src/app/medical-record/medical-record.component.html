@@ -8,7 +8,7 @@
             </span>
             <div *ngIf="parent.isExpanded">
                 <div *ngFor="let child of parent.children" class="child">
-                    <span (click)="showDetail(parent, child)">
+                    <span (click)="showDetail(parent, child)" [ngClass]="{'active':child.name == currentRecord.name}">
                         <img src="../../assets/images/medicalRecord/listen.png" class="listen" />&nbsp; {{child.name}}
                     </span>
                 </div>

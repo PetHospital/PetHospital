@@ -1,4 +1,10 @@
 <div class="content">
+    <div class="back-to-index" *ngIf="isShow">
+        <p class="back-arrow" (click)="backToIndex()">
+            <img src="/assets/images/share/back.png">
+            <span>返回主页</span>
+        </p>
+    </div>
     <div [class.hide]="isShow">
         <div class="back">
             <p class="back-arrow" (click)="back()">
@@ -17,7 +23,7 @@
         </div>
         <div class="front">
             <div class="department-info" [class.hide]="isHide">
-                <app-card></app-card>
+                <app-card (isClose)="close($event)"></app-card>
             </div>
             <div class="right" *ngIf="isDialogShow">
                 <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>

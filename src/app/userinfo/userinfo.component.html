@@ -9,7 +9,7 @@
 <div>
     <div class="left">
         <div class="avatar">
-            <img src="../../assets/images/7.jpg" class="avatar_img" />
+            <img src="../../assets/images/role/A2.jpg" class="avatar_img" />
             <br>
             <button (click)="changeAvatar()" class="change_ava_btn">更改头像</button>
         </div>
@@ -18,7 +18,7 @@
                 <a href="javascript:;" (click)="switchTabs(0)">账号信息</a>
             </div>
             <div class="tab" [ngClass]="{'active':currentTab == 1}">
-                <a href="javascript:;" (click)="switchTabs(1)">学习记录</a>
+                <a href="javascript:;" (click)="switchTabs(1)">考试记录</a>
             </div>
             <div class="tab" [ngClass]="{'active':currentTab == 2}">
                 <a href="javascript:;" (click)="switchTabs(2)">错题记录</a>
@@ -116,15 +116,12 @@
             </form>
         </div>
         <div class="tab1" *ngIf="currentTab==1">
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
-            <p>学习记录</p>
+            <p class="title">您参加过的考试有：</p>
+            <br>
+            <p *ngFor="let exam of exams">
+                {{exam.description}}
+                <a href="testResult/exam/{{exam.eid}}" target="_blank" class="result">查看结果</a>
+            </p>
         </div>
         <div class="tab2" *ngIf="currentTab==2">
             <p>点击这个链接 查看您的错题记录:&nbsp;<a [routerLink]="['/mistake']">我的错题记录</a></p>
@@ -147,4 +144,8 @@
 
 <div class="tip" *ngIf="showMessage">
     <p>修改成功，请去邮箱点击验证链接并重新登录</p>
+</div>
+
+<div class="tip" *ngIf="showError">
+    <p>修改失败</p>
 </div>

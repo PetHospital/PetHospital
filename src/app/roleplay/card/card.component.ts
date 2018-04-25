@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, OnInit, Output, EventEmitter } from '@angular/core';
 import { BigPicComponent } from './../big-pic/big-pic.component';
 import { Info } from '../info';
 
@@ -12,7 +12,10 @@ export class CardComponent {
   bigPic: BigPicComponent;
   coverPic: string;
   content: Info;
+
+  @Output() isClose: EventEmitter<any> = new EventEmitter();
   
+
   constructor() {
     this.content = {
       title: '',
@@ -25,6 +28,10 @@ export class CardComponent {
   onShowPic() {
     this.bigPic.pictures = this.content.pic;
     this.bigPic.showPic();
+  }
+
+  close() {
+      this.isClose.emit("close");
   }
 
 }
