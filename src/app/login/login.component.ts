@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-
+import { environment } from '../../environments/environment';
 import { NgForm } from "@angular/forms";
+import { Router, ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private router: Router
   ) {
   }
 
@@ -32,11 +34,16 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid) {
       return;
     }
-    let url = 'http://localhost:8000/user/login';
-    console.log(JSON.stringify(obj));
+    const API_URL = environment.apiUrl;
+    let url = API_URL + '/user/login';
     this.http.post(url, obj).subscribe(
       data => {
-        console.log(data);
+        let result = data;
+        let time = 2 * 3600 * 1000;
+        let exp = new Date();
+        exp.setTime(exp.getTime() + time);
+        document.cookie = "token=" + result["token"] + ";expires=" + exp.toUTCString();
+        this.router.navigate(['/']);        
       },
       err => {
         console.log(err);

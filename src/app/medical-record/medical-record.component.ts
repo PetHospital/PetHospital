@@ -85,7 +85,6 @@ export class MedicalRecordComponent implements OnInit {
   }
 
   showProcess() {
-    console.log(this.secondBigPic.last);
     this.secondBigPic.last.pictures = ["../../assets/images/medicalRecord/nullrecord.jpeg"];
     this.secondBigPic.last.showPic();
   }
