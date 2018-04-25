@@ -9,20 +9,21 @@
         <div class="tip">
             <p>请选择您想去的房间</p>
         </div>
-        <div class="front">
-            <div class="department-info" [class.hide]="isHide">
-                <app-card></app-card>
-            </div>
-            <div class="right" *ngIf="isDialogShow">
-                <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
-            </div>
-        </div>
+        
         <div class="filter-container">
             <div class="filter" *ngFor="let room of avaliableRooms; let i = index" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(i) !== -1}"
                 (click)="onClickRoom(i)"></div>
             <div class="filter" (click)="onClickRoom(14)" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(14) !== -1}"></div>
             <div class="filter" (click)="onClickRoom(15)" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(15) !== -1}"></div>
         </div>
+        <div class="front">
+                <div class="department-info" [class.hide]="isHide">
+                    <app-card></app-card>
+                </div>
+                <div class="right" *ngIf="isDialogShow">
+                    <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+                </div>
+            </div>
         <div class="bg">
             <img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur">
         </div>

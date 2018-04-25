@@ -96,5 +96,11 @@ export class DataService {
         let dataUrl = API_URL + '/user/password_change';
         return this.http.post<any>(dataUrl, data, {headers: this.header});
     }
+
+    getAllExams(): Observable<any> {
+        let dataUrl = API_URL + '/test/exam-list';
+        console.log(this.header);
+        return this.http.get<any>(dataUrl, {headers: this.header});
+    }
 }
 

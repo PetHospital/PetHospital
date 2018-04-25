@@ -148,6 +148,26 @@
 
     .tab1 {
         width: 100%;
+        float: right;
+        height: 300px;
+
+        .title {
+            color: #706e65;
+            font-weight: bolder;
+            font-size: 120%;
+        }
+
+        .result {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: #706e65;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            line-height: 30px; 
+            margin-left: 30px; 
+        }
     }
     
     .tab2 {

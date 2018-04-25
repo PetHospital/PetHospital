@@ -40,6 +40,9 @@ export class LoginComponent implements OnInit {
     this.http.post(url, obj).subscribe(
       data => {
         let result = data;
+        if (!result["token"]) {
+          
+        }
         let time = 2 * 3600 * 1000;
         let exp = new Date();
         exp.setTime(exp.getTime() + time);

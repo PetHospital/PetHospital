@@ -19,9 +19,12 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   formData = {} as any;
   isChanging: boolean;
   showMessage: boolean;
+  showError: boolean;
+  exams: any[];
 
   constructor(private dataService: DataService, private http: HttpClient, private router: Router) {
     this.file = {};
+    this.exams = [];
     this.dataService.getUserInfo()
       .subscribe(data => {
         this.userinfo = data;
@@ -29,6 +32,18 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
         this.formData.password1 = "";
         this.formData.password2 = "";
       });
+
+    this.dataService.getAllExams().subscribe(data => {
+      console.log(data);
+      for (let exam of data) {
+        console.log(exam);
+        if (exam.taken === true) {
+          console.log(this.exams);
+          this.exams.push(exam);
+        }
+      }
+      console.log(this.exams);
+    });
   }
 
   isUploadingImage: boolean;
@@ -93,6 +108,7 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     this.isChanging = false;
     this.isUploadingImage = false;
     this.showMessage = false;
+    this.showError = false;
     this.customStyle = {
       selectButton: {
         "background-color": "yellow",
@@ -164,10 +180,9 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
       new_password: formData.password1
     };
 
-    let url = API_URL + '/user/password_change';
     this.dataService.changePw(data).subscribe(
       response => {
-        if (response.success === true) {
+        if (!response.success === true) {
           this.showMessage = true;
           let exp = new Date();
           exp.setTime(exp.getTime() - 1);
@@ -179,7 +194,7 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
             this.router.navigate(['/login']);
           }, 1800);
         } else {
-
+          this.showError = true;
         }
 
       },

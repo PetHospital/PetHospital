@@ -50,6 +50,9 @@ export class TutorComponent implements OnInit, AfterViewInit {
     }
 
     onClickRoom(roomIndex) {
+        if (this.highlightRooms.indexOf(roomIndex) === -1) {
+            return;
+        }
         this.isDialogShow = true;
         let self = this;
         setTimeout(() => {
