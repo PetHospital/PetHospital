@@ -69,10 +69,11 @@
         height: 120vh;
 
         .title {
-            font: 40px/45px "visitAB", Helvetica, Arial, sans-serif;
+            font: 40px/45px "source-serif-pro", Helvetica, Arial, sans-serif;
             color: #ff4e1c;
             text-align: center;
             margin-bottom: 40px;
+            font-weight: bolder;
         }
 
         ::-moz-selection{background: #ff4e1c;color: #ffffff;}
@@ -92,9 +93,18 @@
             .intro {
                 float: left;
                 width: 40%;
+                position: relative;
 
                 p {
-                    word-wrap:break-word
+                    word-wrap:break-word;
+                    text-align: left;
+                    line-height: 200%;
+                    letter-spacing: 3px;
+                }
+
+                p:nth-child(2) {
+                    position: absolute;
+                    top: 380px;
                 }
             }
 

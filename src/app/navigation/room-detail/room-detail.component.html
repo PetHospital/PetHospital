@@ -25,10 +25,11 @@
         <p class="charge">主要负责人:&nbsp;{{room && room.charge}}</p>
         <div class="word-content">
             <div class="intro">
-                <p>{{room && room.intro}}</p>
+                <p>{{room && room.intro1}}</p>
+                <p>{{room && room.intro2}}</p>
             </div>
             <div class="imageandvideo">
-                <img src="/assets/images/7.jpg">
+                <img src={{room.image}}>
                 <video poster="/assets/images/7.jpg" class="video" width="400" height="250" src="../../assets/videos/mango.MP4" controls="controls"></video>
             </div>
         </div>

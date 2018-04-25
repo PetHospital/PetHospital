@@ -2,19 +2,19 @@
   <div class="dialog-bar">
     <span>您的医疗学习小助手</span>
     <div class="btn-close" (click) = "onClose()">
-      <img src="../../../assets/images/role/quit2.png">
+      <img src="/assets/images/role/quit2.png">
     </div>
     <div class="dialog-ctnt">
       <ul>
           <li>
             <div *ngFor="let message of messages">
                 <div *ngIf="!message.isUser" class="sys-msg">
-                    <div class="avatar"><img src="../../../assets/images/role/A1.jpg"></div>
+                    <div class="avatar"><img src="/assets/images/role/A1.jpg"></div>
                     <div class="text" (click)="onClickMsg(message.clickMsg)">{{message.content}}</div>
-                </div> 
+                </div>
                 <div *ngIf="message.isUser" class="usr-msg">
                   <div class="text">{{message.content}}</div>
-                  <div class="avatar"><img src="../../../assets/images/role/A2.jpg"></div>
+                  <div class="avatar"><img src="/assets/images/role/A2.jpg"></div>
                 </div>
             </div>
           </li>
@@ -30,11 +30,14 @@
       </ul>
   </div>
   <ul class="dialog-btm">
-    <li>
+    <li *ngIf="!isFinished">
       <button class="btn" (click)="addUserMessage(true)">好的明白了！</button>
     </li>
-    <li>
+    <li *ngIf="!isFinished">
       <button class="btn" (click)="addUserMessage(false)">可以再讲一遍吗？</button>
+    </li>
+    <li *ngIf="isFinished">
+        <button class="btn" (click)="onClose()">再见</button>
     </li>
   </ul>
 </div>
