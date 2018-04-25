@@ -20,11 +20,12 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
   startTime: number;
   isFinished: boolean;
   isOutTime: boolean;
+
   private timer;
   formData = {} as any;
   @ViewChild('examForm') examForm: NgForm;
   id: number;
-  duration: any = 0;
+  duration: number = 0;
   headers: Headers;
   options: RequestOptions;
   token: String;
@@ -38,7 +39,8 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
               this.token = arr[1];
               console.log(this.token);
            }else if (arr[0] === "examTime") {
-             console.log(arr[1]);
+             this.duration = parseInt(arr[1], 10);
+             console.log("duration: " + this.duration);
            }
         } 
         this.headers = new Headers({'Authorization': 'Token ' + this.token});
@@ -51,6 +53,7 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
     this.route.params.subscribe((params) => this.id = params.id);
     if (this.duration === 0) {
       this.route.params.subscribe((params) => this.duration = params.duration);
+      this.duration = this.duration * 60;
     }
     this.dataService.getQuestions(this.id)
                         .subscribe(data => {
@@ -71,7 +74,7 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
     
   ngAfterViewInit() {
       this.startTime = Date.now();
-      this.startTime += this.duration * 60 * 1000;
+      this.startTime += this.duration * 1000;
       this.timer = setInterval(() => {
       this.diff = this.startTime - Date.now();
         }, 1000);
@@ -94,17 +97,19 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
           err => {
             console.log(err);
         });
-      }, this.duration * 60 * 1000);
+      }, this.duration * 1000);
   }
   
   ngOnDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
     }
-    let time = 3600 * 1000;
-    let exp = new Date();
-    exp.setTime(exp.getTime() + time);
-    document.cookie = "examTime=" + this.diff + ";expires=" + exp.toUTCString();
+    if (!this.isFinished) {
+      let time = 3600 * 1000;
+      let exp = new Date();
+      exp.setTime(exp.getTime() + time);
+      document.cookie = "examTime=" + this.diff + ";expires=" + exp.toUTCString();
+    }
   }
 
   doSubmit(obj: any) {

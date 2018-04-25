@@ -46,6 +46,5 @@ export class TestResultComponent implements OnInit {
   }
   selectQuestion(question: TestResult): void {
     this.selectedQuestion = question;
-    console.log(this.selectedQuestion);
   }
 }
