@@ -42,9 +42,6 @@ export class PracticeComponent implements OnInit {
          this.hardItems.push(this.practiceItems[i]);
        }
       }
-      console.log(this.easyItems);
-      console.log(this.normalItems);
-      console.log(this.hardItems);
       this.easy = true;
       this.normal = true;
       this.hard = true;

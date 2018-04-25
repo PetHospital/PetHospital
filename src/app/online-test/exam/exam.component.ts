@@ -24,12 +24,24 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
   formData = {} as any;
   @ViewChild('examForm') examForm: NgForm;
   id: number;
-  duration: number;
+  duration: any = 0;
   headers: Headers;
   options: RequestOptions;
+  token: String;
 
-  constructor(private dataService: DataService, private http: Http, private route: ActivatedRoute) { 
-        this.headers = new Headers({'Authorization': 'Token 5261390e5514cae3e6853559302cbb069a83563a'});
+  constructor(private dataService: DataService, private http: Http, private route: ActivatedRoute) {
+        let strcookie = document.cookie;
+        let arrcookie = strcookie.split("; ");
+        for ( let i = 0; i < arrcookie.length; i++) {
+           let arr = arrcookie[i].split("=");
+           if (arr[0] === "token") {
+              this.token = arr[1];
+              console.log(this.token);
+           }else if (arr[0] === "examTime") {
+             console.log(arr[1]);
+           }
+        } 
+        this.headers = new Headers({'Authorization': 'Token ' + this.token});
         this.options = new RequestOptions({ headers: this.headers });
   }
 
@@ -37,7 +49,9 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isFinished = false;
     this.isOutTime = false;
     this.route.params.subscribe((params) => this.id = params.id);
-    this.route.params.subscribe((params) => this.duration = params.duration);
+    if (this.duration === 0) {
+      this.route.params.subscribe((params) => this.duration = params.duration);
+    }
     this.dataService.getQuestions(this.id)
                         .subscribe(data => {
                           console.log(data);
@@ -86,7 +100,11 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
-      }
+    }
+    let time = 3600 * 1000;
+    let exp = new Date();
+    exp.setTime(exp.getTime() + time);
+    document.cookie = "examTime=" + this.diff + ";expires=" + exp.toUTCString();
   }
 
   doSubmit(obj: any) {
