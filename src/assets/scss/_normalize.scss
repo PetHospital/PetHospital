@@ -256,7 +256,8 @@ textarea {
 //
 
 button {
-	overflow: visible;
+    overflow: visible;
+    outline: 0;
 }
 
 //
@@ -417,4 +418,8 @@ th {
 //add
 ol,ul,li {
 	list-style:none;
+}
+
+div {
+    outline:0 none;
 }

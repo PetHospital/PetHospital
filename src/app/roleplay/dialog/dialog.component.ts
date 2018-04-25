@@ -11,12 +11,14 @@ export class DialogComponent implements OnInit {
   clickMessages: Array<string>;
   messages: Array<Object>;
   currentIndex: number;
+  isFinished: boolean;
 
-  constructor() { 
+  constructor() {
     this.progresses = ['您好，我是您的医疗学习小助手。'];
     this.clickMessages = [''];
     this.messages = [];
     this.currentIndex = 0;
+    this.isFinished = false;
   }
 
   userMessage = {
@@ -48,11 +50,15 @@ export class DialogComponent implements OnInit {
     if (flag) {
       this.currentIndex ++;
     }
-    this.messages.push({
-      "content": this.progresses[this.currentIndex],
-      "isUser": false,
-      "clickMsg": this.clickMessages[this.currentIndex]
-    });
+    if (!this.progresses[this.currentIndex]) {
+        this.isFinished = true;
+    } else {
+        this.messages.push({
+            "content": this.progresses[this.currentIndex],
+            "isUser": false,
+            "clickMsg": this.clickMessages[this.currentIndex]
+        });
+    }
   }
 
   addUserMessage = (flag) => {
@@ -61,7 +67,7 @@ export class DialogComponent implements OnInit {
       "isUser": true,
       "clickMsg": null
     });
-    
+
     setTimeout(() => this.addSysMessage(flag), 1000);
   }
 
