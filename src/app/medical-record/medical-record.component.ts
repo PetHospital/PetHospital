@@ -23,6 +23,7 @@ export class MedicalRecordComponent implements OnInit {
 
     allImages: any;
     allVideos: any;
+    allProcess: any;
 
     diseaseList: object[];
 
@@ -56,8 +57,9 @@ export class MedicalRecordComponent implements OnInit {
             });
         });
 
+        this.dataService.getOperation()
+                        .subscribe(processData => this.allProcess = processData);
     }
-
 
     currentRecord: MedicalRecord;
 
@@ -67,7 +69,7 @@ export class MedicalRecordComponent implements OnInit {
 
     splitImageUrls = (images) => {
         if (!images) {
-            return ["../../assets/images/medicalRecord/nullrecord.jpeg"];
+            return ["/assets/images/medicalRecord/nullrecord.jpeg"];
         }
         if (images.split(',').length === 1) {
             return [API_URL + '/media/' + images];
@@ -82,11 +84,6 @@ export class MedicalRecordComponent implements OnInit {
     onShowPic(images) {
         this.bigPic.pictures = images;
         this.bigPic.showPic();
-    }
-
-    showProcess() {
-        this.secondBigPic.last.pictures = ["../../assets/images/medicalRecord/nullrecord.jpeg"];
-        this.secondBigPic.last.showPic();
     }
 
     ngOnInit() {

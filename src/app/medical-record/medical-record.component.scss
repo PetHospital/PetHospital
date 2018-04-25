@@ -90,11 +90,35 @@
                 .image-container {
                     position: absolute;
                     top: 270px;
+                    height: 250px;
+                    width: 450px;
+                    overflow: scroll;
+                    -webkit-overflow-scrolling: auto;
 
-                    img {
+                    .process-list {
+                        width: 1800px;
                         height: 250px;
-                        width: 450px;
-                        cursor: pointer;
+
+                        li {
+                            display: inline;
+
+                            img {
+                                width: 300px;
+                                height: 250px;
+                            }
+
+                            div {
+                                display: inline-block;
+
+                                h3 {
+
+                                }
+
+                                p {
+
+                                }
+                            }
+                        }
                     }
                 }
 

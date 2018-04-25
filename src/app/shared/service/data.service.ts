@@ -98,7 +98,7 @@ export class DataService {
     }
 
     getOperation(): Observable<Operation[]> {
-        let dataUrl = JSON_URL + '/opration.json';
+        let dataUrl = JSON_URL + '/operation.json';
         return this.http.get<Operation[]>(dataUrl);
     }
 }

@@ -32,9 +32,17 @@
                     <span>介绍:&nbsp;</span>{{currentRecord.text}}
                 </p>
                 <br>
-                <p class="process-title">点击下图查看治疗过程</p>
+                <p class="process-title">鼠标滑动查看治疗过程</p>
                 <div class="image-container">
-                    <img src="/assets/images/medicalRecord/nullrecord.jpeg" class="processimage" (click)="showProcess()">
+                    <ul class="process-list">
+                        <li *ngFor="let process of allProcess">
+                            <img src={{process.image}}>
+                            <div>
+                                <h3>Step{{process.id}}:</h3>
+                                <p>{{process.text}}</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <app-big-pic></app-big-pic>
             </div>
