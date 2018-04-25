@@ -7,7 +7,7 @@
   <div class="result-info">
     <div class="test-result-number">
       <p>答对题数：</p>
-      <h1 style="color:greenyellow">{{correctNum}}</h1><h1>/{{totalNum}}</h1>
+      <h1 [class.score-good]="correctNum>7" [class.score-normal]="correctNum>3 && correctNum<8" [class.score-normal]="correctNum<4" [class.score-good]="correctNum>7">{{correctNum}}</h1><h1>/{{totalNum}}</h1>
     </div>
   </div>
   <div class="result-info">
@@ -22,8 +22,8 @@
       答案与解析
     </h3>
     <ul class="list-num">
-      <li *ngFor="let para of result; index as i;" [class.right]="para.isCorrect===true" [class.wrong]="para.isCorrect===false" [class.active]="que===selectedQuestion"
-         (click)="selectQuestion(para)">{{i+1}}</li>
+      <li *ngFor="let para of result; index as i;" [class.right]="para.isCorrect===true" [class.wrong]="para.isCorrect===false"
+         (click)="selectQuestion(para)" [class.active]="para===selectedQuestion">{{i+1}}</li>
     </ul>
     <div class="question-subject" *ngIf="selectedQuestion">
       <h3 class="sub-tit">
@@ -50,12 +50,12 @@
               <p class="my-answer">
                 我的答案：
                 <span [class.a-right]="selectedQuestion.isCorrect===true" [class.a-wrong]="selectedQuestion.isCorrect===false">
-                  {{selectedQuestion.choice}}
+                  {{options[selectedQuestion.choice-1]}}
                 </span>
               </p>
               <p class="true-answer">
                   正确答案：
-                  <span>{{selectedQuestion.question.answer}}</span>
+                  <span>{{options[selectedQuestion.question.answer-1]}}</span>
               </p>
             </div>
         </div>
