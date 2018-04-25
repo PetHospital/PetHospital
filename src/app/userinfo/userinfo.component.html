@@ -87,7 +87,7 @@
                     邮箱&nbsp;
                     <i class="fa fa-envelope"></i>
                 </label>
-                <span>{{formData.email}}</span>
+                <span *ngIf="formData.user">{{formData.user.email}}</span>
                 <!-- <input type="email" class="input" name="email" [(ngModel)]="formData.email" #email="ngModel" pattern="[\w]+?@[\w]+?\.[a-z]+?"
                     required/>
                 <span *ngIf="email.errors && (email.dirty || email.touched)" class="error">

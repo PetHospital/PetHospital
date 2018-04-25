@@ -34,16 +34,14 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
       });
 
     this.dataService.getAllExams().subscribe(data => {
-      console.log(data);
       for (let exam of data) {
-        console.log(exam);
         if (exam.taken === true) {
-          console.log(this.exams);
           this.exams.push(exam);
         }
       }
-      console.log(this.exams);
     });
+
+
   }
 
   isUploadingImage: boolean;
