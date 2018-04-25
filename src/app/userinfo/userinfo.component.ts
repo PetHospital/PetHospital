@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { DataService } from '../shared/service/data.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
@@ -161,12 +161,13 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     const API_URL = environment.apiUrl;
 
     const data = {
-      new_password: formData.password1,
-      new_password_2: formData.password2
+      new_password: formData.password1
     };
     
-    let url = API_URL + '/user/password_reset';
-    this.http.post(url, data).subscribe(
+    let url = API_URL + '/user/password_change';
+    console.log(this.getCookie("token"));
+    const headers = new HttpHeaders().set("token", this.getCookie("token"));
+    this.http.post(url, data, {headers}).subscribe(
       response => {
         this.showMessage = true;
         let exp = new Date();

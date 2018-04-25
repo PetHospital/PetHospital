@@ -26,7 +26,7 @@ export class SceneComponent implements AfterViewInit, OnInit {
 
     public controls: THREE.OrbitControls;
 
-    private switchValue: boolean;
+    public switchValue: boolean;
 
     private roomInfos: any;
 

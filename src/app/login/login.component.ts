@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     }
     const API_URL = environment.apiUrl;
     let url = API_URL + '/user/login';
+    console.log(url);
     this.http.post(url, obj).subscribe(
       data => {
         let result = data;

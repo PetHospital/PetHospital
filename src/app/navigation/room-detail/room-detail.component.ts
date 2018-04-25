@@ -15,7 +15,7 @@ const roleName = {
     styleUrls: ['./room-detail.component.scss']
 })
 export class RoomDetailComponent implements OnInit {
-    private room: RoomInfo;
+    public room: RoomInfo;
     private param: any;
 
     constructor(
