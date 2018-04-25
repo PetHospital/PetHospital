@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { DataService } from '../shared/service/data.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
@@ -146,9 +146,9 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   getCookie(name) {
     let arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
     if (arr = document.cookie.match(reg)) {
-        return (arr[2]);
+      return (arr[2]);
     } else {
-        return null;
+      return null;
     }
   }
 
@@ -161,23 +161,27 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     const API_URL = environment.apiUrl;
 
     const data = {
-      new_password: formData.password1,
-      new_password_2: formData.password2
+      new_password: formData.password1
     };
-    
-    let url = API_URL + '/user/password_reset';
-    this.http.post(url, data).subscribe(
+
+    let url = API_URL + '/user/password_change';
+    this.dataService.changePw(data).subscribe(
       response => {
-        this.showMessage = true;
-        let exp = new Date();
-        exp.setTime(exp.getTime() - 1);
-        let cval = this.getCookie("token");
-        if (cval != null) {
+        if (response.success === true) {
+          this.showMessage = true;
+          let exp = new Date();
+          exp.setTime(exp.getTime() - 1);
+          let cval = this.getCookie("token");
+          if (cval != null) {
             document.cookie = "token=" + cval + ";expires=" + exp.toUTCString();
+          }
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 1800);
+        } else {
+
         }
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 1800);
+
       },
       err => {
         console.log(err);

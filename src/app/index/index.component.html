@@ -39,8 +39,8 @@
                     </ul>
                 </div>
                 <div class="login-container">
-                    <div *ngIf="!status" class="index-btn">
-                        <a [routerLink]="['/login']">LOGIN</a>
+                    <div *ngIf="!status" class="index-btn" [routerLink]="['/login']">
+                        <a>LOGIN</a>
                     </div>
                     <div *ngIf="status" class="index-btn userinfo-btn">
                         <a [routerLink]="['/userinfo']">

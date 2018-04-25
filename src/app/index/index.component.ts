@@ -7,7 +7,7 @@ import { DataService } from './../shared/service/data.service';
     styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-    private status: boolean;
+    public status: boolean;
     private username: string;
 
     constructor(private dataService: DataService) {
