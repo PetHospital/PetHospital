@@ -8,7 +8,7 @@
         padding-left: 50px;
         box-sizing: border-box;
         background-color: #706e65;
-        color: white;
+        color: #fefefe;
         .title {
             font-size: 120%;
         }
@@ -73,6 +73,7 @@
                 border-bottom: 1px solid #F5F5F5;
             }
             .intro {
+                position: relative;
                 color: #D7CCC8;
                 width: 45%;
                 margin: 5px;
@@ -80,12 +81,19 @@
                 float: left;
                 line-height: 30px;
 
+                .process-title {
+                    color: #fff;
+                    position: absolute;
+                    top: 230px;
+                }
+
                 .image-container {
-                    padding: 20px;
+                    position: absolute;
+                    top: 270px;
 
                     img {
                         height: 250px;
-                        width: auto;
+                        width: 450px;
                         cursor: pointer;
                     }
                 }
@@ -104,15 +112,16 @@
                     display: flex;
                     justify-content: center;
                     width: 400px;
+                    height: 250px;;
                     .image {
-                        width: auto;
-                        height: 250px;
+                        width: 100%;
+                        height: 100%;
                         cursor: pointer;
                     }
                 }
-                
+
                 .video {
-                    margin-top: 10px;
+                    margin-top: 25px;
                     object-fit: inherit;
                 }
             }

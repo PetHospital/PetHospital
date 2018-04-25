@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "拔除猫毛"
+    },
+    {
+        "id": 2,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "用纱布隔离"
+    },
+    {
+        "id": 3,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "切开器官"
+    },
+    {
+        "id": 4,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "取出器官"
+    },
+    {
+        "id": 5,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "结扎步骤1"
+    },
+    {
+        "id": 6,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "结扎步骤2"
+    },
+    {
+        "id": 7,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "结扎步骤3"
+    },
+    {
+        "id": 8,
+        "image": "/assets/images/operation/process.jpg",
+        "text": "缝合"
+    }
+]
