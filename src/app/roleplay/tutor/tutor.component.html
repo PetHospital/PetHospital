@@ -1,4 +1,10 @@
 <div class="content">
+    <div class="back-to-index" *ngIf="isShow">
+        <p class="back-arrow" (click)="backToIndex()">
+            <img src="/assets/images/share/back.png">
+            <span>返回主页</span>
+        </p>
+    </div>
     <div [class.hide]="isShow">
         <div class="back">
             <p class="back-arrow" (click)="back()">
@@ -9,7 +15,6 @@
         <div class="tip">
             <p>请选择您想去的房间</p>
         </div>
-        
         <div class="filter-container">
             <div class="filter" *ngFor="let room of avaliableRooms; let i = index" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(i) !== -1}"
                 (click)="onClickRoom(i)"></div>
@@ -17,15 +22,15 @@
             <div class="filter" (click)="onClickRoom(15)" [ngClass]="{'isAvaliable': highlightRooms && highlightRooms.indexOf(15) !== -1}"></div>
         </div>
         <div class="front">
-                <div class="department-info" [class.hide]="isHide">
-                    <app-card></app-card>
-                </div>
-                <div class="right" *ngIf="isDialogShow">
-                    <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
-                </div>
+            <div class="department-info" [class.hide]="isHide">
+                <app-card (isClose)="close($event)"></app-card>
             </div>
+            <div class="right" *ngIf="isDialogShow">
+                <app-dialog (dialogMsg)="getContentInfo($event)"></app-dialog>
+            </div>
+        </div>
         <div class="bg">
-            <img src="../../../assets/images/role/tutor-background.png" [class.blur]="isBlur">
+            <img src="/assets/images/role/tutor-background.png" [class.blur]="isBlur">
         </div>
     </div>
     <div *ngIf="isShow" [class.hide]="!isShow" class="select-content">

@@ -120,7 +120,7 @@
             <br>
             <p *ngFor="let exam of exams">
                 {{exam.description}}
-                <a href="testResult/exam/{{exam.eid}}" class="result">查看结果</a>
+                <a href="testResult/exam/{{exam.eid}}" target="_blank" class="result">查看结果</a>
             </p>
         </div>
         <div class="tab2" *ngIf="currentTab==2">

@@ -23,6 +23,11 @@
             .child {
                 margin-left: 10px;
                 margin-top: 5px;
+
+                .active {
+                    color: #D7CCC8;
+                }
+
                 .listen {
                     width: 20px;
                 }

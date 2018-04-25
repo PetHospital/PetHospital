@@ -42,8 +42,8 @@
                     <div *ngIf="!status" class="index-btn" [routerLink]="['/login']">
                         <a>LOGIN</a>
                     </div>
-                    <div *ngIf="status" class="index-btn userinfo-btn">
-                        <a [routerLink]="['/userinfo']">
+                    <div *ngIf="status" class="index-btn userinfo-btn" [routerLink]="['/userinfo']">
+                        <a>
                             <span><img src="/assets/images/index/avatar.png"></span>
                             <span>{{username}}</span>
                         </a>
