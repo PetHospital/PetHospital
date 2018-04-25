@@ -72,8 +72,8 @@ export class DataService {
     }
 
     getUserInfo(): Observable<Object> {
-        let dataUrl = JSON_URL + '/userinfo.json';
-        return this.http.get<Object>(dataUrl);
+        let dataUrl = API_URL + '/user/profile';
+        return this.http.get<Object>(dataUrl, {headers: this.header});
     }
 
 
