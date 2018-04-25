@@ -53,7 +53,7 @@
                     <img [src]="currentRecord.images[0]" class="image" (click)="onShowPic(currentRecord.images)">
                 </div>
                 <app-big-pic></app-big-pic>
-                <video poster="/assets/images/7.jpg" class="video" width="400" height="250" [src]="currentRecord.video" controls="controls"></video>
+                <video #myvideo class="video" width="400" height="250" [src]="currentRecord.video" controls="controls"></video>
             </div>
         </div>
     </div>
