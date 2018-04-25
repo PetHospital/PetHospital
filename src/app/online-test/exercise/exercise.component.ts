@@ -20,6 +20,9 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
   count: number = 0;
 
   isFinished: boolean;
+  showSolution: boolean[] = [false, false, false, false, false];
+  options: String[] = ["A", "B", "C", "D"];
+  
   private timer;
   formData = {} as any;
   @ViewChild('exerciseForm') exerciseForm: NgForm;
@@ -60,21 +63,8 @@ export class ExerciseComponent implements OnInit, AfterViewInit, OnDestroy {
   
 
   doSubmit(obj: any) {
-    if (!this.exerciseForm.valid) {
-      return;
-    }
     this.isFinished = true;
-    let exercise = {
-      examid: -1,
-      submission: obj,
-    };
-    let url = 'http://115.159.143.108/test/submit';
-    this.http.post(url, obj).subscribe(
-      data => {
-        console.log(data);
-      },
-      err => {
-        console.log(err);
-    });
+    this.showSolution = [true, true, true, true, true];
+    clearInterval(this.timer);
   }
 }

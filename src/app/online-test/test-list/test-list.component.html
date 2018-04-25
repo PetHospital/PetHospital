@@ -15,10 +15,13 @@
                           <p href="" class="js-subject-title" data-tipsclass="g-kmf-tips-title" data-msg="" data-class="">
                             {{exam.description}}
                           </p>
-                      </div>
-                      <a href="exam/{{exam.eid}}/{{exam.duration}}" class="redo-exam">
-                          <b class="redo-msg">开始考试</b>
-                      </a>
+                          <a href="exam/{{exam.eid}}/{{exam.duration}}" [class.active]="exam.taken===false" class="redo-exam">
+                            <b class="redo-msg">开始考试</b>
+                          </a>
+                          <a href="testResult/exam/{{exam.eid}}" [class.active]="exam.taken===true" class="redo-check">
+                            <b class="redo-msg">查看结果</b>
+                          </a>
+                    </div>
                   </div>
                 </li>
             </ul>

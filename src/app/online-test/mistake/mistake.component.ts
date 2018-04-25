@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ExamQuestion, Mistake} from '../../model/model';
+import {ExamQuestion, TestResult} from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-mistake',
@@ -8,22 +8,24 @@ import { DataService } from './../../shared/service/data.service';
 })
 export class MistakeComponent implements OnInit {
 
-  WrongList: any[];
+  allTest: TestResult[];
+  WrongList: Array<TestResult> = [];
+  options: String[] = ["A", "B", "C", "D"];
 
   constructor(private dataService: DataService) { 
-    this.dataService.getMistakes()
-                        .subscribe(data => this.WrongList = data);
+    this.dataService.getTestResult()
+                        .subscribe(data => {
+                          this.allTest = data;
+                          console.log(this.allTest);
+                          for (let i in this.allTest) {
+                            if (this.allTest[i].choice !== this.allTest[i].question.answer) {
+                              this.WrongList.push(this.allTest[i]);
+                            }
+                          }
+                        });
   }
   ngOnInit() {
     
-  }
-
-  viewSolution(id): void {
-    this.WrongList[id - 1].showSolution = !this.WrongList[id - 1].showSolution;
-  }
-
-  manageCollection(id): void {
-    this.WrongList[id - 1].collectStatus = !this.WrongList[id - 1].collectStatus;
   }
 
 }

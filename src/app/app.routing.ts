@@ -11,7 +11,6 @@ import { PracticeComponent } from './online-test/practice/practice.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ExamComponent } from './online-test/exam/exam.component';
 import { MistakeComponent } from './online-test/mistake/mistake.component';
-import { CollectionComponent } from './online-test/collection/collection.component';
 import { ErrorComponent } from './error/error.component';
 import {TestListComponent} from './online-test/test-list/test-list.component';
 import { TestResultComponent } from './online-test/test-result/test-result.component';
@@ -30,7 +29,6 @@ export const appRoutes: Routes = [
     { path: 'practice', component: PracticeComponent },
     { path: 'userinfo', component: UserinfoComponent},
     { path: 'mistake', component: MistakeComponent},
-    { path: 'collection', component: CollectionComponent},
     { path: 'exam/:id/:duration', component: ExamComponent},
     { path: 'exercise/:level', component: ExerciseComponent},
     { path: 'testList', component: TestListComponent},

@@ -33,9 +33,6 @@
     background: -webkit-linear-gradient(top,#fcfcfc,#f5f4f4);
     text-shadow: 1px 1px 0 #fff;
 }
-.ep_sidel_a:hover{
-	background: rgb(185, 184, 184);
-}
 .ec_sa_span {
     width: 160px;
     float: left;
@@ -147,7 +144,6 @@
 .eh_t_resolve {
     padding: 14px 23px 9px 11px;
     border-top: dashed 1px #bbb;
-    display: none;
     span {
         margin-bottom: 7px;
     }
@@ -168,10 +164,6 @@
         border-radius: 2px;
         margin-left: 6px;
         display: inline;
-    }
-    a:hover{
-        background-color: #03a9f4;
-        color:#fff;
     }
     .a_active {
         color:#03a9f4;

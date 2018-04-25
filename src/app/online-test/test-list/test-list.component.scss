@@ -55,12 +55,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    float: left;
 }
 .redo-exam {
     float: right;
     margin-right: 40px;
     color: #4c91ff;
+    display: none;
+}
+.redo-check {
+    float: right;
+    margin-right: 40px;
+    color: #f37004;
+    display: none;
 }
 .details-title {
     line-height: 28px;
@@ -75,4 +81,7 @@
 }
 .bottom_list{
     border-bottom: 1px dashed #d5d5d5;
+}
+.active{
+    display: inline;
 }

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ExamComponent } from './exam/exam.component';
 import { PracticeComponent } from './practice/practice.component';
 import { MistakeComponent } from './mistake/mistake.component';
-import { CollectionComponent } from './collection/collection.component';
 import { DataService } from './../shared/service/data.service';
 import {  } from './onlineTest-routing.module';
 import { TestListComponent } from './test-list/test-list.component';
@@ -20,7 +19,6 @@ import { ExerciseComponent } from './exercise/exercise.component';
         ExamComponent,
         PracticeComponent,
         MistakeComponent,
-        CollectionComponent,
         TestListComponent,
         TestResultComponent,
         ExerciseComponent

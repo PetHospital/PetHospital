@@ -15,7 +15,7 @@
               <div class="ep_t_topic">
                   <div class="ep_tt_num">{{i+1}}</div>
                   <div class="ep_tt_topic pading">【单选】</div>
-                  <div class="pading"><span>{{parent.subject}}</span></div>
+                  <div class="pading"><span>{{parent.text}}</span></div>
               </div>
               <ul class="ep_t_ul">
                 <li>
@@ -43,15 +43,24 @@
                     </label>
                 </li>
                 </ul>
+                <div class="eh_t_solution" *ngIf="showSolution[i]">
+                    <div class="eh_ts_a">
+                          <div class="eh_uanswer">
+                              <img class="em_icon" src="../../../assets/images/exam/correct.png">
+                              <span>正确答案：
+                                  <b>{{options[parent.answer-1]}}</b>
+                              </span>
+                          </div>
+                    </div>
+                </div>
+                <div class="eh_t_resolve" *ngIf="showSolution[i]">
+                    <div class="eh_resolve_nexist">{{parent.solution}}</div>
+                </div>
           </div>
       </div>
       <div class="ec_sider">
-          <button type="submit" tabindex="4" class="btn_submit">完 成</button>
+          <button *ngIf="!isFinished" type="submit" tabindex="4" class="btn_submit">完 成</button>
+          <a *ngIf="isFinished" href="/practice" class="show_result_button">返回练习列表</a>
       </div>
   </form>
-</div>
-<div *ngIf="isFinished" class="ex_alert_background"></div>
-<div *ngIf="isFinished" class="ex_alert_box">
-  <p class="ex_alert_title">已完成练习！</p>
-  <a href="/testResult/exercise/{{id}}" class="show_result_button">查看结果</a>
 </div>

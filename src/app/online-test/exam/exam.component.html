@@ -17,7 +17,7 @@
                     <div class="ep_tt_topic pading">【单选】</div>
                     <div class="pading"><span>{{parent.text}}</span></div>
                 </div>
-                        <ul class="ep_t_ul">
+                        <ul for="question" class="ep_t_ul">
                         <li>
                             <label>
                                 <input class="ep_radio" name="{{parent.qid}}" type="radio" value="1" ngModel required>
@@ -43,6 +43,9 @@
                             </label>
                         </li>
                         </ul>
+                        <span [hidden]="!question.errors.required">
+                            此题未完成
+                        </span>
                 </div>
         </div>
         <div class="ec_sider">

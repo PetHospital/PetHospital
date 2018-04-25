@@ -34,6 +34,7 @@ export interface ExamQuestion {
     score: number;
     solution: String;
 }
+
 export interface SingleItem {
     id: number;
     name: String;
@@ -54,6 +55,7 @@ export interface ExamItem {
     pubdate: String;
     author: number;
     duration: number;
+    taken: boolean;
 }
 export interface Mistake {
     id: number;

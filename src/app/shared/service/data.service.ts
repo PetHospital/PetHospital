@@ -8,7 +8,7 @@ const JSON_URL = environment.jsonUrl;
 
 @Injectable()
 export class DataService {
-    header: HttpHeaders;
+    header: HttpHeaders = new HttpHeaders({'Authorization': 'Token 5261390e5514cae3e6853559302cbb069a83563a'});
 
     constructor(private http: HttpClient) {
     }
@@ -70,11 +70,10 @@ export class DataService {
 
     getExamItem(): Observable<ExamItem[]> {
         let dataUrl = 'http://115.159.143.108/test/exam-list';
-        return this.http.get<ExamItem[]>(dataUrl);
+        return this.http.get<ExamItem[]>(dataUrl, {headers: this.header});
     }
 
     getTestResult(): Observable<TestResult[]> {
-        this.header = new HttpHeaders({'Authorization': 'Token 5261390e5514cae3e6853559302cbb069a83563a'});
         let dataUrl = 'http://115.159.143.108/test/history';
         return this.http.get<TestResult[]>(dataUrl, {headers: this.header});
     }
