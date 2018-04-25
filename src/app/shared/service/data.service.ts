@@ -8,9 +8,18 @@ const JSON_URL = environment.jsonUrl;
 
 @Injectable()
 export class DataService {
-    header: HttpHeaders = new HttpHeaders({'Authorization': 'Token 5261390e5514cae3e6853559302cbb069a83563a'});
-
+    header: HttpHeaders;
+    token: String;
     constructor(private http: HttpClient) {
+        let strcookie = document.cookie;
+        let arrcookie = strcookie.split("; ");
+        for ( let i = 0; i < arrcookie.length; i++) {
+           let arr = arrcookie[i].split("=");
+           if (arr[0] === "token") {
+              this.token = arr[1];
+           }
+        }
+        this.header = new HttpHeaders({'Authorization': 'Token ' + this.token});
     }
 
     getRoomInfo(): Observable<RoomInfo[]> {
