@@ -146,9 +146,9 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
   getCookie(name) {
     let arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
     if (arr = document.cookie.match(reg)) {
-        return (arr[2]);
+      return (arr[2]);
     } else {
-        return null;
+      return null;
     }
   }
 
@@ -163,22 +163,25 @@ export class UserinfoComponent implements OnInit, AfterViewInit {
     const data = {
       new_password: formData.password1
     };
-    
+
     let url = API_URL + '/user/password_change';
-    console.log(this.getCookie("token"));
-    const headers = new HttpHeaders().set("token", this.getCookie("token"));
-    this.http.post(url, data, {headers}).subscribe(
+    this.dataService.changePw(data).subscribe(
       response => {
-        this.showMessage = true;
-        let exp = new Date();
-        exp.setTime(exp.getTime() - 1);
-        let cval = this.getCookie("token");
-        if (cval != null) {
+        if (response.success === true) {
+          this.showMessage = true;
+          let exp = new Date();
+          exp.setTime(exp.getTime() - 1);
+          let cval = this.getCookie("token");
+          if (cval != null) {
             document.cookie = "token=" + cval + ";expires=" + exp.toUTCString();
+          }
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 1800);
+        } else {
+
         }
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 1800);
+
       },
       err => {
         console.log(err);

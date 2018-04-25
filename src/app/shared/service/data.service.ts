@@ -91,5 +91,10 @@ export class DataService {
         let dataUrl = JSON_URL + '/role-dialog.json';
         return this.http.get<DialogInfo[]>(dataUrl);
     }
+
+    changePw(data): Observable<any> {
+        let dataUrl = API_URL + '/user/password_change';
+        return this.http.post<any>(dataUrl, data, {headers: this.header});
+    }
 }
 
