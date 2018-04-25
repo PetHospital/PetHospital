@@ -101,21 +101,38 @@
 
                         li {
                             display: inline;
-
-                            img {
-                                width: 300px;
+                            .process-img {
+                                display: inline-block;
+                                vertical-align: top;
+                                margin-right: -5.5px;
+                                width: 325px;
                                 height: 250px;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
                             }
 
-                            div {
+                            .process-text {
+                                background-color: #E2B000;
                                 display: inline-block;
+                                vertical-align: top;
+                                margin-right: -5.5px;
+                                width: 125px;
+                                height: 250px;
+                                color: #fff;
+                                text-align: center;
 
                                 h3 {
-
+                                    padding-top: 80px;
+                                    font-size: 1.2rem;
+                                    font-family: 'Abril';
+                                    letter-spacing: 1px;
                                 }
 
                                 p {
-
+                                    padding-top: 10px;
+                                    font-size: 1rem;
                                 }
                             }
                         }

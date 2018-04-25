@@ -36,8 +36,10 @@
                 <div class="image-container">
                     <ul class="process-list">
                         <li *ngFor="let process of allProcess">
-                            <img src={{process.image}}>
-                            <div>
+                            <div class="process-img">
+                                <img src={{process.image}}>
+                            </div>
+                            <div class="process-text">
                                 <h3>Step{{process.id}}:</h3>
                                 <p>{{process.text}}</p>
                             </div>
