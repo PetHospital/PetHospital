@@ -20,6 +20,7 @@ import { ErrorComponent } from './error/error.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 
 import { DataService } from './shared/service/data.service';
+import { AuthGuard } from './shared/service/auth_guard.service';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { DataService } from './shared/service/data.service';
     ],
     providers: [
         DataService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })

@@ -4,12 +4,12 @@
         <h2 class="title">病例目录</h2>
         <div *ngFor="let parent of diseaseList" class="parent">
             <span (click)="parent.isExpanded = !parent.isExpanded;">
-                <img src="../../assets/images/medicalRecord/doctor.png" class="doctor" />&nbsp;{{parent.name}}
+                <img src="/assets/images/medicalRecord/doctor.png" class="doctor" />&nbsp;{{parent.name}}
             </span>
             <div *ngIf="parent.isExpanded">
                 <div *ngFor="let child of parent.children" class="child">
                     <span (click)="showDetail(parent, child)" [ngClass]="{'active':child.name == currentRecord.name}">
-                        <img src="../../assets/images/medicalRecord/listen.png" class="listen" />&nbsp; {{child.name}}
+                        <img src="/assets/images/medicalRecord/listen.png" class="listen" />&nbsp; {{child.name}}
                     </span>
                 </div>
             </div>
