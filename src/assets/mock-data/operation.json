@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "image": "/assets/images/operation/process1.jpg",
+        "text": "拔除猫毛"
+    },
+    {
+        "id": 2,
+        "image": "/assets/images/operation/process2.jpg",
+        "text": "用纱布隔离"
+    },
+    {
+        "id": 3,
+        "image": "/assets/images/operation/process3.jpg",
+        "text": "切开器官"
+    },
+    {
+        "id": 4,
+        "image": "/assets/images/operation/process4.jpg",
+        "text": "取出器官"
+    }
+]

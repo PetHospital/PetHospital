@@ -107,3 +107,8 @@ export interface TestResult {
     user: number;
     isCorrect: boolean;
 }
+export interface Operation {
+    id: number;
+    image: String;
+    text: String;
+}

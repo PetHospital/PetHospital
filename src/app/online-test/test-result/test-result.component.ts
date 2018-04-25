@@ -18,6 +18,7 @@ export class TestResultComponent implements OnInit {
   correctNum: number = 0;
   totalNum: number = 0;
   score: number = 0;
+  options: String[] = ["A", "B", "C", "D"];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) { 
   }
@@ -44,6 +45,7 @@ export class TestResultComponent implements OnInit {
       this.isExam = false;
     }
   }
+
   selectQuestion(question: TestResult): void {
     this.selectedQuestion = question;
   }

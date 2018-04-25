@@ -76,7 +76,14 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
       this.startTime = Date.now();
       this.startTime += this.duration * 1000;
       this.timer = setInterval(() => {
-      this.diff = this.startTime - Date.now();
+        this.diff = this.startTime - Date.now();
+        console.log(this.isFinished);
+        if (!this.isFinished) {
+          let time = 3600 * 1000;
+          let exp = new Date();
+          exp.setTime(exp.getTime() + time);
+          document.cookie = "examTime=" + this.diff + ";expires=" + exp.toUTCString();
+        }
         }, 1000);
       let self = this;
       setTimeout(function (){
@@ -97,18 +104,12 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
           err => {
             console.log(err);
         });
-      }, this.duration * 1000);
+      }, self.duration * 1000);
   }
   
   ngOnDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
-    }
-    if (!this.isFinished) {
-      let time = 3600 * 1000;
-      let exp = new Date();
-      exp.setTime(exp.getTime() + time);
-      document.cookie = "examTime=" + this.diff + ";expires=" + exp.toUTCString();
     }
   }
 
