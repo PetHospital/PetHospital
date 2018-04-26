@@ -9,11 +9,13 @@ import {  } from './onlineTest-routing.module';
 import { TestListComponent } from './test-list/test-list.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { ExerciseComponent } from './exercise/exercise.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     declarations: [
         ExamComponent,

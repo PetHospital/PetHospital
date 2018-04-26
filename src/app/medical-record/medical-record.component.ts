@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, ElementRef } from '@angular/core';
 import { MedicalRecord, Operation } from './../model/model';
 import * as _ from "lodash";
 import { BigPicComponent } from '../roleplay/big-pic/big-pic.component';
@@ -13,6 +13,7 @@ const API_URL = environment.apiUrl;
     styleUrls: ['./medical-record.component.scss']
 })
 export class MedicalRecordComponent implements OnInit {
+    @ViewChild('myvedio') myvideo: ElementRef;
 
     @ViewChild(BigPicComponent)
     bigPic: BigPicComponent;
@@ -93,5 +94,14 @@ export class MedicalRecordComponent implements OnInit {
             children: null,
             isExpanded: null
         };
+
+        let video = this.myvideo.nativeElement;
+        video.on("loadeddata", function () {
+            let canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth * 0.8;
+            canvas.height = video.videoHeight * 0.8;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            video.setAttribute("poster", canvas.toDataURL("image/png"));
+        });
     }
 }

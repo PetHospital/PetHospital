@@ -1,61 +1,74 @@
 <div class="em_main">
-  <div class="ec_sidel">
-      <div class="golbal_side">
-          <div class="Navigation">
-            <div class="ep_sidel_a ep_active" >
-              <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
-              <span class="ec_sa_span">我的错题</span>
+    <div class="back">
+        <p class="back-arrow" (click)="back()">
+            <img src="/assets/images/share/back.png">
+            <br>
+            <span style="color:white">Back</span>
+        </p>
+    </div>
+    <div class="ec_sidel">
+        <div class="golbal_side">
+            <div class="Navigation">
+                <div class="ep_sidel_a ep_active">
+                    <img class="ep_img" src="../../../assets/images/exam/wrongCollection.png">
+                    <span class="ec_sa_span">我的错题</span>
+                </div>
             </div>
-          </div>
-      </div>
-  </div>
-  <div class="ec_sider" *ngFor="let parent of WrongList">
-      <div class="ep_topic">
-          <div class="ep_t_topic">
-              <div class="ep_tt_num">{{parent.eid}}</div>
-              <div class="ep_tt_topic pading">【单选】</div>
-              <div class="pading"><span>{{parent.question.text}}</span></div>
-          </div>
-          <ul class="ep_t_ul">
+        </div>
+    </div>
+    <div class="ec_sider" *ngFor="let parent of WrongList">
+        <div class="ep_topic">
+            <div class="ep_t_topic">
+                <div class="ep_tt_num">{{parent.eid}}</div>
+                <div class="ep_tt_topic pading">【单选】</div>
+                <div class="pading">
+                    <span>{{parent.question.text}}</span>
+                </div>
+            </div>
+            <ul class="ep_t_ul">
                 <li>
                     <label>
-                        <b>A. </b><p>{{parent.question.choice1}}</p>                                
+                        <b>A. </b>
+                        <p>{{parent.question.choice1}}</p>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <b>B. </b><p>{{parent.question.choice2}}</p>                                
+                        <b>B. </b>
+                        <p>{{parent.question.choice2}}</p>
                     </label>
                 </li>
                 <li>
                     <label>
-                        <b>C. </b><p>{{parent.question.choice3}}</p>                                
-                     </label>
+                        <b>C. </b>
+                        <p>{{parent.question.choice3}}</p>
+                    </label>
                 </li>
                 <li>
                     <label>
-                        <b>D. </b><p>{{parent.question.choice4}}</p>                                
+                        <b>D. </b>
+                        <p>{{parent.question.choice4}}</p>
                     </label>
                 </li>
-          </ul>
-          <div class="eh_t_solution">
-              <div class="eh_ts_a">
+            </ul>
+            <div class="eh_t_solution">
+                <div class="eh_ts_a">
                     <div class="eh_answer">
                         <img class="em_icon" src="../../../assets/images/exam/wrong.png">
                         <span>您的答案：
                             <b>{{options[parent.choice-1]}}</b>
                         </span>
                     </div>
-              </div>
-              <div class="eh_uanswer">
+                </div>
+                <div class="eh_uanswer">
                     <span>正确答案：
                         <b>{{options[parent.question.answer-1]}}</b>
                     </span>
-              </div>
-          </div>
-          <div class="eh_t_resolve">
-              <div class="eh_resolve_nexist">{{parent.question.solution}}</div>
-          </div>
-      </div>
-  </div>
+                </div>
+            </div>
+            <div class="eh_t_resolve">
+                <div class="eh_resolve_nexist">{{parent.question.solution}}</div>
+            </div>
+        </div>
+    </div>
 </div>

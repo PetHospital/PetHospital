@@ -5,8 +5,14 @@
 
     .tip {
         position: fixed;
-        top: 46px;
+        top: 40px;
         left: 200px;
+
+        p {
+            color: #fca675;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
     }
 
     .front{
@@ -294,6 +300,13 @@
     .back-arrow {
         display: flex;
         align-items: center;
+        color: #a9ba95;
+
+        span {
+            font-size: 1.2rem;
+            font-weight: 800;
+            padding-left: 5px;
+        }
     }
     img {
         width: 30px;
@@ -331,6 +344,12 @@
     .back-arrow {
         display: flex;
         align-items: center;
+        color: #a9ba95;
+        span {
+            font-size: 1.2rem;
+            font-weight: 800;
+            padding-left: 5px;
+        }
     }
     img {
         width: 30px;

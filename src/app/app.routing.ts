@@ -17,24 +17,25 @@ import { TestResultComponent } from './online-test/test-result/test-result.compo
 import { RoomDetailComponent } from './navigation/room-detail/room-detail.component';
 import { ExerciseComponent } from './online-test/exercise/exercise.component';
 
+import { AuthGuard } from './shared/service/auth_guard.service';
 
 export const appRoutes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: RegisterComponent},
-    { path: 'navigation', component: SceneComponent},
-    { path: 'role', component: TutorComponent },
-    { path: 'disease', component: MedicalRecordComponent},
-    { path: 'tutor', component: TutorComponent},
-    { path: 'practice', component: PracticeComponent },
-    { path: 'userinfo', component: UserinfoComponent},
-    { path: 'mistake', component: MistakeComponent},
-    { path: 'exam/:id/:duration', component: ExamComponent},
-    { path: 'exercise/:level', component: ExerciseComponent},
-    { path: 'testList', component: TestListComponent},
-    { path: 'testResult/:type/:id', component: TestResultComponent},
-    { path: 'roomDetail/:id', component: RoomDetailComponent},
-    { path: '**', component: ErrorComponent }
+    { path: 'navigation', component: SceneComponent, canActivate: [AuthGuard]},
+    { path: 'role', component: TutorComponent, canActivate: [AuthGuard]},
+    { path: 'disease', component: MedicalRecordComponent, canActivate: [AuthGuard]},
+    { path: 'tutor', component: TutorComponent, canActivate: [AuthGuard]},
+    { path: 'practice', component: PracticeComponent, canActivate: [AuthGuard]},
+    { path: 'userinfo', component: UserinfoComponent, canActivate: [AuthGuard]},
+    { path: 'mistake', component: MistakeComponent, canActivate: [AuthGuard]},
+    { path: 'exam/:id/:duration', component: ExamComponent, canActivate: [AuthGuard]},
+    { path: 'exercise/:level', component: ExerciseComponent, canActivate: [AuthGuard]},
+    { path: 'testList', component: TestListComponent, canActivate: [AuthGuard]},
+    { path: 'testResult/:type/:id', component: TestResultComponent, canActivate: [AuthGuard]},
+    { path: 'roomDetail/:id', component: RoomDetailComponent, canActivate: [AuthGuard]},
+    { path: '**', component: ErrorComponent}
 
 ];
 

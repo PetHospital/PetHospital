@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/service/data.service';
 import { RoomInfo } from '../../model/model';
@@ -18,6 +18,8 @@ export class RoomDetailComponent implements OnInit {
     public room: RoomInfo;
     private param: any;
 
+    @ViewChild('myvideo') myvideo: ElementRef;
+
     constructor(
         private route: ActivatedRoute,
         private dataService: DataService,
@@ -31,6 +33,14 @@ export class RoomDetailComponent implements OnInit {
                             this.room = data[this.param - 1];
                             this.room.charge = this.parseName(this.room.charge);
                         });
+        let video = this.myvideo.nativeElement;
+        video.on("loadeddata", function () {
+            let canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth * 0.8;
+            canvas.height = video.videoHeight * 0.8;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            video.setAttribute("poster", canvas.toDataURL("image/png"));
+        });
     }
 
     back() {
