@@ -7,6 +7,7 @@ import 'three/examples/js/controls/OrbitControls';
 import 'three/examples/js/loaders/OBJLoader';
 import 'three/examples/js/loaders/MTLLoader';
 import { Vector3, BooleanKeyframeTrack } from 'three';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'app-scene',
@@ -41,6 +42,9 @@ export class SceneComponent implements AfterViewInit, OnInit {
 
     ngOnInit () {
         this.dataService.getRoomInfo().subscribe(data => {
+            _.map(data, (d) => {
+                d.image = 'http://115.159.143.108' + d.image;
+            });
             this.roomInfos = data;
         });
     }

@@ -28,8 +28,8 @@
             </div>
             <div class="intro">
                 <br>
-                <p>
-                    <span>介绍:&nbsp;</span>{{currentRecord.text}}
+                <p class="intro-text">
+                    <span class="intro-text-title">介绍:&nbsp;</span>{{currentRecord.text}}
                 </p>
                 <br>
                 <p class="process-title">鼠标滑动查看治疗过程</p>
@@ -53,7 +53,7 @@
                     <img [src]="currentRecord.images[0]" class="image" (click)="onShowPic(currentRecord.images)">
                 </div>
                 <app-big-pic></app-big-pic>
-                <video #myvideo class="video" width="400" height="250" [src]="currentRecord.video" controls="controls"></video>
+                <video #myvideo class="video" [src]="currentRecord.video" controls="controls"></video>
             </div>
         </div>
     </div>

@@ -63,16 +63,17 @@
     }
 
     .detail {
-        padding-top: 50px;
-        width: 700px;
+        padding-top: 6vh;
+        padding-bottom: 6vh;
+        width: 70vw;
         margin: 0 auto;
-        height: 120vh;
+        height: 95vh;
 
         .title {
-            font: 40px/45px "source-serif-pro", Helvetica, Arial, sans-serif;
+            font: 45px "source-serif-pro", Helvetica, Arial, sans-serif;
             color: #ff4e1c;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 3vh;
             font-weight: bolder;
         }
 
@@ -80,10 +81,10 @@
         ::selection{background: #ff4e1c;color: #ffffff;}
 
         .charge {
-            font: 18px/26px "Roboto-Slab-Regular", Helvetica, Arial, sans-serif;
+            font: 22px "Roboto-Slab-Regular", Helvetica, Arial, sans-serif;
             color: #ff4e1c;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 5vh;
         }
         .word-content {
             font: 14px/26px "Roboto-Slab-Regular", Helvetica, Arial, sans-serif;
@@ -92,10 +93,11 @@
 
             .intro {
                 float: left;
-                width: 40%;
+                width: 45%;
                 position: relative;
 
                 p {
+                    font-size: 120%;
                     word-wrap:break-word;
                     text-align: left;
                     line-height: 200%;
@@ -104,7 +106,7 @@
 
                 p:nth-child(2) {
                     position: absolute;
-                    top: 380px;
+                    top: 42vh;
                 }
             }
 
@@ -112,13 +114,15 @@
                 float: right;
                 width: 50%;
                 img {
-                    width: 400px;
-                    height: 300px;
+                    width: 32vw;
+                    height: 33vh;
                 }
 
                 video {
+                    width: 32vw;
+                    height: 33vh;
                     object-fit: inherit;
-                    margin-top: 10vh;
+                    margin-top: 6vh;
                 }
             }
         }

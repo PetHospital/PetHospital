@@ -1,16 +1,16 @@
 .record-container {
     height: calc(100vh - 110px);
     .categories {
-        width: 20%;
+        width: 20vw;
         height: 100%;
         overflow: auto;
-        padding-top: 20px;
-        padding-left: 50px;
+        padding-top: 4vh;
+        padding-left: 4vw;
         box-sizing: border-box;
         background-color: #706e65;
         color: #fefefe;
         .title {
-            font-size: 120%;
+            font-size: 150%;
         }
         .parent {
             width: 200px;
@@ -21,8 +21,8 @@
                 width: 20px;
             }
             .child {
-                margin-left: 10px;
-                margin-top: 5px;
+                margin-left: 2vh;
+                margin-top: 1vh;
 
                 .active {
                     color: #E2B000;
@@ -36,13 +36,13 @@
         }
     }
     .recordContent {
-        width: 80%;
-        height: 100%;
+        width: 80vw;
+        height: calc(100vh - 110px);
         background-color: #706e65;
         .record-bg {
             width: 100%;
             height: 100%;
-            background: url('./../../assets/images/medicalRecord/nullrecord.jpeg') center no-repeat;
+            background: url('/assets/images/medicalRecord/nullrecord.jpeg') center no-repeat;
             background-size: cover;
             .tip {
                 width: 450px;
@@ -71,11 +71,11 @@
                 }
                 text-align: center;
                 width: 90%;
-                font-size: 1.5rem;
+                font-size: 2rem;
                 color: #D7CCC8;
-                padding: 10px;
+                padding: 2vh;
                 padding-top: 0;
-                margin: 10px;
+                margin: 2vh;
                 border-bottom: 1px solid #F5F5F5;
             }
             .intro {
@@ -87,23 +87,32 @@
                 float: left;
                 line-height: 30px;
 
+                .intro-text {
+                    font-size: 120%;
+
+                    .intro-text-title {
+                        font-size: 150%;
+                    }
+                }
+
                 .process-title {
                     color: #fff;
                     position: absolute;
-                    top: 230px;
+                    top: 34vh;
+                    font-size: 150%;
                 }
 
                 .image-container {
                     position: absolute;
-                    top: 270px;
-                    height: 250px;
-                    width: 450px;
+                    top: 38.5vh;
+                    height: 35vh;
+                    width: 32vw;
                     overflow: scroll;
                     -webkit-overflow-scrolling: auto;
 
                     .process-list {
-                        width: 1800px;
-                        height: 250px;
+                        width: 136vw;
+                        height: 35vh;
 
                         li {
                             display: inline;
@@ -111,8 +120,8 @@
                                 display: inline-block;
                                 vertical-align: top;
                                 margin-right: -5.5px;
-                                width: 325px;
-                                height: 250px;
+                                width: 26vw;
+                                height: 35vh;
                                 img {
                                     width: 100%;
                                     height: 100%;
@@ -124,20 +133,20 @@
                                 display: inline-block;
                                 vertical-align: top;
                                 margin-right: -5.5px;
-                                width: 125px;
-                                height: 250px;
+                                width: 8vw;
+                                height: 35vh;
                                 color: #fff;
                                 text-align: center;
 
                                 h3 {
-                                    padding-top: 80px;
+                                    padding-top: 12vh;
                                     font-size: 1.2rem;
                                     font-family: 'Abril';
                                     letter-spacing: 1px;
                                 }
 
                                 p {
-                                    padding-top: 10px;
+                                    padding-top: 1vh;
                                     font-size: 1rem;
                                 }
                             }
@@ -158,8 +167,8 @@
                 .image-wrapper {
                     display: flex;
                     justify-content: center;
-                    width: 400px;
-                    height: 250px;;
+                    width: 32vw;
+                    height: 35vh;
                     .image {
                         width: 100%;
                         height: 100%;
@@ -168,7 +177,9 @@
                 }
 
                 .video {
-                    margin-top: 25px;
+                    width: 32vw;
+                    height: 35vh;
+                    margin-top: 4vh;
                     object-fit: inherit;
                 }
             }

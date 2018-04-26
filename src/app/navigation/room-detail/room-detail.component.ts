@@ -31,6 +31,7 @@ export class RoomDetailComponent implements OnInit {
         this.dataService.getRoomInfo()
                         .subscribe(data => {
                             this.room = data[this.param - 1];
+                            this.room.image = 'http://115.159.143.108' + this.room.image;
                             this.room.charge = this.parseName(this.room.charge);
                         });
         let video = this.myvideo.nativeElement;

@@ -23,7 +23,7 @@ export class DataService {
     }
 
     getRoomInfo(): Observable<RoomInfo[]> {
-        let dataUrl = JSON_URL + '/roomInfo.json';
+        let dataUrl =  API_URL + '/room/list';
         return this.http.get<RoomInfo[]>(dataUrl);
     }
 
@@ -102,7 +102,7 @@ export class DataService {
         console.log(this.header);
         return this.http.get<any>(dataUrl, {headers: this.header});
     }
-    
+
     getOperation(): Observable<Operation[]> {
         let dataUrl = JSON_URL + '/operation.json';
         return this.http.get<Operation[]>(dataUrl);
