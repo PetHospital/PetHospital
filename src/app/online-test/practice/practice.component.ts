@@ -52,9 +52,6 @@ export class PracticeComponent implements OnInit {
   
   SelectTab(tab: PracticeTab): void {
     this.OnSelectedTab = tab;
-    console.log(this.easy);
-    console.log(this.normal);
-    console.log(this.hard);
     if (tab.name === "全部") {
       this.easy = true;
       this.normal = true;
