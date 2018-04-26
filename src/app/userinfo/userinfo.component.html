@@ -11,7 +11,8 @@
         <div class="avatar">
             <img src="../../assets/images/role/A2.jpg" class="avatar_img" />
             <br>
-            <button (click)="changeAvatar()" class="change_ava_btn">更改头像</button>
+            <p *ngIf="formData.user">Welcome {{formData.user.username}}</p>
+            <!-- <button (click)="changeAvatar()" class="change_ava_btn">更改头像</button> -->
         </div>
         <div class="tabs">
             <div class="tab" [ngClass]="{'active':currentTab == 0}">
@@ -32,7 +33,7 @@
                     用户名&nbsp;
                     <i class="fa fa-user"></i>
                 </label>
-                <span>{{formData.user.username}}</span>
+                <span *ngIf="formData.user">{{formData.user.username}}</span>
                 <br>
                 <!-- <input type="text" class="input" name="username" required [(ngModel)]="formData.username" #userName="ngModel" minlength="4"
                     value="userinfo.username" />

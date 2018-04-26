@@ -7,7 +7,7 @@
         width: 20%;
         height: 100%;
         .logo {
-            width: 80%;
+            width: 60%;
         }
     }
 }
@@ -25,6 +25,11 @@
         height: 10%;
         margin:20px;
         text-align: center;
+
+        p{
+            color: #666666;
+            font-size: 150%;
+        }
 
         .avatar_img {
             width: 50%;

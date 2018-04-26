@@ -3,6 +3,8 @@ export interface RoomInfo {
     intro: string;
     image: string;
     charge: string;
+    intro1: string;
+    intro2: string;
 }
 
 export interface RoleInfo {

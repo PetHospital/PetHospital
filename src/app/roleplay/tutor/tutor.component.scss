@@ -2,6 +2,19 @@
     height: 100%;
     width: 100%;
     font-family: 'Roboto-Slab-Regular';
+    
+    .category {
+        width: 20vw;
+        height: 80vh;
+        padding: 3vw;
+        margin-top: 10vh;
+
+        .div {
+            p{
+                margin:3vh;
+            }
+        }
+    }
 
     .tip {
         position: fixed;
@@ -20,10 +33,14 @@
     }
 
     .filter-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
+        position: absolute;
+        left: calc((100% - 1280px) / 2);
+        top: 186px;
+        width: 1280px;
+        height: 600px;
         z-index: 10;
+        // background: #e1ebed;
+        
         .filter {
             position: absolute;
             background: #9E9E9E;
@@ -35,111 +52,111 @@
         }
         .filter:nth-child(1) {
             width: 160px;
-            height: 115px;
+            height: 100px;
             left: 205px;
-            top: 490px;
+            top: 400px;
             //左下角ICU
         }
         .filter:nth-child(2) {
             width: 200px;
-            height: 115px;
+            height: 100px;
             left: 370px;
-            top: 490px;
+            top: 400px;
             //左下角第二个住院部
         }
         .filter:nth-child(3) {
             width: 75px;
             height: 235px;
             left: 205px;
-            top: 140px;
+            top: 120px;
             //最左边上半部分
         }
         .filter:nth-child(4) {
             width: 365px;
-            height: 115px;
+            height: 100px;
             left: 205px;
-            top: 375px;
+            top: 305px;
             //最左边的下半部分pathological room
         }
         .filter:nth-child(5) {
             width: 120px;
-            height: 115px;
+            height: 100px;
             left: 280px;
-            top: 145px;
+            top: 210px;
             //第一排正方形手术室
         }
         .filter:nth-child(6) {
             width: 125px;
-            height: 115px;
+            height: 100px;
             left: 280px;
-            top: 255px;
+            top: 115px;
             //第2排正方形Consultation Room
         }
         .filter:nth-child(7) {
             width: 170px;
-            height: 230px;
+            height: 200px;
             left: 400px;
-            top: 140px;
+            top: 115px;
             //第1排第三列手术准备室
         }
         .filter:nth-child(8) {
             width: 90px;
-            height: 80px;
+            height: 70px;
             left: 485px;
-            top: 60px;
+            top: 50px;
             //最上面小厕所injection room
         }
         .filter:nth-child(9) {
             width: 120px;
-            height: 150px;
+            height: 130px;
             left: 575px;
-            top: 140px;
+            top: 120px;
             //右半部分 第一排第一个　pharmacy dispensary
         }
         .filter:nth-child(10) {
             width: 80px;
-            height: 150px;
+            height: 70px;
             left: 700px;
-            top: 140px;
+            top: 180px;
             //右半部分 第一排第2个　treatment room
         }
         .filter:nth-child(11) {
             width: 120px;
-            height: 150px;
+            height: 130px;
             left: 780px;
-            top: 140px;
+            top: 120px;
             //右半部分 第一排第3个　immunexxx
         }
 
         .filter:nth-child(12) {
             width: 170px;
-            height: 230px;
+            height: 190px;
             left: 900px;
-            top: 140px;
+            top: 115px;
             //右半部分 最右　眼科诊室 ophtaxxx
         }
 
         .filter:nth-child(13) {
             width: 80px;
-            height: 80px;
+            height: 70px;
             left: 990px;
-            top: 60px;
+            top: 50px;
             //右半部分 右上 小厕所　挂号前台 registration office
         }
 
         .filter:nth-child(14) {
             width: 335px;
-            height: 310px;
+            height: 265px;
             left: 570px;
-            top: 295px;
+            top: 240px;
             //右半部分 右下 大房间　胃 stomxxx 左边正方形
         }
 
         .filter:nth-child(15) {
             width: 170px;
-            height: 160px;
+            height: 140px;
             left: 900px;
-            top: 370px;
+            top: 300px;
             //右半部分 右下 大房间　胃 stomxxx 右半部分
         }
 
@@ -147,7 +164,7 @@
             width: 80px;
             height: 75px;
             left: 700px;
-            top: 215px;
+            top: 120px;
             //右半部分 第一排第2个下 lab
         }
     }
@@ -159,10 +176,14 @@
         right: 0;
         bottom: 0;
         z-index: -100;
+        background: #e1ebed;
 
         img{
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            left: calc((100% - 1280px) / 2);
+            top: 186px;
+            width: 1280px;
+            height: 600px;
         }
     }
 
@@ -213,8 +234,8 @@
             width: 100%;
             .select{
                 padding: 30px;
-                height: 400px;
-                width: 270px;
+                height: 50vh;
+                width: 20vw;
                 display: flex;
                 flex-direction: column;
                 background: #fff;
