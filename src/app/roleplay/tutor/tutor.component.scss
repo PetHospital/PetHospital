@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     font-family: 'Roboto-Slab-Regular';
-    
+
     .category {
         width: 20vw;
         height: 80vh;
@@ -40,7 +40,7 @@
         height: 600px;
         z-index: 10;
         // background: #e1ebed;
-        
+
         .filter {
             position: absolute;
             background: #9E9E9E;
@@ -251,9 +251,10 @@
                     color: #7F8487;
                 }
                 img{
-                    width: 270px;
-                    height: 500px;
+                    width: 19vw;
+                    height: 40vh;
                     overflow: hidden;
+                    margin: 0 auto;
                 }
                 &:hover{
                     transform: scale(1.02);

@@ -27,6 +27,11 @@ export class DataService {
         return this.http.get<RoomInfo[]>(dataUrl);
     }
 
+    getCharge(): Observable<RoomInfo[]> {
+        let dataUrl = JSON_URL + '/roomInfo.json';
+        return this.http.get<RoomInfo[]>(dataUrl);
+    }
+
     getRoleInfo(): Observable<RoleInfo[]> {
         let dataUrl = JSON_URL + '/role-info.json';
         return this.http.get<RoleInfo[]>(dataUrl);

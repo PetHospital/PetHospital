@@ -35,9 +35,10 @@ export class TutorComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-        this.dataService.getRoomInfo().subscribe(
+        this.dataService.getCharge().subscribe(
             data => {
                 this.avaliableRooms = data;
+                console.log(this.avaliableRooms);
             }
         );
     }
@@ -49,12 +50,9 @@ export class TutorComponent implements OnInit, AfterViewInit {
     onClickRole(roleIndex) {
         this.isShow = false;
         this.highlightRooms = this.getRoomIndexs(this.getHighlightRooms(roleIndex));
-        console.log(this.highlightRooms);
-        console.log(this.avaliableRooms);
     }
 
     onClickRoom(roomIndex) {
-        console.log(roomIndex);
         if (this.highlightRooms.indexOf(roomIndex) === -1) {
             return;
         }
@@ -70,6 +68,7 @@ export class TutorComponent implements OnInit, AfterViewInit {
 
     getHighlightRooms(roleIndex) {
         let rooms = [];
+        console.log(this.avaliableRooms);
         for (let room of this.avaliableRooms) {
             if (room.charge.indexOf(roleIndex) !== -1) {
                 rooms.push(room);
@@ -161,7 +160,7 @@ export class TutorComponent implements OnInit, AfterViewInit {
     }
 
     backToIndex = () => {
-        this.router.navigate(['/']);        
+        this.router.navigate(['/']);
     }
 
 }
