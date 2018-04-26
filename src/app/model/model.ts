@@ -3,6 +3,8 @@ export interface RoomInfo {
     intro: string;
     image: string;
     charge: string;
+    intro1: string;
+    intro2: string;
 }
 
 export interface RoleInfo {
@@ -111,4 +113,9 @@ export interface Operation {
     id: number;
     image: String;
     text: String;
+}
+
+export interface ExamUser {
+    score: number;
+    name: String;
 }

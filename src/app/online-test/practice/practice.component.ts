@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SingleItem, PracticeItem, PracticeTitle, PracticeTab} from '../../model/model';
+import {SingleItem, PracticeItem, PracticeTitle, PracticeTab, ExamUser} from '../../model/model';
 import { DataService } from './../../shared/service/data.service';
 @Component({
   selector: 'app-practice',
@@ -22,6 +22,7 @@ export class PracticeComponent implements OnInit {
   OnSelectedTab = this.practiceTabs[0];
 
   practiceItems: PracticeItem[];
+  examUser: ExamUser[];
   easyItems: Array<PracticeItem> = [];
   normalItems: Array<PracticeItem> = [];
   hardItems: Array<PracticeItem> = [];
@@ -42,19 +43,19 @@ export class PracticeComponent implements OnInit {
          this.hardItems.push(this.practiceItems[i]);
        }
       }
-      this.easy = true;
-      this.normal = true;
-      this.hard = true;
     });
+    this.dataService.getExamUser().subscribe(data => {
+      this.examUser = data;
+    });
+    this.easy = true;
+    this.normal = true;
+    this.hard = true;
    }
   ngOnInit() {
   }
   
   SelectTab(tab: PracticeTab): void {
     this.OnSelectedTab = tab;
-    console.log(this.easy);
-    console.log(this.normal);
-    console.log(this.hard);
     if (tab.name === "全部") {
       this.easy = true;
       this.normal = true;

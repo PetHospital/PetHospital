@@ -49,6 +49,8 @@ export class TutorComponent implements OnInit, AfterViewInit {
     onClickRole(roleIndex) {
         this.isShow = false;
         this.highlightRooms = this.getRoomIndexs(this.getHighlightRooms(roleIndex));
+        console.log(this.highlightRooms);
+        console.log(this.avaliableRooms);
     }
 
     onClickRoom(roomIndex) {
