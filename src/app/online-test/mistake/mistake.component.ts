@@ -17,7 +17,6 @@ export class MistakeComponent implements OnInit {
         this.dataService.getTestResult()
             .subscribe(data => {
                 this.allTest = data;
-                console.log(this.allTest);
                 for (let i in this.allTest) {
                     if (this.allTest[i].choice !== this.allTest[i].question.answer) {
                         this.WrongList.push(this.allTest[i]);

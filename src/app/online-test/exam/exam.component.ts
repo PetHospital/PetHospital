@@ -37,10 +37,8 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
            let arr = arrcookie[i].split("=");
            if (arr[0] === "token") {
               this.token = arr[1];
-              console.log(this.token);
            }else if (arr[0] === "examTime") {
              this.duration = parseInt(arr[1], 10);
-             console.log("duration: " + this.duration);
            }
         } 
         this.headers = new Headers({'Authorization': 'Token ' + this.token});
@@ -57,7 +55,6 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.dataService.getQuestions(this.id)
                         .subscribe(data => {
-                          console.log(data);
                           this.QuestionLists = data;
                         });
   }
@@ -77,7 +74,6 @@ export class ExamComponent implements OnInit, AfterViewInit, OnDestroy {
       this.startTime += this.duration * 1000;
       this.timer = setInterval(() => {
         this.diff = this.startTime - Date.now();
-        console.log(this.isFinished);
         if (!this.isFinished) {
           let time = 3600 * 1000;
           let exp = new Date();

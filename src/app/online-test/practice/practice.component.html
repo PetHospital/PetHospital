@@ -46,10 +46,7 @@
                   <div class="practice-lists">
                   <a class="practice-title">{{child.name}}</a>
                   <div class="tab-cout">
-                    <span class="type {{child.level}}">{{child.level}}</span>
-                  </div>
-                  <div class="score_show">
-                    <span class="score-num">Last score: </span>
+                    <span class="type easy"> easy</span>
                   </div>
                   <a href="/exercise/low" class="plan-icon practice-icon">
                     <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
@@ -69,10 +66,7 @@
                   <div class="practice-lists">
                   <a class="practice-title">{{child.name}}</a>
                   <div class="tab-cout">
-                    <span class="type {{child.level}}">{{child.level}}</span>
-                  </div>
-                  <div class="score_show">
-                    <span class="score-num">Last score: </span>
+                    <span class="type normal"> normal</span>
                   </div>
                   <a href="/exercise/medium" class="plan-icon practice-icon">
                     <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
@@ -92,10 +86,7 @@
                 <div class="practice-lists">
                 <a class="practice-title">{{child.name}}</a>
                 <div class="tab-cout">
-                  <span class="type {{child.level}}">{{child.level}}</span>
-                </div>
-                <div class="score_show">
-                  <span class="score-num">Last score: </span>
+                  <span class="type hard">hard</span>
                 </div>
                 <a href="/exercise/high" class="plan-icon practice-icon">
                   <img style="width: 25px;height: 25px;" src="./../../assets/images/exam/practice.png" alt="">
@@ -118,7 +109,7 @@
             <span class="grade-tip top-one">No.1</span>
             <img src="./../../assets/images/exam/avatar.jpg" alt="">
             <div class="user-message">
-              <span class="user-nikename">cyx</span>
+              <span class="user-nikename">{{examUser[0].name}}</span>
             </div>
           </div>
         </div>
@@ -127,7 +118,7 @@
               <span class="grade-tip top-two">No.2</span>
               <img src="./../../assets/images/exam/avatar.jpg" alt="">
               <div class="user-message">
-                <span class="user-nikename">Pandaice</span>
+                <span class="user-nikename">{{examUser[1].name}}</span>
               </div>
             </div>
           </div>
@@ -136,7 +127,7 @@
                 <span class="grade-tip top-three">No.3</span>
                 <img src="./../../assets/images/exam/avatar.jpg" alt="">
                 <div class="user-message">
-                  <span class="user-nikename">yxrr</span>
+                  <span class="user-nikename">{{examUser[2].name}}</span>
                 </div>
               </div>
           </div>

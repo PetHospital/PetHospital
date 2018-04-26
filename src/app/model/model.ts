@@ -114,3 +114,8 @@ export interface Operation {
     image: String;
     text: String;
 }
+
+export interface ExamUser {
+    score: number;
+    name: String;
+}
