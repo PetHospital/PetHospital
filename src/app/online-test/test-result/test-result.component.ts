@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TestResultComponent implements OnInit {
 
-  result: TestResult[];
+  response: TestResult[];
+  result: Array<TestResult>= [];
   selectedQuestion: TestResult;
   type: String;
   id: String;
@@ -27,16 +28,19 @@ export class TestResultComponent implements OnInit {
     this.route.params.subscribe((params) => this.type = params.type);
     this.route.params.subscribe((params) => this.id = params.id);
     this.dataService.getTestResult().subscribe(data => {
-      this.result = data;
-      for (let i in this.result) {
-        if (this.result[i].choice === this.result[i].question.answer) {
-          this.correctNum++;
-          this.result[i].isCorrect = true;
-          this.score += this.result[i].question.score;
-        }else {
-          this.result[i].isCorrect = false;
+      this.response = data;
+      for (let single of this.response) {
+        if (single.exam_id == this.id) {
+          this.result.push(single);
+          if (single.choice === single.question.answer) {
+            this.correctNum++;
+            single.isCorrect = true;
+            this.score += single.question.score;
+          }else {
+            single.isCorrect = false;
+          }
+          this.totalNum++;
         }
-        this.totalNum++;
       }
     });
     if (this.type === "exam") {
