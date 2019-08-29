@@ -1,0 +1,13 @@
+尊敬的先生/女士
+<br><br>
+感谢您注册{{ site_name }}.
+<br>
+请 <a href="http://{{ site }}{% url 'email_verify' verification_key=verification_key %}">点击此处</a> 激活您的账号。
+<br>
+如果上面的链接失效，请复制以下链接到您的浏览器 - http://{{ site }}{% url 'email_verify' verification_key=verification_key %}
+<br>
+如果您本人没有注册过，请忽略此邮件
+<br><br>
+祝好
+<br>
+{{ site_name }} 团队

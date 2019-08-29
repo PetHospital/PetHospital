@@ -1,0 +1,3 @@
+pandas==0.22.0
+Django==2.0.4
+locustio==0.8.1
